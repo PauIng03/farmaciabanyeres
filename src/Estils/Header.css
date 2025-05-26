@@ -1,0 +1,81 @@
+.header {
+  width: -webkit-fill-available;
+  padding: 24px 120px;
+  background: white;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+}
+
+.logo {
+  width: 55px;
+  height: 60px;
+}
+
+.nav {
+  display: flex;
+  gap: 25px;
+  height: 20px;
+  align-items: center;
+}
+
+.nav-item {
+  font-family: Quicksand, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: max-content;
+}
+
+.nav-item.active {
+  font-weight: 700;
+  color: #A60066;
+}
+
+.nav-item.active .underline {
+  height: 0;
+  align-self: stretch;
+  outline: 1px solid #A60066;
+  outline-offset: -0.5px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.icon {
+  background: none;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.login-register {
+  display: flex;
+  align-items: center;
+}
+
+.separator {
+  width: 20px;
+  height: 0;
+  transform: rotate(-90deg);
+  outline: 1px solid #a60066;
+  outline-offset: -0.5px;
+}
+
+.icon-header {
+  width: 20px;
+  height: 20px;
+  color: #a60066;
+  cursor: pointer;
+}
