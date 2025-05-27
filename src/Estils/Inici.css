@@ -1,0 +1,45 @@
+.QuiSom{
+    height: auto;
+    width: -webkit-fill-available;
+    padding: 44px 128px;
+    gap: 24px;
+    display: flex;
+    flex-direction: column;
+}
+.TextImatge{
+    display: inline-flex;
+    gap: 24px;
+}
+h1{
+    padding: 0px;
+    margin: 0px;
+    font-family: Quicksand, sans-serif;
+}
+p{
+    padding: 0px;
+    margin: 0px;
+}
+.TextQuiSom{
+    gap: 25px;
+}
+.Imatge{
+    width: fit-content;
+    height: fit-content;
+}
+.underline {
+  height: 0;
+  align-self: stretch;
+  outline: 1px solid #A60066;
+  outline-offset: -0.5px;
+  margin-top: 8px;
+}
+.underlineBlanc {
+  height: 0;
+  align-self: stretch;
+  outline: 1px solid #ffffff;
+  outline-offset: -0.5px;
+  margin-top: 8px;
+}
+.Titols{
+    width: fit-content;
+}
