@@ -43,3 +43,18 @@ p{
 .Titols{
     width: fit-content;
 }
+.TextBoto{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.Boto{
+    margin-top: 24px;
+    width: max-content;
+    background-color: #6e0a78;
+    color: #ffffff;
+    border-radius: 8px;
+    padding: 18px 85px;
+    border-style: hidden;
+    font-size: 16px;
+}

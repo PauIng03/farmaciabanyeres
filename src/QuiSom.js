@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import './Estils/QuiSom.css';
 import { supabase } from './lib/supabaseClient';
+import { useNavigate } from 'react-router-dom';
 
 function QuiSom() {
   const [equip, setEquip] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     async function fetchEquip() {
@@ -26,13 +28,17 @@ function QuiSom() {
           <div className='underline'></div>
         </div>
         <div className="TextImatge">
-          <p className='TextQuiSom'>
-            Farmàcia Banyeres és un espai de salut on tu ets el centre. <br /><br />
-            Oferim una atenció personalitzada, professional, actualitzada i adaptada a cada pacient.<br />
-            La nostra motivació són els nostres pacients i tenir cura de la seva salut.<br />
-            Comptem amb un equip qualificat, competent, proper i de confiança que es forma de manera continuada per oferir la millor atenció.
-          </p>
-          <img className='Imatge' src="https://placehold.co/600x200" alt="QuiSom" />
+          <div className='TextBoto'>
+            <p className='TextQuiSom'>
+              Farmàcia Banyeres és un espai de salut on tu ets el centre. <br /><br />
+              Oferim una atenció personalitzada, professional, actualitzada i adaptada a cada pacient.<br />
+              La nostra motivació són els nostres pacients i tenir cura de la seva salut.<br />
+              Comptem amb un equip qualificat, competent, proper i de confiança que es forma de manera continuada per oferir la millor atenció.
+            </p>
+            <button className='Boto' onClick={() => navigate('/contacte')}>Contacta amb nosaltres!</button>
+          </div>
+
+          <img className='Imatge' src="https://placehold.co/600x250" alt="QuiSom" />
         </div>
       </div>
 
@@ -42,7 +48,7 @@ function QuiSom() {
           <div className='underlineBlanc'></div>
         </div>
         <div className="TextImatge">
-          <img className='Imatge' src="https://placehold.co/600x200" alt="Valors" />
+          <img className='Imatge' src="https://placehold.co/600x250" alt="Valors" />
           <p className='TextValors'>
             La nostra visió és la d’una farmàcia comunitària centrada en el pacient.<br />
             Volem establir una relació de confiança amb la nostra comunitat, basada en oferir una atenció farmacèutica on el pacient rep una informació sanitària de qualitat que li permet prendre decisions sobre la seva salut.<br />

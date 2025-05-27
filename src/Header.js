@@ -9,7 +9,9 @@ function Header() {
 
   return (
     <div className="header">
-      <img className="logo" src="/Logo.png" alt="Logo" />
+        <Link to="/" className={`nav-item ${currentPath === '/' ? 'active' : ''}`}>
+          <div><img className="logo" src="/Logo.png" alt="Logo" /></div>
+        </Link>
 
       <div className="nav">
         <Link to="/" className={`nav-item ${currentPath === '/' ? 'active' : ''}`}>
