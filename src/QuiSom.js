@@ -37,7 +37,6 @@ function QuiSom() {
             </p>
             <button className='Boto' onClick={() => navigate('/contacte')}>Contacta amb nosaltres!</button>
           </div>
-
           <img className='Imatge' src="https://placehold.co/600x250" alt="QuiSom" />
         </div>
       </div>
@@ -57,7 +56,6 @@ function QuiSom() {
           </p>
         </div>
       </div>
-
       <div className="Equip">
         <div className='Titols'>
           <h1>Equip</h1>

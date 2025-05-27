@@ -1,26 +1,6 @@
-.QuiSom{
-    height: auto;
-    width: -webkit-fill-available;
-    padding: 44px 128px;
-    gap: 24px;
-    display: flex;
-    flex-direction: column;
-}
 .TextImatge{
     display: inline-flex;
     gap: 24px;
-}
-.Valors{
-    height: auto;
-    width: -webkit-fill-available;
-    padding: 44px 128px;
-    text-align: right;
-    background-color: #6E0A78;
-    color: #FFFFFF;
-    gap: 24px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
 }
 h1{
     padding: 0px;
@@ -31,22 +11,11 @@ p{
     padding: 0px;
     margin: 0px;
 }
-.TextQuiSom{
-    gap: 25px;
-}
-.TextValors{
-    text-align: left;
-    gap: 24px;
-}
-.Imatge{
-    object-fit: cover;
-    object-position: center;
-}
-.Equip{
+.Serveis{
     height: auto;
     width: -webkit-fill-available;
     padding: 44px 128px;
-    gap: 24px;
+    gap: 40px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -56,33 +25,29 @@ p{
     gap: 60px;
     flex-wrap: wrap;
     justify-content: center;
+    flex-direction: row;
 }
 .ImatgeCarta{
-    width: 200px;
-    height: 300px;
-    border-radius: 16px;
+    width: 100px;
+    height: 100px;
 }
 .Nom{
     font-weight: bold;
     font-family: Quicksand, sans-serif;
 }
-.Rol{
+.Resum{
     font-family: Quicksand, sans-serif;
 }
 .Carta{
-    text-align: center;
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    width: 475px;
 }
 .underline {
   height: 0;
   align-self: stretch;
   outline: 1px solid #A60066;
-  outline-offset: -0.5px;
-  margin-top: 8px;
-}
-.underlineBlanc {
-  height: 0;
-  align-self: stretch;
-  outline: 1px solid #ffffff;
   outline-offset: -0.5px;
   margin-top: 8px;
 }
@@ -103,4 +68,17 @@ p{
     padding: 18px 85px;
     border-style: hidden;
     font-size: 16px;
+}
+.InfoFotoServeis{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px 16px;
+    width: 315px;
+}
+.InfoServeis{
+    text-align: left;
+}
+.IconoNom{
+    width: 155px;
 }
