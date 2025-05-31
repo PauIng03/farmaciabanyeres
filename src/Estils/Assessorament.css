@@ -11,7 +11,7 @@ p{
     padding: 0px;
     margin: 0px;
 }
-.Serveis{
+.Assessoraments{
     height: auto;
     width: -webkit-fill-available;
     padding: 44px 128px;
@@ -20,7 +20,7 @@ p{
     flex-direction: column;
     align-items: center;
 }
-.CartesServeis{
+.CartesAssessoraments{
     display: flex;
     gap: 60px;
     flex-wrap: wrap;
@@ -31,7 +31,7 @@ p{
     width: 100px;
     height: 100px;
 }
-.nomServeis{
+.nomAssessoraments{
     font-weight: bold;
     font-family: Quicksand, sans-serif;
 }
@@ -43,7 +43,7 @@ p{
 .Resum{
     font-family: Quicksand, sans-serif;
 }
-.CartaServeis{
+.CartaAssessoraments{
     display: flex;
     flex-direction: row;
     gap: 16px;
@@ -64,24 +64,24 @@ p{
     flex-direction: column;
     align-items: center;
 }
-.Boto{
+.BotoRosa{
     margin-top: 24px;
     width: max-content;
-    background-color: #6e0a78;
+    background-color: #A60066;
     color: #ffffff;
     border-radius: 8px;
     padding: 18px 85px;
     border-style: hidden;
     font-size: 16px;
 }
-.InfoFotoServeis{
+.InfoFotoAssessoraments{
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 0px 16px;
     width: 315px;
 }
-.InfoServeis{
+.InfoAssesoraments{
     text-align: left;
 }
 .IconoNom{

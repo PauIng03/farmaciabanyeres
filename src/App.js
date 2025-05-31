@@ -7,6 +7,7 @@ import Blog from './Blog.js'
 import Promocions from './Promocions.js'
 import Footer from './Footer.js'
 import Inici from './Inici.js';
+import Assessorament from './Assessorament.js';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/serveis" element={<Serveis />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/promocions" element={<Promocions />} />
+        <Route path="/assessorament" element={<Assessorament />} />
       </Routes>
       <Footer />
     </BrowserRouter>

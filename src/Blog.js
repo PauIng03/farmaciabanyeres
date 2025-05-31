@@ -1,6 +1,11 @@
+import React from 'react';
+import './Estils/Blog.css';
+import ArticlesBlog from './ArticlesBlog';
+
 function Blog() {
   return (
-    <div className="header-2">
+    <div className="Blog">
+      <ArticlesBlog></ArticlesBlog>
     </div>
   );
 }

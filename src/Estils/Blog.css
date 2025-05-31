@@ -1,0 +1,50 @@
+.Blog{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    width: -webkit-fill-available;
+    padding: 44px 128px;
+    gap: 40px;
+}
+.articles{
+    display: flex;
+    gap: 24px;
+    flex-direction: column;
+    align-items: center;
+}
+.articlesBlog{
+    display: flex;
+    gap: 24px;
+    flex-wrap: nowrap;
+}
+.articleBoto{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.articleIndividual{
+    background-image: none;
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+    padding: 16px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.DivDataCategoria{
+    display: flex;
+    justify-content: space-between;
+}
+.data{
+    background-color: purple;
+    padding: 8px;
+    border-radius: 8px;
+}
+.categoria{
+    background-color: orange;
+    padding: 8px;
+    border-radius: 8px;
+}

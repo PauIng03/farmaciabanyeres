@@ -57,4 +57,95 @@ p{
     padding: 18px 85px;
     border-style: hidden;
     font-size: 16px;
+    font-weight: bold;
+    font-family: Quicksand, sans-serif;
+    text-align: center;
+}
+.CartaServeisInici{
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    width: fit-content;
+}
+.IconoNom {
+    justify-items: center;
+    width: 140px;
+}
+.nomInici {
+    font-weight: normal;
+    font-family: Quicksand, sans-serif;
+    text-align: center;
+}
+.divServeis{
+    background-color: #6e0a78;
+    height: auto;
+    width: -webkit-fill-available;
+    padding: 44px 128px;
+    gap: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color:#ffffff;
+}
+.iniciServeis{
+    height: auto;
+    width: -webkit-fill-available;
+    padding: 0px 0px;
+    gap: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.Boto.BotoVoraBlanca{
+    border-color: #ffffff;
+    border-style: double;
+    margin-top: 0px;
+}
+.divAssessorament {
+    position: relative;
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwLFm53tEjkRFMJcgmwsX2o9n71lWJOVZ4qQ&s');
+    background-size: cover;
+    background-position: center;
+    width: -webkit-fill-available;
+    padding: 44px 128px;
+    gap: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #ffffff;
+    z-index: 0;
+    overflow: hidden;
+}
+
+/* Capa negra a sobre de la imatge */
+.divAssessorament::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* 0.5 = 50% opacitat negra */
+  z-index: 1;
+}
+
+/* Contingut per sobre de l'overlay */
+.divAssessorament > * {
+  position: relative;
+  z-index: 2;
+}
+
+.BotonsAssessorament{
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+.Boto.BotoBlanc{
+    background-color: #ffffff;
+    color: black;
+}
+.Boto.BotoVoraBlancaTransparent{
+    border-color: #ffffff;
+    border-style: double;
+    background-color: transparent;
 }

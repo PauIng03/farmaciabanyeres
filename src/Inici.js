@@ -1,31 +1,40 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Estils/Inici.css';
+import DivQuiSom from './DivQuiSom';
+import LlistatServeis from './LlistatServeis';
+import ArticlesBlog from './ArticlesBlog';
 
 function Inici() {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
   return (
     <div>
-        <img src="imatges/carrussel-banner-27.png" className="carrussel-banner-27" alt="carrussel-banner" />
-        <div className="QuiSom">
-            <div className='Titols'>
-                <h1>Qui som?</h1>
-            <div className='underline'></div>
+      <img src="imatges/carrussel-banner-27.png" className="carrussel-banner-27" alt="carrussel-banner" />
+      <DivQuiSom botoText="Coneixe'ns més!" botoRuta="/qui-som" />
+      <div className='divServeis'>
+       <LlistatServeis cartaServeisClass='CartaServeisInici' serveisClass='iniciServeis' underlineClass='underlineBlanc' titol="Serveis" limit={6} mode="compacte"></LlistatServeis>
+      <button className='Boto BotoVoraBlanca' onClick={() => navigate('/serveis')}>Veure'n més</button>
+      </div>
+      <div className='divAssessorament'>
+        <div className='Titols'>
+          <h1>Assessorament</h1>
+          <div className='underlineBlanc'></div>
         </div>
-        <div className="TextImatge">
-          <div className='TextBoto'>
-            <p className='TextQuiSom'>
-              Farmàcia Banyeres és un espai de salut on tu ets el centre. <br /><br />
-              Oferim una atenció personalitzada, professional, actualitzada i adaptada a cada pacient.<br />
-              La nostra motivació són els nostres pacients i tenir cura de la seva salut.<br />
-              Comptem amb un equip qualificat, competent, proper i de confiança que es forma de manera continuada per oferir la millor atenció.
-            </p>
-            <button className='Boto' onClick={() => navigate('/qui-som')}>Coneixe'ns més!</button>
+        <div className='TextBoto'>
+          <p className='TextQuiSom'>
+            Farmàcia Banyeres és un espai de salut on tu ets el centre. <br /><br />
+            Oferim una atenció personalitzada, professional, actualitzada i adaptada a cada pacient.<br />
+            La nostra motivació són els nostres pacients i tenir cura de la seva salut.<br />
+            Comptem amb un equip qualificat, competent, proper i de confiança que es forma de manera continuada per oferir la millor atenció.
+          </p>
+          <div className='BotonsAssessorament'>
+            <button className='Boto BotoBlanc' onClick={() => navigate("/Assessorament")}>Consulta'ls</button>
+            <button className='Boto BotoVoraBlancaTransparent' onClick={() => navigate("/Contacte")}>Contacta'ns</button>
           </div>
-          <img className='Imatge' src="https://placehold.co/600x250" alt="QuiSom" />
         </div>
       </div>
+      <ArticlesBlog underlineClass="underline"></ArticlesBlog>
     </div>
   );
 }
