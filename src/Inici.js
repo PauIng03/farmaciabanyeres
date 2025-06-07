@@ -34,7 +34,9 @@ function Inici() {
           </div>
         </div>
       </div>
-      <ArticlesBlog underlineClass="underline"></ArticlesBlog>
+      <div className='iniciBlog'>
+        <ArticlesBlog underlineClass="underline" limit={3} showButton={true} showReadMore={false} />
+      </div>
     </div>
   );
 }

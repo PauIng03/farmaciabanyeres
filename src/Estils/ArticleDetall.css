@@ -63,7 +63,7 @@
 }
 .autorArticle{
     font-family: Quicksand, sans-serif;
-    font-weight: 600;
+    font-weight: 700;
     font-size: 16px;
 }
 .InfoArticle{
@@ -88,6 +88,6 @@
     flex-direction: row;
     gap: 5px;
 }
-.iconaUsuari{
-    height: min-content;
+.articleDetall{
+    justify-items: center;
 }

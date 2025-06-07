@@ -8,6 +8,7 @@ import Promocions from './Promocions.js'
 import Footer from './Footer.js'
 import Inici from './Inici.js';
 import Assessorament from './Assessorament.js';
+import ArticleIndividual from './ArticleIndividual.js';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/qui-som" element={<QuiSom />} />
         <Route path="/serveis" element={<Serveis />} />
         <Route path="/blog" element={<Blog />} />
+        <Route path="/blog/:id" element={<ArticleIndividual />} />
         <Route path="/promocions" element={<Promocions />} />
         <Route path="/assessorament" element={<Assessorament />} />
       </Routes>

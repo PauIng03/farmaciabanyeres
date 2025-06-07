@@ -1,54 +1,105 @@
 import React, { useEffect, useState } from 'react';
+import { FaUser } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 import { supabase } from './lib/supabaseClient';
+import './Estils/Blog.css';
 
-function ArticlesBlog({ underlineClass="underline", limit = null}) {
+function ArticlesBlog({
+  title = "Blog",
+  underlineClass = "underline",
+  limit = null,
+  showButton = false,
+  showReadMore = true,
+  excludeId = null
+}) {
   const [articles, setArticles] = useState([]);
   const navigate = useNavigate();
 
   useEffect(() => {
     async function fetchArticles() {
       let query = supabase.from('Articles').select('*');
-      if (limit) query = query.limit(limit);
       const { data, error } = await query;
+
       if (error) {
         console.error('Error carregant articles:', error.message);
       } else {
-        setArticles(data);
+        let filteredData = data;
+
+        // Exclou l'article actiu
+        if (excludeId) {
+          filteredData = filteredData.filter(article => article.id !== excludeId);
+        }
+
+        // Limita els articles si cal
+        if (limit) {
+          filteredData = filteredData.slice(0, limit);
+        }
+
+        setArticles(filteredData);
       }
     }
+
     fetchArticles();
-  }, [limit]);
+  }, [limit, excludeId]); // Afegeix `excludeId` a les dependències
+
+  function formatData(dataString) {
+    const data = new Date(dataString);
+    const dia = data.getDate();
+    const mes = data.toLocaleString('ca-ES', { month: 'short' });
+    const mesCapitalitzat = mes.charAt(0).toUpperCase() + mes.slice(1);
+
+    return (
+      <div className="Data">
+        <p className="Dia">{dia}</p>
+        <p className="Mes">{mesCapitalitzat}</p>
+      </div>
+    );
+  }
 
   return (
     <div className="articles">
       <div className='Titols'>
-        <h1>Blog</h1>
+        <h1>{title}</h1>
         <div className={underlineClass}></div>
       </div>
 
       <div className="articlesBlog">
         {articles.map((article) => (
           <div key={article.id} className='articleBoto'>
-            <div className='articleIndividual'>
-                <div className='DivDataCategoria'>
-                    <div className='data'>
-                        <p className='dataText'>{article.Data}</p>
-                    </div>
-                    <div className='categoria'>
-                        <p className='categoriaText'>{article.Categoria}</p>
-                    </div>
+            <div className='articleIndividual' onClick={() => navigate(`/blog/${article.id}`)}>
+              <div className='DivDataCategoria'>
+                <div className='data'>
+                  {formatData(article.Data)}
                 </div>
-                <div className='InfoArticle'>
-                    <p className='nomArticle'>{article.Nom}</p>
-                    <p className='autorArticle'>{article.Autor}</p>
-                    <p className='resumArticle'>Resum:<br></br>{article.Resum}</p>
+                <div className='categoria'>
+                  <p className='categoriaText'>{article.Categoria}</p>
                 </div>
+              </div>
+              <div className='InfoArticle'>
+                <p className='nomArticle'>{article.Nom}</p>
+                <div className='autor'>
+                  <FaUser className="iconaUsuari" />
+                  <p className='autorArticle'>{article.Autor}</p>
+                </div>
+                <div className='resum'>
+                  <p className='resumArticle'>Resum</p>
+                  <p className='resumArticleText'>{article.Resum}</p>
+                </div>
+              </div>
             </div>
-            <button className='BotoRosa' onClick={() => navigate(`/blog/${article.Nom}`)}>Continua llegint</button>
-        </div>
+
+            {showReadMore && (
+              <button className='Boto' onClick={() => navigate(`/blog/${article.id}`)}>Continua llegint</button>
+            )}
+          </div>
         ))}
       </div>
+
+      {showButton && (
+        <div className="containerBotoFinal">
+          <button className="Boto BotoVoraBlanca" onClick={() => navigate('/blog')}>Veure'n més</button>
+        </div>
+      )}
     </div>
   );
 }
