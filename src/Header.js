@@ -22,17 +22,17 @@ function Header() {
           <div>Qui som?</div>
           {currentPath === '/qui-som' && <div className="underline" />}
         </Link>
-        <Link to="/serveis" className={`nav-item ${currentPath === '/serveis' ? 'active' : ''}`}>
+        <Link to="/serveis" className={`nav-item ${currentPath.startsWith('/serveis') ? 'active' : ''}`}>
           <div>Serveis</div>
-          {currentPath === '/serveis' && <div className="underline" />}
+          {currentPath.startsWith('/serveis') && <div className="underline" />}
         </Link>
         <Link to="/assessorament" className={`nav-item ${currentPath === '/assessorament' ? 'active' : ''}`}>
           <div>Assessorament</div>
           {currentPath === '/assessorament' && <div className="underline" />}
         </Link>
-        <Link to="/blog" className={`nav-item ${currentPath === '/blog' ? 'active' : ''}`}>
+        <Link to="/blog" className={`nav-item ${currentPath.startsWith('/blog') ? 'active' : ''}`}>
           <div>Blog</div>
-          {currentPath === '/blog' && <div className="underline" />}
+          {currentPath.startsWith('/blog') && <div className="underline" />}
         </Link>
         <Link to="/promocions" className={`nav-item ${currentPath === '/promocions' ? 'active' : ''}`}>
           <div>Promocions</div>
