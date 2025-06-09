@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from 'react';
 import './Estils/QuiSom.css';
 import { useNavigate } from 'react-router-dom';
 

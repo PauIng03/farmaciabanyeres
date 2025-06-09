@@ -90,5 +90,8 @@
 }
 
 a{
-    text-decoration: none;
+  text-decoration: none;
+}
+.mapaFooter{
+  height: 290px;
 }

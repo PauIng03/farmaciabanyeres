@@ -10,7 +10,7 @@ function ArticleIndividual() {
   return (
     <div className="Blog">
       <ArticleDetall></ArticleDetall>
-      <ArticlesBlog title="Altres articles" limit={3} excludeId={parseInt(id)} />
+      <ArticlesBlog title="Altres articles" limit={3} excludeId={parseInt(id)} smallTitle={true} articlesRecomanats={true}/>
     </div>
   );
 }

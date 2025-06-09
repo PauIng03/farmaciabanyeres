@@ -9,6 +9,7 @@ import Footer from './Footer.js'
 import Inici from './Inici.js';
 import Assessorament from './Assessorament.js';
 import ArticleIndividual from './ArticleIndividual.js';
+import Contacte from './Contacte.js';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="/blog/:id" element={<ArticleIndividual />} />
         <Route path="/promocions" element={<Promocions />} />
         <Route path="/assessorament" element={<Assessorament />} />
+        <Route path="/contacte" element={<Contacte />} />
       </Routes>
       <Footer />
     </BrowserRouter>

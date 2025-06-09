@@ -40,7 +40,7 @@ function Header() {
         </Link>
         <Link to="/contacte" className={`nav-item ${currentPath === '/contacte' ? 'active' : ''}`}>
           <div>Contacte</div>
-          {currentPath === '/contacte' && <div className="underline" />}
+          {currentPath.startsWith('/contacte') && <div className="underline" />}
         </Link>
       </div>
 

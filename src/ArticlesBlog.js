@@ -10,7 +10,9 @@ function ArticlesBlog({
   limit = null,
   showButton = false,
   showReadMore = true,
-  excludeId = null
+  excludeId = null,
+  smallTitle = false,
+  articlesRecomanats = false,
 }) {
   const [articles, setArticles] = useState([]);
   const navigate = useNavigate();
@@ -57,9 +59,9 @@ function ArticlesBlog({
   }
 
   return (
-    <div className="articles">
+    <div className={`articles ${articlesRecomanats ? 'articlesRecomanats' : ''}`}>
       <div className='Titols'>
-        <h1>{title}</h1>
+        <h1 className={`titolArticle ${smallTitle ? 'titolArticlePetit' : ''}`}>{title}</h1>
         <div className={underlineClass}></div>
       </div>
 

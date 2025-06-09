@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import './Estils/QuiSom.css';
 import { supabase } from './lib/supabaseClient';
-import { useNavigate } from 'react-router-dom';
 import DivQuiSom from './DivQuiSom';
 
 function QuiSom() {
   const [equip, setEquip] = useState([]);
-  const navigate = useNavigate();
 
   useEffect(() => {
     async function fetchEquip() {
