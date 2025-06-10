@@ -24,12 +24,22 @@
     flex-direction: column;
     gap: 8px;
 }
-.llistaDemanarCita{
-    padding: 10px 12px;
+.llistaDemanarCitaServeis{
+    padding: 12px 12px;
     border-radius: 8px;
     border-style: solid;
     border-color: #6E0A78;
     color: #6E0A78;
+    border-width: 2px;
+    font-family: Quicksand, sans-serif;
+    font-size: 14px;
+}
+.llistaDemanarCitaAssessorament{
+    padding: 12px 12px;
+    border-radius: 8px;
+    border-style: solid;
+    border-color: #A60066;
+    color: #A60066;
     border-width: 2px;
     font-family: Quicksand, sans-serif;
     font-size: 14px;
@@ -40,4 +50,27 @@
     flex-wrap: nowrap;
     gap: 8px;
     width: -webkit-fill-available;
+}
+.BotoCitaAssessorament{
+    margin-top: 8px;
+    width: max-content;
+    background-color: #A60066;
+    color: #ffffff;
+    border-radius: 8px;
+    padding: 18px 85px;
+    border-style: hidden;
+    font-size: 16px;
+}
+.BotoCitaServeis{
+    margin-top: 8px;
+    width: max-content;
+    background-color: #6e0a78;
+    color: #ffffff;
+    border-radius: 8px;
+    padding: 18px 85px;
+    border-style: hidden;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: Quicksand, sans-serif;
+    text-align: center;
 }

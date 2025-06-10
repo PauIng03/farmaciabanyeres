@@ -9,7 +9,10 @@ function DemanarCita() {
   const location = useLocation();
   const [taula, setTaula] = useState(null);
   const [frase, setfrase] = useState([]);
-  const [llista, setLlista] = useState([]);        // Tots serveis o assessoraments
+  const [estilBoto, setEstilBoto] = useState([]);
+  const [estilMargeForm, setEstilMargeForm] = useState([]);
+
+  const [llista, setLlista] = useState([]);
   const [serveiSeleccionat, setServeiSeleccionat] = useState(null); // El servei seleccionat
 
   const [errors, setErrors] = useState({});
@@ -19,12 +22,17 @@ function DemanarCita() {
     if (location.pathname.startsWith('/assessorament/')) {
       setTaula('Assessoraments');
       setfrase('Assesorament escollit');
+      setEstilBoto('BotoCitaAssessorament');
+      setEstilMargeForm('llistaDemanarCitaAssessorament');
     } else if (location.pathname.startsWith('/serveis/')) {
       setTaula('Serveis');
       setfrase('Servei escollit');
+      setEstilBoto('BotoCitaServeis');
+      setEstilMargeForm('llistaDemanarCitaServeis');
     } else {
       setTaula(null);
       setfrase(null);
+      setEstilBoto(null);
     }
   }, [location.pathname]);
 
@@ -56,7 +64,7 @@ function DemanarCita() {
     } else {
       setServeiSeleccionat(llista[0]);
     }
-  }, [taula, id, llista, frase]);
+  }, [taula, id, llista, frase, estilBoto, estilMargeForm]);
 
   const form = useRef();
     const [formData, setFormData] = useState({
@@ -145,7 +153,7 @@ function DemanarCita() {
         <div className="desplegableDemanarCita">
             <p className="textInput">{frase}</p>
             <select
-            className="llistaDemanarCita"
+            className={estilMargeForm}
             name="servei"
             value={serveiSeleccionat ? serveiSeleccionat.id : ''}
             onChange={handleServeiChange}
@@ -197,7 +205,7 @@ function DemanarCita() {
         <div className="desplegableDemanarCita">
             <p className="textInput">Via de contacte desitjada</p>
             <select
-            className="llistaDemanarCita"
+            className={estilMargeForm}
             name="contacte"
             value={formData.contacte}
             onChange={handleChange}
@@ -213,7 +221,7 @@ function DemanarCita() {
         <div className="desplegableDemanarCita">
             <p className="textInput">Horari preferent</p>
             <select
-            className="llistaDemanarCita"
+            className={estilMargeForm}
             name="horari"
             value={formData.horari}
             onChange={handleChange}
@@ -237,7 +245,7 @@ function DemanarCita() {
             ></textarea>
         </div>
 
-        <button className="BotoFormContacte" type="submit">
+        <button className={estilBoto} type="submit">
             Enviar
         </button>
 
