@@ -26,9 +26,9 @@ function Header() {
           <div>Serveis</div>
           {currentPath.startsWith('/serveis') && <div className="underline" />}
         </Link>
-        <Link to="/assessorament" className={`nav-item ${currentPath === '/assessorament' ? 'active' : ''}`}>
+        <Link to="/assessorament" className={`nav-item ${currentPath.startsWith('/assessorament') ? 'active' : ''}`}>
           <div>Assessorament</div>
-          {currentPath === '/assessorament' && <div className="underline" />}
+          {currentPath.startsWith('/assessorament') && <div className="underline" />}
         </Link>
         <Link to="/blog" className={`nav-item ${currentPath.startsWith('/blog') ? 'active' : ''}`}>
           <div>Blog</div>
@@ -38,7 +38,7 @@ function Header() {
           <div>Promocions</div>
           {currentPath === '/promocions' && <div className="underline" />}
         </Link>
-        <Link to="/contacte" className={`nav-item ${currentPath === '/contacte' ? 'active' : ''}`}>
+        <Link to="/contacte" className={`nav-item ${currentPath.startsWith('/contacte') ? 'active' : ''}`}>
           <div>Contacte</div>
           {currentPath.startsWith('/contacte') && <div className="underline" />}
         </Link>

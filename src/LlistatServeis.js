@@ -41,7 +41,7 @@ function LlistatServeis({ cartaServeisClass='CartaServeis', serveisClass="Servei
                   <p className='nomServeis'>{servei.Nom}</p>
                   <p className='Resum'>{servei.Resum}</p>
                 </div>
-                <button className='Boto' onClick={() => navigate(`/serveis/${servei.Nom}`)}>Veure'n més</button>
+                <button className='Boto' onClick={() => navigate(`/serveis/${servei.id}`)}>Veure'n més</button>
               </div>
             )}
           </div>

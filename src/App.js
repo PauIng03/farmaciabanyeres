@@ -10,6 +10,8 @@ import Inici from './Inici.js';
 import Assessorament from './Assessorament.js';
 import ArticleIndividual from './ArticleIndividual.js';
 import Contacte from './Contacte.js';
+import ServeisVistaInterior from './ServeisVistaInterior.js';
+import AssessoramentVistaInterior from './AssessoramentVistaInterior.js';
 
 function App() {
   return (
@@ -20,10 +22,12 @@ function App() {
         <Route path="/" element={<Inici />} />
         <Route path="/qui-som" element={<QuiSom />} />
         <Route path="/serveis" element={<Serveis />} />
+        <Route path='/serveis/:id' element={<ServeisVistaInterior/>}></Route>
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog/:id" element={<ArticleIndividual />} />
         <Route path="/promocions" element={<Promocions />} />
         <Route path="/assessorament" element={<Assessorament />} />
+        <Route path='/assessorament/:id' element={<AssessoramentVistaInterior/>}></Route>
         <Route path="/contacte" element={<Contacte />} />
       </Routes>
       <Footer />

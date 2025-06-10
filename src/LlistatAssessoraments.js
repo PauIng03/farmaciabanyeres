@@ -41,7 +41,7 @@ function LlistatAssessoraments({ assessoramentsClass="Assessoraments", underline
                   <p className='nomAssessoraments'>{assessorament.Nom}</p>
                   <p className='Resum'>{assessorament.Resum}</p>
                 </div>
-                <button className='BotoRosa' onClick={() => navigate(`/assessoraments/${assessorament.Nom}`)}>Veure'n més</button>
+                <button className='BotoRosa' onClick={() => navigate(`/assessorament/${assessorament.id}`)}>Veure'n més</button>
               </div>
             )}
           </div>

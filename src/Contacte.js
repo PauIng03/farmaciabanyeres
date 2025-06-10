@@ -136,7 +136,7 @@ function Contacte() {
                         {errors.missatge && <span className="error">{errors.missatge}</span>}
                     </div>
 
-                    <button className='Boto' type="submit">Enviar</button>
+                    <button className='BotoFormContacte' type="submit">Enviar</button>
                     {enviat && <p className="missatgeEnviat">Missatge enviat correctament!</p>}
                 </form>
                 <div className='divMaps'>

@@ -1,0 +1,134 @@
+.divSuperiorAssessorament {
+  position: relative;
+  display: flex;
+  height: auto;
+  width: 100%;
+  overflow: hidden;
+  flex-direction: row-reverse;
+}
+
+.divImatgeAssessorament {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 0;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row;
+    align-items: center;
+}
+
+.imatgeAssessorament {
+  width: 100%;
+  object-fit: cover;
+}
+
+.degradatOverlayAssessorament {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 70%;
+  background: linear-gradient(to left, #A60066 75%, #ff00f500);
+  z-index: 1;
+}
+
+.divTitolResumAssessorament {
+  position: relative;
+  z-index: 2;
+    padding: 40px 128px 40px 10px;
+  width: 45%;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-end;
+}
+.blanc{
+    outline: 1px solid #ffffff;
+}
+.resumAssessorament{
+    padding-left: 20px;
+    text-align: right;
+}
+.botoBlanc{
+    background-color: transparent;
+    border-color: #ffffff;
+    border: 1px;
+    border-style: solid;
+    margin-top: 18px;
+}
+.divInfoAssessorament{
+    display: flex;
+    flex-direction: column;
+    padding: 44px 128px;
+    align-items: center;
+    gap: 24px;
+}
+.titolInfo{
+    margin: 0px;
+}
+.detallContingutAssessorament{
+    display: flex;
+    padding: 48px 128px;
+    gap: 64px;
+    justify-content: center;
+    background-color: #A60066;
+    color: #ffffff;
+}
+.blocText{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 33%;
+}
+.textDetall{
+    text-align: center;
+}
+.titolDetall{
+    margin-top: 0px;
+}
+.divDubtes{
+    display: flex;
+    flex-direction: column;
+    padding: 44px 128px;
+    align-items: start;
+    gap: 24px;
+}
+.divDesplegable {
+    width: -webkit-fill-available;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.divDesplegable:hover {
+  background-color: #f8f8f8;
+}
+
+.preguntaWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pregunta {
+  font-weight: bold;
+  margin: 0;
+}
+
+.fletxa {
+  font-size: 20px;
+  transition: transform 0.3s ease;
+}
+
+.fletxa.oberta {
+  transform: rotate(180deg);
+}
+
+.resposta {
+  margin-top: 12px;
+}
