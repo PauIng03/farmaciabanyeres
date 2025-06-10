@@ -98,15 +98,6 @@
 }
 .divDesplegable {
     width: -webkit-fill-available;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    padding: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.divDesplegable:hover {
-  background-color: #f8f8f8;
 }
 
 .preguntaWrapper {

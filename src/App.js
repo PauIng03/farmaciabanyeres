@@ -12,6 +12,7 @@ import ArticleIndividual from './ArticleIndividual.js';
 import Contacte from './Contacte.js';
 import ServeisVistaInterior from './ServeisVistaInterior.js';
 import AssessoramentVistaInterior from './AssessoramentVistaInterior.js';
+import DemanarCita from './DemanarCita.js';
 
 function App() {
   return (
@@ -23,11 +24,13 @@ function App() {
         <Route path="/qui-som" element={<QuiSom />} />
         <Route path="/serveis" element={<Serveis />} />
         <Route path='/serveis/:id' element={<ServeisVistaInterior/>}></Route>
+        <Route path='/serveis/:id/demanar-cita' element={<DemanarCita/>}></Route>
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog/:id" element={<ArticleIndividual />} />
         <Route path="/promocions" element={<Promocions />} />
         <Route path="/assessorament" element={<Assessorament />} />
         <Route path='/assessorament/:id' element={<AssessoramentVistaInterior/>}></Route>
+        <Route path='/assessorament/:id/demanar-cita' element={<DemanarCita/>}></Route>
         <Route path="/contacte" element={<Contacte />} />
       </Routes>
       <Footer />

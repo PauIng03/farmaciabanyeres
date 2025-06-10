@@ -1,0 +1,43 @@
+.demanarCita{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: -webkit-fill-available;
+    height: auto;
+    padding: 44px 128px;
+    gap: 24px;
+}
+.divSuperiorDemanarCita{
+    display: flex;
+    flex-direction: column;
+}
+.formDemanarCita{
+    display: flex;
+    width: -webkit-fill-available;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+.desplegableDemanarCita{
+    display: flex;
+    width: -webkit-fill-available;
+    flex-direction: column;
+    gap: 8px;
+}
+.llistaDemanarCita{
+    padding: 10px 12px;
+    border-radius: 8px;
+    border-style: solid;
+    border-color: #6E0A78;
+    color: #6E0A78;
+    border-width: 2px;
+    font-family: Quicksand, sans-serif;
+    font-size: 14px;
+}
+.divsForm{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 8px;
+    width: -webkit-fill-available;
+}
