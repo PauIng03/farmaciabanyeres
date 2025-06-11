@@ -16,6 +16,7 @@ import DemanarCita from './DemanarCita.js';
 import IniciSessio from './IniciSessio.js';
 import OblidatContrassenya from './OblidatContrassenya.js';
 import Registre from './Registre.js';
+import BotoFlotant from './BotoFlotant.js';
 
 function App() {
   return (
@@ -39,6 +40,7 @@ function App() {
         <Route path='/inicisessio/oblidatcontrassenya' element={<OblidatContrassenya />}></Route>
         <Route path='/registre' element={<Registre />}></Route>
       </Routes>
+      <BotoFlotant />
       <Footer />
     </BrowserRouter>
   );

@@ -99,10 +99,10 @@ function IniciSessio() {
         {enviat && <p className="missatgeEnviat">Sessió iniciada amb èxit</p>}
       </form>
         <p>
-            Encara no tens compte? <Link to="/registre">Registra't</Link>
+            Encara no tens compte? <Link className='enllaços' to="/registre">Registra't</Link>
         </p>
         <p>
-        <Link to="/inicisessio/oblidatcontrassenya" className="enlace">
+        <Link to="/inicisessio/oblidatcontrassenya" className='enllaços'>
             Has oblidat la contrassenya?
         </Link>
         </p>

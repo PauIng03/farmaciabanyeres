@@ -56,8 +56,8 @@ function OblidatContrassenya() {
         {enviat && <p className="missatgeEnviat">Comprova el teu correu per restablir la contrasenya</p>}
       </form>
 
-      <p style={{ marginTop: '1rem' }}>
-        <Link to="/inicisessio">Tornar a iniciar sessió</Link>
+      <p>
+        <Link className='enllaços' to="/inicisessio">Tornar a iniciar sessió</Link>
       </p>
     </div>
   );

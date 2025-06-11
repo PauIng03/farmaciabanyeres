@@ -1,0 +1,88 @@
+.boto-flotant {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #cf278f;
+  color: white;
+  border-radius: 50%;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  cursor: pointer;
+  z-index: 1000;
+  /*border: 1px, #ffffff, solid;*/
+}
+
+.tooltip-petita {
+  position: absolute;
+  bottom: 60px;
+  right: 0;
+  background-color: #3e1043;
+  color: #ffffff;
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-size: 14px;
+  box-shadow: -5px 5px 15px 5px rgba(0, 0, 0, 0.2);
+  animation: fadeInUp 0.3s ease-out;
+  z-index: 1001;
+  white-space: nowrap;
+  /*border: 1px, #ffffff, solid;*/
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.panell-missatgeria {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  background-color: white;
+  /*border: 1px solid #ddd;*/
+  border-radius: 10px;
+  width: 280px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+  z-index: 999;
+  overflow: hidden;
+}
+
+.capcalera {
+  background-color: #cf278f;
+  color: white;
+  padding: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+}
+
+.cos {
+  padding: 16px;
+}
+
+.boto-whatsapp {
+  background-color: #cf278f;
+  color: white;
+  padding: 10px 14px;
+  border-radius: 6px;
+  text-align: center;
+  display: block;
+  text-decoration: none;
+  margin-top: 12px;
+  font-weight: bold;
+}
+.creuBotoFlotant{
+    background-color: #cf278f;
+    border: none;
+    color: white;
+}
