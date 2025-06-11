@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { supabase } from './lib/supabaseClient';
 import { useNavigate } from 'react-router-dom';
+import "./Estils/Sessio.css"
 
 function Registre() {
   const [formData, setFormData] = useState({
@@ -66,14 +67,14 @@ function Registre() {
       } else {
         setEnviat(true);
         setErrors({});
-        setTimeout(() => navigate('/'), 1500);
+        setTimeout(() => navigate('/inicisessio'), 1500);
       }
     }
   };
 
   return (
     <div className='demanarCita'>
-      <div className="divSuperiorDemanarCita">
+      <div className="divSuperiorSessio">
         <h3 className="titolDetall">Crea un compte</h3>
         <p>Introdueix les teves dades per registrar-te</p>
       </div>

@@ -103,7 +103,7 @@ function Header() {
 
       <div className="user">
         {user && perfil ? (
-          <div className="login-register">
+          <div className="login-register registrat">
             <div className="nav-item">Hola {perfil.nom}!</div>
             <div className="icon">
               <FaUser className="icon-header" />

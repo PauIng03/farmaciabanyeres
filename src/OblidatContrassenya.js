@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { supabase } from './lib/supabaseClient';
 import { Link } from 'react-router-dom';
+import "./Estils/Sessio.css"
 
 function OblidatContrassenya() {
   const [email, setEmail] = useState('');
@@ -30,7 +31,7 @@ function OblidatContrassenya() {
 
   return (
     <div className='demanarCita'>
-      <div className="divSuperiorDemanarCita">
+      <div className="divSuperiorSessio">
         <h3 className="titolDetall">Has oblidat la contrasenya?</h3>
         <p>Introdueix el teu correu per rebre un enllaç de recuperació</p>
       </div>

@@ -66,6 +66,14 @@
   align-items: center;
 }
 
+.registrat{
+  gap: 8px;
+}
+
+.registrat{
+  margin-right: 0px;
+}
+
 .separator {
   width: 20px;
   height: 0;

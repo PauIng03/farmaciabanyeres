@@ -1,0 +1,54 @@
+.comentaris{
+    width: -webkit-fill-available;
+    background-color: #6E0A78;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 48px 128px;
+    gap: 24px;
+}
+.titolComentaris{
+    margin: 0px;
+}
+.divFormulariComentari{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.formulariComentari{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: -webkit-fill-available;
+}
+.textareaComentaris{
+    width: -webkit-fill-available;
+}
+.titolPComentari{
+    font-weight: 600;
+}
+.comentari{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.divTitolResposta{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    color: white;
+}
+.botoResposta{
+    background: none;
+    border: none;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    width: min-content;
+}
+.iconaComentari{
+    margin-right: 6px;
+}

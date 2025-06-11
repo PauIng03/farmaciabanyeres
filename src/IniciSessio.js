@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { supabase } from './lib/supabaseClient';
 import { Link, useNavigate } from 'react-router-dom';
+import "./Estils/Sessio.css"
 
 function IniciSessio() {
   const [formData, setFormData] = useState({ email: '', contrassenya: '' });
@@ -59,7 +60,7 @@ function IniciSessio() {
 
   return (
     <div className='demanarCita'>
-      <div className="divSuperiorDemanarCita">
+      <div className="divSuperiorSessio">
         <h3 className="titolDetall">Ja tens Compte?</h3>
         <p>Inicia la sessió amb el correu electrònic</p>
       </div>

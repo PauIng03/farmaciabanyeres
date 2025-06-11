@@ -4,14 +4,15 @@
     align-items: center;
     height: auto;
     width: -webkit-fill-available;
-    padding: 44px 128px;
     gap: 40px;
+    padding: 44px 0px;
 }
 .articles{
     display: flex;
     gap: 24px;
     flex-direction: column;
     align-items: center;
+    padding: 0px 128px;
 }
 .articlesBlog{
     display: flex;

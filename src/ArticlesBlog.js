@@ -27,12 +27,10 @@ function ArticlesBlog({
       } else {
         let filteredData = data;
 
-        // Exclou l'article actiu
         if (excludeId) {
           filteredData = filteredData.filter(article => article.id !== excludeId);
         }
 
-        // Limita els articles si cal
         if (limit) {
           filteredData = filteredData.slice(0, limit);
         }
@@ -42,7 +40,7 @@ function ArticlesBlog({
     }
 
     fetchArticles();
-  }, [limit, excludeId]); // Afegeix `excludeId` a les dependències
+  }, [limit, excludeId]);
 
   function formatData(dataString) {
     const data = new Date(dataString);

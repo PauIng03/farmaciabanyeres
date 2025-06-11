@@ -134,18 +134,24 @@ function DemanarCita() {
   };
 
   const validate = () => {
-    const newErrors = {};
-    if (!formData.nom.trim()) newErrors.nom = "El nom és obligatori.";
-    if (!formData.email.trim()) {
-      newErrors.email = "L'email és obligatori.";
-    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      newErrors.email = "Format d'email invàlid.";
-    }
-    if (!formData.telefon.trim()) newErrors.telefon = "El telèfon és obligatori.";
-    if (!formData.contacte.trim()) newErrors.contacte = "Escollir una via de contacte és obligatori.";
-    if (!formData.horari.trim()) newErrors.horari = "Escollir una franja horaria és obligatori.";
-    return newErrors;
-  };
+  const newErrors = {};
+  if (!formData.nom || String(formData.nom).trim() === '') newErrors.nom = "El nom és obligatori.";
+
+  if (!formData.email || String(formData.email).trim() === '') {
+    newErrors.email = "L'email és obligatori.";
+  } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+    newErrors.email = "Format d'email invàlid.";
+  }
+
+  if (!formData.telefon || String(formData.telefon).trim() === '') newErrors.telefon = "El telèfon és obligatori.";
+
+  if (!formData.contacte || String(formData.contacte).trim() === '') newErrors.contacte = "Escollir una via de contacte és obligatori.";
+
+  if (!formData.horari || String(formData.horari).trim() === '') newErrors.horari = "Escollir una franja horaria és obligatori.";
+
+  return newErrors;
+};
+
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -263,16 +269,13 @@ function DemanarCita() {
             name="horari"
             value={formData.horari}
             onChange={handleChange}
-          >
-            <option value="">-- Selecciona una franja horaria --</option>
-            <option value="8:00 - 10:00">8:00 - 10:00</option>
-            <option value="10:00 - 12:00">10:00 - 12:00</option>
-            <option value="12:00 - 14:00">12:00 - 14:00</option>
-            <option value="14:00 - 16:00">14:00 - 16:00</option>
-            <option value="16:00 - 18:00">16:00 - 18:00</option>
-            <option value="18:00 - 20:00">18:00 - 20:00</option>
-          </select>
-          {errors.horari && <span className="error">{errors.horari}</span>}
+            >
+            <option value="">-- Selecciona una franja --</option>
+            <option value="Dilluns a Divendres - Matí">Dilluns a Divendres - Matí</option>
+            <option value="Dilluns a Divendres - Tarda">Dilluns a Divendres - Tarda</option>
+            <option value="Dissabtes - Matí">Dissabtes - Matí</option>
+            </select>
+            {errors.horari && <span className="error">{errors.horari}</span>}
         </div>
 
         <div className="divsForm">

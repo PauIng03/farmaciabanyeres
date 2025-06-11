@@ -152,7 +152,7 @@ p{
 .iniciBlog{
     height: auto;
     width: -webkit-fill-available;
-    padding: 44px 128px;
+    padding: 44px 0px;
     gap: 40px;
     display: flex;
     flex-direction: column;
