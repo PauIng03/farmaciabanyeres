@@ -1,60 +1,95 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
+import { supabase } from './lib/supabaseClient';
 import emailjs from 'emailjs-com';
 import Maps from "./Maps";
 import "./Estils/Contacte.css"
 
 function Contacte() {
-    const form = useRef();
-    const [formData, setFormData] = useState({
-        nom: '',
-        email: '',
-        telefon: '',
-        missatge: ''
+  const form = useRef();
+  const [formData, setFormData] = useState({
+      nom: '',
+      email: '',
+      telefon: '',
+      missatge: ''
+  });
+
+  const [errors, setErrors] = useState({});
+  const [enviat, setEnviat] = useState(false);
+
+  useEffect(() => {
+    async function carregarDadesUsuari() {
+      const { data: { session } } = await supabase.auth.getSession();
+      if (session?.user) {
+        const userEmail = session.user.email;
+
+        let nomComplet = '';
+        let telefonUsuari = '';
+
+        const { data: perfils, error } = await supabase
+          .from('Perfils')
+          .select('nom, cognom, telefon')
+          .eq('user_id', session.user.id)
+          .single();
+
+        if (error) {
+          console.log('Error carregant perfil:', error.message);
+        } else if (perfils) {
+          nomComplet = perfils.nom + ' ' + perfils.cognom;
+          telefonUsuari = perfils.telefon ? perfils.telefon.toString() : '';
+        }
+
+        setFormData(prev => ({
+          ...prev,
+          nom: nomComplet,
+          email: userEmail || '',
+          telefon: telefonUsuari
+        }));
+      }
+    }
+
+    carregarDadesUsuari();
+  }, []);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+    setErrors(prev => ({ ...prev, [name]: '' }));
+  };
+
+  const validate = () => {
+    const newErrors = {};
+    if (!formData.nom.trim()) newErrors.nom = "El nom és obligatori.";
+    if (!formData.email.trim()) {
+      newErrors.email = "L'email és obligatori.";
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      newErrors.email = "Format d'email invàlid.";
+    }
+    if (!formData.missatge.trim()) newErrors.missatge = "El missatge és obligatori.";
+    return newErrors;
+  };
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+    const validationErrors = validate();
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
+      return;
+    }
+
+    emailjs.sendForm(
+      'YOUR_SERVICE_ID',
+      'YOUR_TEMPLATE_ID',
+      form.current,
+      'YOUR_PUBLIC_KEY'
+    ).then(() => {
+      setEnviat(true);
+      form.current.reset();
+      setFormData({ nom: '', email: '', telefon: '', missatge: '' });
+    }).catch((error) => {
+      console.error("Error en l'enviament:", error.text);
+      alert("Hi ha hagut un error en enviar el missatge.");
     });
-
-    const [errors, setErrors] = useState({});
-    const [enviat, setEnviat] = useState(false);
-
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setFormData(prev => ({ ...prev, [name]: value }));
-        setErrors(prev => ({ ...prev, [name]: '' }));
-    };
-
-    const validate = () => {
-        const newErrors = {};
-        if (!formData.nom.trim()) newErrors.nom = "El nom és obligatori.";
-        if (!formData.email.trim()) {
-        newErrors.email = "L'email és obligatori.";
-        } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-        newErrors.email = "Format d'email invàlid.";
-        }
-        if (!formData.missatge.trim()) newErrors.missatge = "El missatge és obligatori.";
-        return newErrors;
-    };
-
-    const sendEmail = (e) => {
-        e.preventDefault();
-        const validationErrors = validate();
-        if (Object.keys(validationErrors).length > 0) {
-        setErrors(validationErrors);
-        return;
-        }
-
-        emailjs.sendForm(
-        'YOUR_SERVICE_ID',
-        'YOUR_TEMPLATE_ID',
-        form.current,
-        'YOUR_PUBLIC_KEY'
-        ).then(() => {
-        setEnviat(true);
-        form.current.reset();
-        setFormData({ nom: '', email: '', telefon: '', missatge: '' });
-        }).catch((error) => {
-        console.error("Error en l'enviament:", error.text);
-        alert("Hi ha hagut un error en enviar el missatge.");
-        });
-    };
+  };
 
     return (
         <div className='contacte'>
@@ -88,57 +123,57 @@ function Contacte() {
                         </div>    
                     </div>
                 </div>
-                <form className="formContacte" ref={form} onSubmit={sendEmail} noValidate>
-                    <div className='divsForm'>
-                        <p className='textInput'>Nom</p>
-                        <input
-                            type="text"
-                            name="nom"
-                            placeholder="Nom"
-                            value={formData.nom}
-                            onChange={handleChange}
-                        />
-                        {errors.nom && <span className="error">{errors.nom}</span>}
-                    </div>
-                    
-                    <div className='divsForm'>
-                        <p className='textInput'>Email</p>
-                        <input
-                            type="email"
-                            name="email"
-                            placeholder="Email"
-                            value={formData.email}
-                            onChange={handleChange}
-                        />
-                        {errors.email && <span className="error">{errors.email}</span>}
-                    </div>
+                 <form className="formContacte" ref={form} onSubmit={sendEmail} noValidate>
+        <div className='divsForm'>
+          <p className='textInput'>Nom</p>
+          <input
+            type="text"
+            name="nom"
+            placeholder="Nom"
+            value={formData.nom}
+            onChange={handleChange}
+          />
+          {errors.nom && <span className="error">{errors.nom}</span>}
+        </div>
+        
+        <div className='divsForm'>
+          <p className='textInput'>Email</p>
+          <input
+            type="email"
+            name="email"
+            placeholder="Email"
+            value={formData.email}
+            onChange={handleChange}
+          />
+          {errors.email && <span className="error">{errors.email}</span>}
+        </div>
 
-                    <div className='divsForm'>
-                        <p className='textInput'>Telèfon</p>
-                        <input
-                            type="tel"
-                            name="telefon"
-                            placeholder="Telèfon"
-                            value={formData.telefon}
-                            onChange={handleChange}
-                        />
-                    </div>
+        <div className='divsForm'>
+          <p className='textInput'>Telèfon</p>
+          <input
+            type="tel"
+            name="telefon"
+            placeholder="Telèfon"
+            value={formData.telefon}
+            onChange={handleChange}
+          />
+        </div>
 
-                    <div className='divsForm'>
-                        <p className='textInput'>Missatge</p>
-                        <textarea
-                            name="missatge"
-                            placeholder="Missatge"
-                            rows="4"
-                            value={formData.missatge}
-                            onChange={handleChange}
-                        ></textarea>
-                        {errors.missatge && <span className="error">{errors.missatge}</span>}
-                    </div>
+        <div className='divsForm'>
+          <p className='textInput'>Missatge</p>
+          <textarea
+            name="missatge"
+            placeholder="Missatge"
+            rows="4"
+            value={formData.missatge}
+            onChange={handleChange}
+          ></textarea>
+          {errors.missatge && <span className="error">{errors.missatge}</span>}
+        </div>
 
-                    <button className='BotoFormContacte' type="submit">Enviar</button>
-                    {enviat && <p className="missatgeEnviat">Missatge enviat correctament!</p>}
-                </form>
+        <button className='BotoFormContacte' type="submit">Enviar</button>
+        {enviat && <p className="missatgeEnviat">Missatge enviat correctament!</p>}
+      </form>
                 <div className='divMaps'>
                     <div className='divTitolInfo'>
                         <h2 className='h2Contacte'>Localització</h2>

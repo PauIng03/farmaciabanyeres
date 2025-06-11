@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { useParams, useLocation } from 'react-router-dom';
 import { supabase } from './lib/supabaseClient';
 import emailjs from '@emailjs/browser';
-import "./Estils/DemanarCita.css"
+import "./Estils/DemanarCita.css";
 
 function DemanarCita() {
   const { id } = useParams();
@@ -17,6 +17,19 @@ function DemanarCita() {
 
   const [errors, setErrors] = useState({});
   const [enviat, setEnviat] = useState(false);
+
+  // Form data incloent nom, email, telefon carregats automàticament
+  const [formData, setFormData] = useState({
+    nom: '',
+    email: '',
+    telefon: '',
+    missatge: '',
+    servei: '',
+    contacte: '',
+    horari: '',
+  });
+
+  const form = useRef();
 
   useEffect(() => {
     if (location.pathname.startsWith('/assessorament/')) {
@@ -36,6 +49,7 @@ function DemanarCita() {
     }
   }, [location.pathname]);
 
+  // Carregar llista de serveis o assessoraments
   useEffect(() => {
     async function fetchLlista() {
       if (!taula) return;
@@ -55,6 +69,7 @@ function DemanarCita() {
     fetchLlista();
   }, [taula]);
 
+  // Seleccionar servei segons id de la URL o per defecte primer de la llista
   useEffect(() => {
     if (!taula || !id || llista.length === 0) return;
 
@@ -64,18 +79,46 @@ function DemanarCita() {
     } else {
       setServeiSeleccionat(llista[0]);
     }
-  }, [taula, id, llista, frase, estilBoto, estilMargeForm]);
+  }, [taula, id, llista]);
 
-  const form = useRef();
-    const [formData, setFormData] = useState({
-    nom: '',
-    email: '',
-    telefon: '',
-    missatge: '',
-    servei: '',
-    contacte: '',
-    horari: '',
-    });
+  // Quan canviï el serveiSeleccionat, actualitza el formData.servei
+  useEffect(() => {
+    if (serveiSeleccionat) {
+      setFormData((prev) => ({ ...prev, servei: serveiSeleccionat.Nom }));
+    }
+  }, [serveiSeleccionat]);
+
+  // Carregar dades usuari de Supabase (nom, email, telefon) si hi ha sessió
+  useEffect(() => {
+    async function carregarDadesUsuari() {
+      const { data: { session } } = await supabase.auth.getSession();
+      if (session?.user) {
+        const user = session.user;
+        const { data: perfil, error } = await supabase
+          .from('Perfils')
+          .select('nom, cognom, telefon')
+          .eq('user_id', user.id)
+          .single();
+
+        if (error) {
+          console.log("Error carregant perfil:", error.message);
+        } else if (perfil) {
+          setFormData(prev => ({
+            ...prev,
+            nom: `${perfil.nom || ''} ${perfil.cognom || ''}`.trim(),
+            email: user.email || '',
+            telefon: perfil.telefon || ''
+          }));
+        } else {
+          setFormData(prev => ({
+            ...prev,
+            email: user.email || ''
+          }));
+        }
+      }
+    }
+    carregarDadesUsuari();
+  }, []);
 
   const handleServeiChange = (e) => {
     const selectedId = Number(e.target.value);
@@ -84,30 +127,25 @@ function DemanarCita() {
     setFormData((prev) => ({ ...prev, servei: servei ? servei.Nom : '' }));
   };
 
-    const handleChange = (e) => {
+  const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
-    };
+    setErrors(prev => ({ ...prev, [name]: '' }));
+  };
 
-    useEffect(() => {
-        if (serveiSeleccionat) {
-        setFormData((prev) => ({ ...prev, servei: serveiSeleccionat.Nom }));
-        }
-    }, [serveiSeleccionat]);
-
-    const validate = () => {
+  const validate = () => {
     const newErrors = {};
     if (!formData.nom.trim()) newErrors.nom = "El nom és obligatori.";
     if (!formData.email.trim()) {
-        newErrors.email = "L'email és obligatori.";
+      newErrors.email = "L'email és obligatori.";
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-        newErrors.email = "Format d'email invàlid.";
+      newErrors.email = "Format d'email invàlid.";
     }
     if (!formData.telefon.trim()) newErrors.telefon = "El telèfon és obligatori.";
     if (!formData.contacte.trim()) newErrors.contacte = "Escollir una via de contacte és obligatori.";
     if (!formData.horari.trim()) newErrors.horari = "Escollir una franja horaria és obligatori.";
     return newErrors;
-    };
+  };
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -127,7 +165,7 @@ function DemanarCita() {
       .then(() => {
         setEnviat(true);
         form.current.reset();
-        setFormData({ nom: '', email: '', telefon: '', missatge: '', serveiId: '' });
+        setFormData({ nom: '', email: '', telefon: '', missatge: '', servei: '', contacte: '', horari: '' });
       })
       .catch((error) => {
         console.error("Error en l'enviament:", error.text);
@@ -151,106 +189,111 @@ function DemanarCita() {
 
       <form className='formDemanarCita' ref={form} onSubmit={sendEmail}>
         <div className="desplegableDemanarCita">
-            <p className="textInput">{frase}</p>
-            <select
+          <p className="textInput">{frase}</p>
+          <select
             className={estilMargeForm}
             name="servei"
             value={serveiSeleccionat ? serveiSeleccionat.id : ''}
             onChange={handleServeiChange}
-            >
+          >
             {llista.map((item) => (
-                <option key={item.id} value={item.id}>
+              <option key={item.id} value={item.id}>
                 {item.Nom}
-                </option>
+              </option>
             ))}
-            </select>
+          </select>
         </div>
 
         <div className="divsForm">
-            <p className="textInput">Nom</p>
-            <input
+          <p className="textInput">Nom</p>
+          <input
             type="text"
             name="nom"
             placeholder="Nom"
             value={formData.nom}
             onChange={handleChange}
-            />
-            {errors.nom && <span className="error">{errors.nom}</span>}
+          />
+          {errors.nom && <span className="error">{errors.nom}</span>}
         </div>
 
         <div className="divsForm">
-            <p className="textInput">Email</p>
-            <input
+          <p className="textInput">Email</p>
+          <input
             type="email"
             name="email"
             placeholder="Email"
             value={formData.email}
             onChange={handleChange}
-            />
-            {errors.email && <span className="error">{errors.email}</span>}
+          />
+          {errors.email && <span className="error">{errors.email}</span>}
         </div>
 
         <div className="divsForm">
-            <p className="textInput">Telèfon</p>
-            <input
+          <p className="textInput">Telèfon</p>
+          <input
             type="tel"
             name="telefon"
             placeholder="Telèfon"
             value={formData.telefon}
             onChange={handleChange}
-            />
-            {errors.telefon && <span className="error">{errors.telefon}</span>}
+          />
+          {errors.telefon && <span className="error">{errors.telefon}</span>}
         </div>
 
         <div className="desplegableDemanarCita">
-            <p className="textInput">Via de contacte desitjada</p>
-            <select
+          <p className="textInput">Via de contacte desitjada</p>
+          <select
             className={estilMargeForm}
             name="contacte"
             value={formData.contacte}
             onChange={handleChange}
-            >
+          >
             <option value="">-- Selecciona una opció --</option>
             <option value="Telèfon">Telèfon</option>
             <option value="Email">Email</option>
             <option value="WhatsApp">WhatsApp</option>
-            </select>
-            {errors.contacte && <span className="error">{errors.contacte}</span>}
+          </select>
+          {errors.contacte && <span className="error">{errors.contacte}</span>}
         </div>
 
         <div className="desplegableDemanarCita">
-            <p className="textInput">Horari preferent</p>
-            <select
+          <p className="textInput">Horari preferent</p>
+          <select
             className={estilMargeForm}
             name="horari"
             value={formData.horari}
             onChange={handleChange}
-            >
-            <option value="">-- Selecciona una franja --</option>
-            <option value="Dilluns a Divendres - Matí">Dilluns a Divendres - Matí</option>
-            <option value="Dilluns a Divendres - Tarda">Dilluns a Divendres - Tarda</option>
-            <option value="Dissabtes - Matí">Dissabtes - Matí</option>
-            </select>
-            {errors.horari && <span className="error">{errors.horari}</span>}
+          >
+            <option value="">-- Selecciona una franja horaria --</option>
+            <option value="8:00 - 10:00">8:00 - 10:00</option>
+            <option value="10:00 - 12:00">10:00 - 12:00</option>
+            <option value="12:00 - 14:00">12:00 - 14:00</option>
+            <option value="14:00 - 16:00">14:00 - 16:00</option>
+            <option value="16:00 - 18:00">16:00 - 18:00</option>
+            <option value="18:00 - 20:00">18:00 - 20:00</option>
+          </select>
+          {errors.horari && <span className="error">{errors.horari}</span>}
         </div>
 
         <div className="divsForm">
-            <p className="textInput">Missatge (opcional)</p>
-            <textarea
+          <p className="textInput">Missatge</p>
+          <textarea
             name="missatge"
-            placeholder="Missatge"
-            rows="4"
+            placeholder="Missatge (opcional)"
             value={formData.missatge}
             onChange={handleChange}
-            ></textarea>
+          />
         </div>
 
-        <button className={estilBoto} type="submit">
-            Enviar
+        <button
+          className={estilBoto}
+          type="submit"
+        >
+          Demana cita
         </button>
 
         {enviat && <p className="missatgeEnviat">Missatge enviat correctament!</p>}
-        </form>
+      </form>
     </div>
   );
 }

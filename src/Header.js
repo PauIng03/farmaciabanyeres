@@ -1,17 +1,59 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './Estils/Header.css';
 import { FaUser, FaPhoneAlt, FaInstagram, FaFacebookF, FaWhatsapp } from 'react-icons/fa';
 import { Link, useLocation } from 'react-router-dom';
+import { supabase } from './lib/supabaseClient';
 
 function Header() {
   const location = useLocation();
   const currentPath = location.pathname;
 
+  const [user, setUser] = useState(null);
+  const [perfil, setPerfil] = useState(null);
+
+  useEffect(() => {
+    // Comprovar usuari al carregar
+    const getUser = async () => {
+      const { data: { user } } = await supabase.auth.getUser();
+      setUser(user || null);
+
+      if (user) {
+        // Agafar el perfil amb el nom des de la taula Perfils
+        const { data: perfilData, error } = await supabase
+          .from('Perfils')
+          .select('nom')
+          .eq('user_id', user.id)
+          .single();
+
+        if (!error && perfilData) {
+          setPerfil(perfilData);
+        }
+      }
+    };
+
+    getUser();
+
+    // També escoltem canvis d'autenticació (login/logout)
+    const { data: listener } = supabase.auth.onAuthStateChange((_event, session) => {
+      if (session?.user) {
+        setUser(session.user);
+        // Podries tornar a carregar el perfil si vols
+      } else {
+        setUser(null);
+        setPerfil(null);
+      }
+    });
+
+    return () => {
+      listener.subscription.unsubscribe();
+    };
+  }, []);
+
   return (
     <div className="header">
-        <Link to="/" className={`nav-item ${currentPath === '/' ? 'active' : ''}`}>
-          <div><img className="logo" src="/Logo.png" alt="Logo" /></div>
-        </Link>
+      <Link to="/" className={`nav-item ${currentPath === '/' ? 'active' : ''}`}>
+        <div><img className="logo" src="/Logo.png" alt="Logo" /></div>
+      </Link>
 
       <div className="nav">
         <Link to="/" className={`nav-item ${currentPath === '/' ? 'active' : ''}`}>
@@ -60,14 +102,24 @@ function Header() {
       </div>
 
       <div className="user">
-        <div className="login-register">
-          <div className="nav-item">Inicia Sessió</div>
-          <div className="separator" />
-          <div className="nav-item">Registra’t</div>
-        </div>
-        <div className="icon">
-          <FaUser className="icon-header" />
-        </div>
+        {user && perfil ? (
+          <div className="login-register">
+            <div className="nav-item">Hola {perfil.nom}!</div>
+            <div className="icon">
+              <FaUser className="icon-header" />
+            </div>
+          </div>
+        ) : (
+          <div className="login-register">
+            <Link to="/inicisessio" className={`nav-item ${currentPath.startsWith('/inicisessio') ? 'active' : ''}`}>
+              <div className="nav-item">Inicia Sessió</div>
+            </Link>
+            <div className="separator" />
+            <Link to="/registre" className={`nav-item ${currentPath.startsWith('/registre') ? 'active' : ''}`}>
+              <div className="nav-item">Registra’t</div>
+            </Link>
+          </div>
+        )}
       </div>
     </div>
   );

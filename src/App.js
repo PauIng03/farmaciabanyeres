@@ -13,6 +13,9 @@ import Contacte from './Contacte.js';
 import ServeisVistaInterior from './ServeisVistaInterior.js';
 import AssessoramentVistaInterior from './AssessoramentVistaInterior.js';
 import DemanarCita from './DemanarCita.js';
+import IniciSessio from './IniciSessio.js';
+import OblidatContrassenya from './OblidatContrassenya.js';
+import Registre from './Registre.js';
 
 function App() {
   return (
@@ -32,6 +35,9 @@ function App() {
         <Route path='/assessorament/:id' element={<AssessoramentVistaInterior/>}></Route>
         <Route path='/assessorament/:id/demanar-cita' element={<DemanarCita/>}></Route>
         <Route path="/contacte" element={<Contacte />} />
+        <Route path='/inicisessio' element={<IniciSessio />}></Route>
+        <Route path='/inicisessio/oblidatcontrassenya' element={<OblidatContrassenya />}></Route>
+        <Route path='/registre' element={<Registre />}></Route>
       </Routes>
       <Footer />
     </BrowserRouter>
