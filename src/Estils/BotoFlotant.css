@@ -47,11 +47,11 @@
   position: fixed;
   bottom: 90px;
   right: 20px;
-  background-color: white;
+  background-color: #e7e7e7;
   /*border: 1px solid #ddd;*/
   border-radius: 10px;
   width: 280px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+  box-shadow: -3px 3px 10px 3px rgba(0, 0, 0, 0.25);
   z-index: 999;
   overflow: hidden;
 }
@@ -72,17 +72,40 @@
 
 .boto-whatsapp {
   background-color: #cf278f;
-  color: white;
-  padding: 10px 14px;
-  border-radius: 6px;
-  text-align: center;
-  display: block;
-  text-decoration: none;
-  margin-top: 12px;
-  font-weight: bold;
+    color: white;
+    padding: 10px 14px;
+    border-radius: 6px;
+    text-align: center;
+    text-decoration: none;
+    margin-top: 12px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
 }
 .creuBotoFlotant{
     background-color: #cf278f;
     border: none;
     color: white;
+}
+.divImatgeLogo{
+    width: 20px;
+    height: 20px;
+    padding: 8px;
+    background-color: white;
+    border-radius: 30px;
+    display: flex;
+    justify-content: flex-end;
+}
+.imatgeLogo{
+    width: -webkit-fill-available;
+}
+.missatge{
+    background-color: #ffffff;
+    padding: 12px;
+    border-radius: 12px;
+}
+.iconaBotoXat{
+    height: 24px;
+    width: auto;
 }

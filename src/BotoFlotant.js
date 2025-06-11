@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { FaWhatsapp } from 'react-icons/fa';
+import { PiPaperPlaneRightFill } from "react-icons/pi";
 import './Estils/BotoFlotant.css';
 
 function BotoFlotant() {
@@ -31,19 +32,22 @@ function BotoFlotant() {
       {obert && (
         <div className="panell-missatgeria">
           <div className="capcalera">
-            <span>Necessites ajuda?</span>
-            <button className='creuBotoFlotant' onClick={() => setObert(false)}>✖</button>
-          </div>
+            <div className='divImatgeLogo'><img className='imatgeLogo' src='/Logo.png' alt='logo farmàcia'></img></div>
+                <span>Farmàcia Banyeres</span>
+                <button className='creuBotoFlotant' onClick={() => setObert(false)}>✖</button>
+            </div>
           <div className="cos">
-            <p>Hola! 👋</p>
-            <p>En què et podem ajudar?</p>
+            <div className='missatge'>
+                <p>Hola! 👋</p>
+                <p>En què et podem ajudar?</p>
+            </div>
             <a
               href="https://wa.me/34600000000"
               target="_blank"
               rel="noopener noreferrer"
               className="boto-whatsapp"
             >
-              Obrir WhatsApp
+              <PiPaperPlaneRightFill className='iconaBotoXat' /> Obrir WhatsApp
             </a>
           </div>
         </div>

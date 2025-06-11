@@ -4,6 +4,7 @@ import './Estils/Inici.css';
 import DivQuiSom from './DivQuiSom';
 import LlistatServeis from './LlistatServeis';
 import ArticlesBlog from './ArticlesBlog';
+import CtaFlotant from './CtaFlotant';
 
 function Inici() {
   const navigate = useNavigate();
@@ -37,6 +38,7 @@ function Inici() {
       <div className='iniciBlog'>
         <ArticlesBlog underlineClass="underline" limit={3} showButton={true} showReadMore={false} />
       </div>
+      <CtaFlotant/>
     </div>
   );
 }
