@@ -1,0 +1,111 @@
+.panellDemanarCitaServeis {
+    position: relative;
+    left: 20px;
+    bottom: 120px;
+    background-color: #e7e7e7;
+    border-radius: 10px;
+    width: 290px;
+    min-width: 290px;
+    box-shadow: -3px 3px 10px 3px rgba(0, 0, 0, 0.25);
+    z-index: 999;
+    overflow: hidden;
+}
+.panellDemanarCitaAssessorament{
+    position: relative;
+    right: 20px;
+    bottom: 120px;
+    background-color: #e7e7e7;
+    border-radius: 10px;
+    width: 290px;
+    min-width: 290px;
+    box-shadow: -3px 3px 10px 3px rgba(0, 0, 0, 0.25);
+    z-index: 999;
+    overflow: hidden;
+}
+.divBotoDemanarCita{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    height: 70px;
+}
+.botoPanellDemanarCita{
+    background-color: #660066;
+    color: white;
+    padding: 10px 14px;
+    border-radius: 6px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 10px;
+    width: -webkit-fill-available;
+    border: none;
+}
+.capcaleraDemanarCita{
+    background-color: #cf278f;
+    color: white;
+    padding: 16px;
+    padding-top: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+}
+.capcaleraDemanarCitaAssessorament{
+    background-color: #660066;
+    color: white;
+    padding: 16px;
+    padding-top: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+}
+.iconaBotoDemanarCita{
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+}
+.iconaDemanarCita{
+    font-size: 20px;
+}
+.textBotonsPanellDemanarCita{
+    font-size: 16px;
+    font-weight: 600;
+    font-family: quicksand;
+}
+.BotoDemanarCita{
+    min-width: 277px;
+}
+.creuBotoFlotantDemanarCita{
+    background-color: #cf278f;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+.creuBotoFlotantDemanarCitaAssessorament{
+    background-color: #660066;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+.botoPanellDemanarCitaAssessorament{
+    background-color: #cf278f;
+    color: white;
+    padding: 10px 14px;
+    border-radius: 6px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 10px;
+    width: -webkit-fill-available;
+    border: none;
+}
+.botoWhatsAppDemanarCita{
+    margin-top: 0px;
+}

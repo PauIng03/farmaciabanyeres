@@ -21,6 +21,7 @@
     background-color: #3e1043;
     border: none;
     color: white;
+    cursor: pointer;
 }
 .ctaTextMissatge{
     padding: 8px;

@@ -3,12 +3,12 @@ import { useParams } from 'react-router-dom';
 import { supabase } from './lib/supabaseClient';
 import './Estils/ServeisVistaInterior.css';
 import Desplegable from './Desplegable';
-import { useNavigate } from 'react-router-dom';
+
+import PanellDemanarCita from './PanellDemanarCita';
 
 function ServeisVistaInterior() {
   const { id } = useParams();
   const [servei, setServei] = useState(null);
-  const navigate = useNavigate();
 
   useEffect(() => {
     async function fetchServei() {
@@ -43,7 +43,7 @@ function ServeisVistaInterior() {
             <div className="underline blanc"></div>
           </div>
           <p className="Resum resumServeis">{servei.Resum}</p>
-          <button className="Boto botoBlanc" onClick={() => navigate(`/serveis/${servei.id}/demanar-cita`)}>Demanar cita</button>
+          <PanellDemanarCita id={servei.id} tipus="serveis" />
         </div>
       </div>
 

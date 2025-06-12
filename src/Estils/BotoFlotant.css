@@ -87,6 +87,7 @@
     background-color: #cf278f;
     border: none;
     color: white;
+    cursor: pointer;
 }
 .divImatgeLogo{
     width: 20px;

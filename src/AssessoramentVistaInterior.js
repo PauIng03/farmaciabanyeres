@@ -3,11 +3,10 @@ import { useParams } from 'react-router-dom';
 import { supabase } from './lib/supabaseClient';
 import './Estils/AssessoramentVistaInterior.css';
 import Desplegable from './Desplegable';
-import { useNavigate } from 'react-router-dom';
+import PanellDemanarCita from './PanellDemanarCita';
 
 function AssessoramentVistaInterior() {
   const { id } = useParams();
-    const navigate = useNavigate();
   const [assessorament, setAssessorament] = useState(null);
 
   useEffect(() => {
@@ -43,7 +42,7 @@ function AssessoramentVistaInterior() {
             <div className="underline blanc"></div>
           </div>
           <p className="Resum resumAssessorament">{assessorament.Resum}</p>
-          <button className="Boto botoBlanc" onClick={() => navigate(`/assessorament/${assessorament.id}/demanar-cita`)}>Demanar cita</button>
+          <PanellDemanarCita id={assessorament.id} tipus="assessorament" />
         </div>
       </div>
 
