@@ -11,6 +11,8 @@ function Header() {
   const [user, setUser] = useState(null);
   const [perfil, setPerfil] = useState(null);
 
+  const [visible, setVisible] = useState(true);
+
   useEffect(() => {
     // Comprovar usuari al carregar
     const getUser = async () => {
@@ -49,8 +51,27 @@ function Header() {
     };
   }, []);
 
+  useEffect(() => {
+    let lastScrollY = window.scrollY;
+
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        setVisible(false); // scroll avall → amaga
+      } else {
+        setVisible(true); // scroll amunt → mostra
+      }
+
+      lastScrollY = currentScrollY;
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <div className="header">
+    <div className={`header ${visible ? 'visible' : 'amagat'}`}>
       <Link to="/" className={`nav-item ${currentPath === '/' ? 'active' : ''}`}>
         <div><img className="logo" src="/Logo.png" alt="Logo" /></div>
       </Link>

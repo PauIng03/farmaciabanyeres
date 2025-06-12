@@ -1,13 +1,28 @@
 .header {
-  width: -webkit-fill-available;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: white;
   padding: 24px 128px;
-  background: white;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 30px;
+  transition: transform 0.3s ease-in-out;
 }
+
+/* Quan es fa scroll avall */
+.header.amagat {
+  transform: translateY(-100%);
+}
+
+/* Quan es fa scroll amunt o estàs a dalt de tot */
+.header.visible {
+  transform: translateY(0);
+}
+
 
 .logo {
   width: 55px;

@@ -17,12 +17,13 @@ import IniciSessio from './IniciSessio.js';
 import OblidatContrassenya from './OblidatContrassenya.js';
 import Registre from './Registre.js';
 import BotoFlotant from './BotoFlotant.js';
+import "./App.css"
 
 function App() {
   return (
-
     <BrowserRouter className="inici-desktop-1">
       <Header />
+      <div className="ContingutApp">
       <Routes>
         <Route path="/" element={<Inici />} />
         <Route path="/qui-som" element={<QuiSom />} />
@@ -40,6 +41,7 @@ function App() {
         <Route path='/inicisessio/oblidatcontrassenya' element={<OblidatContrassenya />}></Route>
         <Route path='/registre' element={<Registre />}></Route>
       </Routes>
+      </div>
       <BotoFlotant />
       <Footer />
     </BrowserRouter>
