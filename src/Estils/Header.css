@@ -13,12 +13,10 @@
   transition: transform 0.3s ease-in-out;
 }
 
-/* Quan es fa scroll avall */
 .header.amagat {
   transform: translateY(-100%);
 }
 
-/* Quan es fa scroll amunt o estàs a dalt de tot */
 .header.visible {
   transform: translateY(0);
 }

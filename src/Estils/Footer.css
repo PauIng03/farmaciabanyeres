@@ -5,6 +5,7 @@
   display: flex;
   gap: 52px;
   align-items: flex-start;
+  flex-wrap: wrap;
 }
 
 .footer-img {
@@ -94,4 +95,91 @@ a{
 }
 .mapaFooter{
   height: 290px;
+}
+
+.divInfoFooter{
+  display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 52px;
+}
+
+/* 🔵 Estil per a pantalles grans (+1150px) */
+.footer {
+  width: 100%;
+  padding: 44px 128px;
+  background: #A60066;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.divInfoFooter {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 52px;
+  flex-wrap: nowrap;
+  width: 100%;
+}
+
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  flex: 1 1 0;
+  min-width: 250px;
+}
+
+.mapaFooter {
+  height: 285px;
+  border-radius: 25px;
+  overflow: hidden;
+  flex: 1 1 0;
+  min-width: 300px;
+}
+
+/* 🟠 De 768px fins a 1150px — mateixa estructura però padding més estret */
+@media (max-width: 1150px) and (min-width: 950px) {
+  .footer {
+    padding: 32px 40px;
+  }
+
+  .divInfoFooter {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 40px;
+  }
+
+  .mapaFooter {
+    height: 250px;
+  }
+
+  .footer-col {
+    gap: 56px;
+  }
+}
+
+/* 🔴 Menys de 768px — stack vertical */
+@media (max-width: 950px) {
+  .footer {
+    padding: 32px 24px;
+  }
+
+  .divInfoFooter {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 32px;
+  }
+
+  .mapaFooter {
+    width: 100%;
+  }
+
+  .text-group {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
 }

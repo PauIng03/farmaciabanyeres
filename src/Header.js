@@ -14,13 +14,11 @@ function Header() {
   const [visible, setVisible] = useState(true);
 
   useEffect(() => {
-    // Comprovar usuari al carregar
     const getUser = async () => {
       const { data: { user } } = await supabase.auth.getUser();
       setUser(user || null);
 
       if (user) {
-        // Agafar el perfil amb el nom des de la taula Perfils
         const { data: perfilData, error } = await supabase
           .from('Perfils')
           .select('nom')
@@ -35,11 +33,9 @@ function Header() {
 
     getUser();
 
-    // També escoltem canvis d'autenticació (login/logout)
     const { data: listener } = supabase.auth.onAuthStateChange((_event, session) => {
       if (session?.user) {
         setUser(session.user);
-        // Podries tornar a carregar el perfil si vols
       } else {
         setUser(null);
         setPerfil(null);
@@ -58,9 +54,9 @@ function Header() {
       const currentScrollY = window.scrollY;
 
       if (currentScrollY > lastScrollY && currentScrollY > 100) {
-        setVisible(false); // scroll avall → amaga
+        setVisible(false);
       } else {
-        setVisible(true); // scroll amunt → mostra
+        setVisible(true);
       }
 
       lastScrollY = currentScrollY;
