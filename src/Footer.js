@@ -25,7 +25,7 @@ function Footer() {
                 <a href="tel:977671102" className="text">Telef: 977 67 11 02</a>
               </div>
               <div className='text-group'>
-                <a href="mailto:info@farmaciabanyeres.com" className="text">Correu: info@farmaciabanyeres.com</a>
+                <a href="mailto:info@farmaciabanyeres.com" className="text">Correu: info@farmaciabanyeres.com<br></br><br></br></a>
               </div>
             </div>
           </div>
