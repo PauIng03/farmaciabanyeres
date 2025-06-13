@@ -102,3 +102,43 @@
     align-items: flex-start;
     width: -webkit-fill-available;
 }
+
+@media (max-width: 768px) {
+  .articles {
+    padding: 0 40px;
+  }
+
+  .articlesBlog {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    width: 100%;
+  }
+
+  .articleBoto {
+    width: 100%;
+  }
+
+  .articleIndividual {
+    width: 100%;
+    height: auto;
+  }
+
+  .titolArticle {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .titolArticle.titolArticlePetit {
+    font-size: 18px;
+  }
+
+  .DivDataCategoria {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .autor {
+    flex-wrap: wrap;
+  }
+}

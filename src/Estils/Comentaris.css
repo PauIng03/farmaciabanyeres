@@ -52,3 +52,56 @@
 .iconaComentari{
     margin-right: 6px;
 }
+.divBotoComentaris{
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .comentaris {
+    padding: 40px 40px;
+    width: 100%;
+    box-sizing: border-box;
+    gap: 16px;
+  }
+
+  .formulariComentari {
+    width: 100%;
+    align-items: stretch;
+  }
+
+  .textareaComentaris {
+    width: 100%;
+    font-size: 14px;
+    min-height: 100px;
+  }
+
+  .comentari {
+    margin-left: 0 !important; /* eliminem la sangria horitzontal a mòbil */
+    gap: 12px;
+  }
+
+  /* Sangria segons nivell, però amb més control i menys marge */
+  .comentari[style] {
+    margin-left: 12px !important; /* opcional: poc marge per les respostes */
+  }
+
+  .divTitolResposta {
+    gap: 4px;
+  }
+
+  .botoResposta {
+    font-size: 12px;
+    padding: 4px 8px;
+    width: min-content;
+  }
+
+  .titolPComentari {
+    font-size: 16px;
+  }
+
+  .missatgeEnviat, .error {
+    font-size: 14px;
+  }
+}

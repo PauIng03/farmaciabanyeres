@@ -71,7 +71,7 @@ function ComentarisForm({ articleId, respostaA = null, onComentariPublicat, canc
         />
         {error && <p className="error">{error}</p>}
         {enviat && <p className="missatgeEnviat">Comentari publicat!</p>}
-        <div style={{ display: 'flex', gap: '10px' }}>
+        <div className='divBotoComentaris'>
           <button className='Boto blanc' type="submit">Publicar</button>
           {respostaA && (
             <button type="button" onClick={cancelResposta} className="Boto blanc">Cancel·la</button>
