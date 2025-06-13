@@ -16,13 +16,16 @@ function Inici() {
       <div className='divServeis'>
        <LlistatServeis cartaServeisClass='CartaServeisInici' serveisClass='iniciServeis' underlineClass='underlineBlanc' titol="Serveis" limit={6} mode="compacte"></LlistatServeis>
       <button className='Boto BotoVoraBlanca' onClick={() => navigate('/serveis')}>Veure'n més</button>
+      </div>      
+      <div className='iniciBlog'>
+        <ArticlesBlog underlineClass="underline" limit={3} showButton={true} showReadMore={false} />
       </div>
       <div className='divAssessorament'>
         <div className='Titols'>
           <h1>Assessorament</h1>
           <div className='underlineBlanc'></div>
         </div>
-        <div className='TextBoto'>
+        <div className='TextBotoAssessorament'>
           <p className='TextQuiSom'>
             Farmàcia Banyeres és un espai de salut on tu ets el centre. <br /><br />
             Oferim una atenció personalitzada, professional, actualitzada i adaptada a cada pacient.<br />
@@ -34,9 +37,6 @@ function Inici() {
             <button className='Boto BotoVoraBlancaTransparent' onClick={() => navigate("/Contacte")}>Contacta'ns</button>
           </div>
         </div>
-      </div>
-      <div className='iniciBlog'>
-        <ArticlesBlog underlineClass="underline" limit={3} showButton={true} showReadMore={false} />
       </div>
       <CtaFlotant/>
     </div>

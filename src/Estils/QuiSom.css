@@ -98,9 +98,9 @@
 }
 
 /* ========== MEDIA QUERIES ========== */
-@media screen and (max-width: 1180px) {
+@media screen and (max-width: 1200px) {
   .TextImatgeQuiSom {
-    flex-direction: column;
+    flex-direction: column-reverse;
     align-items: center;
   }
 
