@@ -28,7 +28,7 @@ function QuiSom() {
           <h1>Els nostres valors</h1>
           <div className='underlineBlanc'></div>
         </div>
-        <div className="TextImatge">
+        <div className="TextImatgeQuiSom">
           <img className='Imatge' src="https://placehold.co/600x250" alt="Valors" />
           <p className='TextValors'>
             La nostra visió és la d’una farmàcia comunitària centrada en el pacient.<br />

@@ -1,106 +1,139 @@
-.QuiSom{
-    height: auto;
-    width: -webkit-fill-available;
-    padding: 44px 128px;
-    gap: 24px;
-    display: flex;
-    flex-direction: column;
+/* ========== SECCIONS COMUNES ========== */
+.QuiSom,
+.Equip,
+.Valors {
+  width: 100%;
+  padding: 44px 128px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  box-sizing: border-box;
 }
-.TextImatge{
-    display: inline-flex;
-    gap: 24px;
+
+/* ========== CONTINGUT FLEXIBLE AMB IMATGE I TEXT ========== */
+.TextImatgeQuiSom {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
-.Valors{
-    height: auto;
-    width: -webkit-fill-available;
-    padding: 44px 128px;
-    text-align: right;
-    background-color: #6E0A78;
-    color: #FFFFFF;
-    gap: 24px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+
+/* ========== TEXT I BOTÓ DE "QUI SOM" ========== */
+.TextBoto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1 1 300px;
+  min-width: 250px;
 }
-h1{
-    padding: 0px;
-    margin: 0px;
-    font-family: Quicksand, sans-serif;
+
+.TextQuiSom {
+  flex: none;
+  font-size: 16px;
+  text-align: justify;
+  min-width: 250px;
 }
-p{
-    padding: 0px;
-    margin: 0px;
+
+.TextValors {
+  flex: none;
+  font-size: 16px;
+  text-align: justify;
+  min-width: 250px;
+  flex: 1 1 300px;
 }
-.TextQuiSom{
-    gap: 25px;
+
+
+.BotoQuiSom {
+  margin-top: 24px;
+  background-color: #6e0a78;
+  color: #ffffff;
+  border-radius: 8px;
+  padding: 18px 85px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
 }
-.TextValors{
-    text-align: left;
-    gap: 24px;
+
+/* ========== IMATGE COMUNA ========== */
+.Imatge {
+  object-fit: cover;
+  object-position: center;
+  flex: 1 1 300px;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  max-width: 600px;
 }
-.Imatge{
-    object-fit: cover;
-    object-position: center;
+
+/* ========== SECCIÓ EQUIP ========== */
+.Equip {
+  align-items: center;
 }
-.Equip{
-    height: auto;
-    width: -webkit-fill-available;
-    padding: 44px 128px;
-    gap: 24px;
-    display: flex;
+
+.Cartes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 60px;
+  justify-content: center;
+}
+
+.Carta {
+  text-align: center;
+  width: 200px;
+}
+
+.ImatgeCarta {
+  width: 200px;
+  height: 300px;
+  border-radius: 16px;
+  object-fit: cover;
+}
+
+/* ========== SECCIÓ VALORS ========== */
+.Valors {
+  background-color: #6E0A78;
+  color: #FFFFFF;
+  align-items: flex-end;
+}
+
+/* ========== MEDIA QUERIES ========== */
+@media screen and (max-width: 1180px) {
+  .TextImatgeQuiSom {
     flex-direction: column;
     align-items: center;
+  }
+
+  .Imatge {
+    max-width: none;
+  }
+
+  .TextQuiSom,
+  .TextValors {
+    font-size: 15px;
+  }
+
+
+  .TextQuiSom, .TextValors, .TextBoto {
+    flex: none;
+    }
 }
-.Cartes{
-    display: flex;
-    gap: 60px;
-    flex-wrap: wrap;
-    justify-content: center;
+
+@media screen and (max-width: 768px) {
+  .QuiSom,
+  .Valors,
+  .Equip {
+    padding: 32px 40px;
+  }
 }
-.ImatgeCarta{
-    width: 200px;
-    height: 300px;
-    border-radius: 16px;
+
+/* ========== GLOBAL (recomanat) ========== */
+* {
+  box-sizing: border-box;
 }
-.Nom{
-    font-weight: bold;
-    font-family: Quicksand, sans-serif;
-}
-.Rol{
-    font-family: Quicksand, sans-serif;
-}
-.Carta{
-    text-align: center;
-}
-.underline {
-  height: 0;
-  align-self: stretch;
-  outline: 1px solid #A60066;
-  outline-offset: -0.5px;
-  margin-top: 8px;
-}
-.underlineBlanc {
-  height: 0;
-  align-self: stretch;
-  outline: 1px solid #ffffff;
-  outline-offset: -0.5px;
-  margin-top: 8px;
-}
-.Titols{
-    width: fit-content;
-}
-.TextBoto{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.Boto{
-    margin-top: 24px;
-    width: max-content;
-    background-color: #6e0a78;
-    color: #ffffff;
-    border-radius: 8px;
-    padding: 18px 85px;
-    border-style: hidden;
-    font-size: 16px;
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
 }

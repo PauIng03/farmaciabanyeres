@@ -162,62 +162,36 @@ p{
     align-items: flex-end;
 }
 
-/*Mobil
-@media (max-width: 768px) {
-  .QuiSom,
-  .divServeis,
-  .divAssessorament {
-    padding: 24px 16px;
-    gap: 20px;
-  }
-
-  .TextImatge {
-    flex-direction: column;
-    gap: 16px;
-  }
-
-  .CartaServeisInici {
+@media screen and (max-width: 1180px) {
+  .TextImatgeQuiSom {
     flex-direction: column;
     align-items: center;
   }
 
-  .IconoNom {
-    width: 100px;
-  }
-
-  .TextBoto {
-    text-align: center;
-  }
-
-  .Boto {
-    width: 100%;
-    padding: 14px;
-    font-size: 15px;
-  }
-
-  .BotonsAssessorament {
-    flex-direction: column;
-    gap: 12px;
-    align-items: stretch;
-  }
-
-  .TextQuiSom {
-    font-size: 15px;
-    gap: 16px;
-  }
-
   .Imatge {
-    width: 100%;
-    height: auto;
+    max-width: none;
   }
 
-  .iniciBlog {
-    padding: 24px 16px;
+  .TextQuiSom,
+  .TextValors {
+    font-size: 15px;
   }
 
-  .underline,
-  .underlineBlanc {
-    margin-top: 4px;
+
+  .TextQuiSom, .TextValors, .TextBoto {
+    flex: none;
+    }
+}
+
+@media screen and (max-width: 768px) {
+  .QuiSom,
+  .Valors,
+  .Equip {
+    padding: 32px 40px;
   }
 }
-*/
+
+/* ========== GLOBAL (recomanat) ========== */
+* {
+  box-sizing: border-box;
+}
