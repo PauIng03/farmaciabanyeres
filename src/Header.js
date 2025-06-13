@@ -3,6 +3,7 @@ import './Estils/Header.css';
 import { FaUser, FaPhoneAlt, FaInstagram, FaFacebookF, FaWhatsapp } from 'react-icons/fa';
 import { Link, useLocation } from 'react-router-dom';
 import { supabase } from './lib/supabaseClient';
+import XarxesSocials from './XarxesSocials';
 
 function Header() {
   const location = useLocation();
@@ -90,11 +91,18 @@ function Header() {
         <div><img className="logo" src="/Logo.png" alt="Logo" /></div>
       </Link>
 
-      <button className="menu-toggle" onClick={() => setMenuObert(!menuObert)}>
-        <span className="bar"></span>
-        <span className="bar"></span>
-        <span className="bar"></span>
-      </button>
+      <div className='iconaMenuHamburguesa'>
+        <Link to={user ? '#' : '/inicisessio'} className="usuari-responsive">
+          <FaUser className='icon-header-responsive' title={user ? `Hola ${perfil?.nom}` : 'Inicia Sessió'} />
+        </Link>
+        <button className="menu-toggle" onClick={() => setMenuObert(!menuObert)}>
+          <span className="bar"></span>
+          <span className="bar"></span>
+          <span className="bar"></span>
+        </button>
+      </div>
+
+
 
 
       <div className={`nav ${menuObert ? 'obert' : ''}`}>
@@ -163,6 +171,7 @@ function Header() {
           </div>
         )}
       </div>
+      <XarxesSocials menuObert={menuObert}></XarxesSocials>
     </div>
   );
 }

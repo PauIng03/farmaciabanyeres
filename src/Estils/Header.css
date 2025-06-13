@@ -21,6 +21,9 @@
   transform: translateY(0);
 }
 
+.iconaMenuHamburguesa{
+  display: none;
+}
 
 .logo {
   width: 55px;
@@ -122,8 +125,19 @@
   border-radius: 2px;
 }
 
+.icon-header-responsive {
+  display: none;
+}
+
 /* --- Responsive --- */
-@media (max-width: 900px) {
+
+@media (max-width: 1250px) and (min-width: 1050px) {
+  .header {
+    padding: 24px 40px;
+  }
+}
+
+@media (max-width: 1049px) {
   .header {
     padding: 16px 24px;
     flex-wrap: wrap;
@@ -159,12 +173,24 @@
   .user {
     display: none;
   }
+  .iconaMenuHamburguesa{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+  }
+  .icon-header-responsive {
+  width: 20px;
+  height: 20px;
+  color: #a60066;
+  cursor: pointer;
+  display: flex;
+  }
 }
 
 /* Quan el menú està obert, .header.visible també agafa aquest estil */
 .header.obert.visible {
   height: -webkit-fill-available;
-  align-items: flex-start;
 }
 
 /* Ja tens .nav.obert però aquí afegim el height i center en mode menú obert */
