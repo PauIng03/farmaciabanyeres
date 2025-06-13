@@ -129,7 +129,22 @@
   display: none;
 }
 
-/* --- Responsive --- */
+.header.obert.visible {
+  height: -webkit-fill-available;
+}
+
+.nav.obert {
+  height: -webkit-fill-available;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav.obert .nav-item.active {
+  height: fit-content;
+}
+
+
 
 @media (max-width: 1250px) and (min-width: 1050px) {
   .header {
@@ -165,8 +180,10 @@
 
   .nav.obert {
     display: flex;
+    padding: 0px 70px;
+    background-color: #FAFAFA;
+    margin: 16px -36px 16px -36px;
     align-items: center;
-    padding: 36px;
   }
 
   .social-icons,
@@ -188,20 +205,3 @@
   }
 }
 
-/* Quan el menú està obert, .header.visible també agafa aquest estil */
-.header.obert.visible {
-  height: -webkit-fill-available;
-}
-
-/* Ja tens .nav.obert però aquí afegim el height i center en mode menú obert */
-.nav.obert {
-  height: -webkit-fill-available;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Quan un nav-item és actiu i el menú està obert */
-.nav.obert .nav-item.active {
-  height: fit-content;
-}

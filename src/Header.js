@@ -103,8 +103,6 @@ function Header() {
       </div>
 
 
-
-
       <div className={`nav ${menuObert ? 'obert' : ''}`}>
         <Link to="/" onClick={() => setMenuObert(false)}  className={`nav-item ${currentPath === '/' ? 'active' : ''}`}>
           <div>Inici</div>
