@@ -138,6 +138,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  width: -webkit-fill-available;
 }
 
 .nav.obert .nav-item.active {
