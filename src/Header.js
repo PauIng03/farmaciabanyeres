@@ -13,6 +13,8 @@ function Header() {
 
   const [visible, setVisible] = useState(true);
 
+  const [menuObert, setMenuObert] = useState(false);
+
   useEffect(() => {
     const getUser = async () => {
       const { data: { user } } = await supabase.auth.getUser();
@@ -51,6 +53,8 @@ function Header() {
     let lastScrollY = window.scrollY;
 
     const handleScroll = () => {
+      if (menuObert) return; // NO amaguis si el menú està obert
+
       const currentScrollY = window.scrollY;
 
       if (currentScrollY > lastScrollY && currentScrollY > 100) {
@@ -64,40 +68,61 @@ function Header() {
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [menuObert]);
+
+  useEffect(() => {
+    if (menuObert) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, [menuObert]);
+
+
 
   return (
-    <div className={`header ${visible ? 'visible' : 'amagat'}`}>
-      <Link to="/" className={`nav-item ${currentPath === '/' ? 'active' : ''}`}>
+    <div className={`header ${visible ? 'visible' : 'amagat'} ${menuObert ? 'obert' : ''}`}>
+      <Link to="/" onClick={() => setMenuObert(false)}  className={`nav-item ${currentPath === '/' ? 'active' : ''}`}>
         <div><img className="logo" src="/Logo.png" alt="Logo" /></div>
       </Link>
 
-      <div className="nav">
-        <Link to="/" className={`nav-item ${currentPath === '/' ? 'active' : ''}`}>
+      <button className="menu-toggle" onClick={() => setMenuObert(!menuObert)}>
+        <span className="bar"></span>
+        <span className="bar"></span>
+        <span className="bar"></span>
+      </button>
+
+
+      <div className={`nav ${menuObert ? 'obert' : ''}`}>
+        <Link to="/" onClick={() => setMenuObert(false)}  className={`nav-item ${currentPath === '/' ? 'active' : ''}`}>
           <div>Inici</div>
           {currentPath === '/' && <div className="underline" />}
         </Link>
-        <Link to="/qui-som" className={`nav-item ${currentPath === '/qui-som' ? 'active' : ''}`}>
+        <Link to="/qui-som" onClick={() => setMenuObert(false)}  className={`nav-item ${currentPath === '/qui-som' ? 'active' : ''}`}>
           <div>Qui som?</div>
           {currentPath === '/qui-som' && <div className="underline" />}
         </Link>
-        <Link to="/serveis" className={`nav-item ${currentPath.startsWith('/serveis') ? 'active' : ''}`}>
+        <Link to="/serveis" onClick={() => setMenuObert(false)}  className={`nav-item ${currentPath.startsWith('/serveis') ? 'active' : ''}`}>
           <div>Serveis</div>
           {currentPath.startsWith('/serveis') && <div className="underline" />}
         </Link>
-        <Link to="/assessorament" className={`nav-item ${currentPath.startsWith('/assessorament') ? 'active' : ''}`}>
+        <Link to="/assessorament" onClick={() => setMenuObert(false)}  className={`nav-item ${currentPath.startsWith('/assessorament') ? 'active' : ''}`}>
           <div>Assessorament</div>
           {currentPath.startsWith('/assessorament') && <div className="underline" />}
         </Link>
-        <Link to="/blog" className={`nav-item ${currentPath.startsWith('/blog') ? 'active' : ''}`}>
+        <Link to="/blog" onClick={() => setMenuObert(false)}  className={`nav-item ${currentPath.startsWith('/blog') ? 'active' : ''}`}>
           <div>Blog</div>
           {currentPath.startsWith('/blog') && <div className="underline" />}
         </Link>
-        <Link to="/promocions" className={`nav-item ${currentPath === '/promocions' ? 'active' : ''}`}>
+        <Link to="/promocions" onClick={() => setMenuObert(false)}  className={`nav-item ${currentPath === '/promocions' ? 'active' : ''}`}>
           <div>Promocions</div>
           {currentPath === '/promocions' && <div className="underline" />}
         </Link>
-        <Link to="/contacte" className={`nav-item ${currentPath.startsWith('/contacte') ? 'active' : ''}`}>
+        <Link to="/contacte" onClick={() => setMenuObert(false)}  className={`nav-item ${currentPath.startsWith('/contacte') ? 'active' : ''}`}>
           <div>Contacte</div>
           {currentPath.startsWith('/contacte') && <div className="underline" />}
         </Link>

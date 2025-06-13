@@ -3,7 +3,7 @@
   top: 0;
   left: 0;
   right: 0;
-  z-index: 1000;
+  z-index: 1010;
   background-color: white;
   padding: 24px 128px;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
@@ -100,4 +100,82 @@
   height: 20px;
   color: #a60066;
   cursor: pointer;
+}
+
+/* --- Menú Hamburguesa --- */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 18px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.menu-toggle .bar {
+  height: 3px;
+  width: 100%;
+  background-color: #a60066;
+  border-radius: 2px;
+}
+
+/* --- Responsive --- */
+@media (max-width: 900px) {
+  .header {
+    padding: 16px 24px;
+    flex-wrap: wrap;
+  }
+
+  .header.obert {
+    padding: 16px 24px;
+    flex-wrap: wrap;
+    height: -webkit-fill-available;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .nav {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    margin-top: 16px;
+    height: auto;
+  }
+
+  .nav.obert {
+    display: flex;
+    align-items: center;
+    padding: 36px;
+  }
+
+  .social-icons,
+  .user {
+    display: none;
+  }
+}
+
+/* Quan el menú està obert, .header.visible també agafa aquest estil */
+.header.obert.visible {
+  height: -webkit-fill-available;
+  align-items: flex-start;
+}
+
+/* Ja tens .nav.obert però aquí afegim el height i center en mode menú obert */
+.nav.obert {
+  height: -webkit-fill-available;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Quan un nav-item és actiu i el menú està obert */
+.nav.obert .nav-item.active {
+  height: fit-content;
 }
