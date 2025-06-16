@@ -74,3 +74,9 @@
     font-family: Quicksand, sans-serif;
     text-align: center;
 }
+
+@media screen and (max-width: 950px) {
+    .demanarCita{
+        padding: 44px 40px;
+    }
+}
