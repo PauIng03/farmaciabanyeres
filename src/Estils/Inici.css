@@ -198,6 +198,21 @@ p{
   }
 }
 
+@media screen and (max-width: 772px) {
+  .BotonsAssessorament {
+        gap: 0px;
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 800px) {
+  .BotonsAssessorament {
+        gap: 10px;
+        justify-content: center;
+    }
+}
+
+
 /* ========== GLOBAL (recomanat) ========== */
 * {
   box-sizing: border-box;

@@ -13,7 +13,7 @@
 .panellDemanarCitaAssessorament{
     position: relative;
     right: 20px;
-    bottom: 120px;
+    bottom: 145px;
     background-color: #e7e7e7;
     border-radius: 10px;
     width: 290px;
@@ -108,4 +108,14 @@
 }
 .botoWhatsAppDemanarCita{
     margin-top: 0px;
+}
+
+@media screen and (max-width: 830px) {
+  .amagatMobil {
+    display: none !important;
+  }
+  .panellDemanarCitaAssessorament {
+    right: 0px;
+    bottom: 130px;
+   }
 }

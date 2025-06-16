@@ -87,3 +87,70 @@ p{
 .IconoNom{
     width: 155px;
 }
+
+@media (max-width: 768px) {
+  .Serveis {
+    padding: 24px 16px;
+    gap: 32px;
+  }
+
+  .CartesServeis {
+    flex-direction: column;
+    gap: 32px;
+    align-items: center;
+  }
+
+  .CartaServeis {
+    flex-direction: column;
+    width: 100%;
+    max-width: 360px;
+    gap: 12px;
+    align-items: center;
+  }
+
+  .IconaCarta {
+    width: 80px;
+    height: 80px;
+  }
+
+  .InfoFotoServeis {
+    width: 100%;
+    padding: 0 8px;
+  }
+
+  .nomServeis {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .nomInici {
+    font-size: 16px;
+  }
+
+  .Resum {
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .Boto {
+    padding: 12px 40px;
+    font-size: 14px;
+  }
+
+  .IconoNom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: auto;
+  }
+
+  .Titols {
+    text-align: center;
+  }
+
+  .carrussel-banner-27 {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+}

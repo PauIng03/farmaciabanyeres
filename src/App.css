@@ -40,3 +40,9 @@
 .ContingutApp{
   margin-top: 112px;
 }
+
+@media screen and (max-width: 1049px) {
+  .ContingutApp{
+  margin-top: 97px;
+  }
+}

@@ -59,7 +59,8 @@ function PanellDemanarCita({ id, tipus }) {
       )}
 
 
-      <button className="Boto botoBlanc BotoDemanarCita" onClick={handleClick}>
+      <button className={`Boto botoBlanc BotoDemanarCita ${obert ? 'amagatMobil' : ''}`}
+      onClick={handleClick}>
         Demanar cita
       </button>
 

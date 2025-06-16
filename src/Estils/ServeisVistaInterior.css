@@ -120,3 +120,76 @@
 .resposta {
   margin-top: 12px;
 }
+
+
+@media screen and (max-width: 850px){
+  .divTitolResum {
+    padding: 44px 40px;
+    width: 100%;
+    background-color: #660066;
+    align-items: center;
+  }
+  .divSuperiorServeis {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .divImatgeServei {
+    position: static;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .imatgeServei {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+  }
+
+  .degradatOverlay {
+    display: none;
+  }
+
+  .divInfoServei {
+    padding: 44px 40px;
+  }
+
+  .detallContingut {
+    flex-direction: column;
+    padding: 44px 40px;
+    gap: 32px;
+    align-items: center;
+  }
+
+  .blocText {
+    width: 100%;
+  }
+
+  .textDetall {
+    font-size: 14px;
+  }
+
+  .divDubtes {
+    padding: 44px 40px;
+    gap: 16px;
+  }
+
+  .divTitolDubtes {
+    align-items: center;
+    text-align: center;
+  }
+
+  .Titols h1 {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .resumServeis {
+    padding-right: 0px;
+  }
+
+  .titolDetall{
+    margin-top: 0px;
+    text-align: center;
+  }
+}
