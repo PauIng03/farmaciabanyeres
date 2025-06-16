@@ -16,6 +16,24 @@ function Contacte() {
   const [errors, setErrors] = useState({});
   const [enviat, setEnviat] = useState(false);
 
+  const volemSaberRef = useRef(null); // <- Afegit
+  const contenidorLilaRef = useRef(null); // <- Afegit
+
+  useEffect(() => {
+    const actualitzaTop = () => {
+      if (volemSaberRef.current && contenidorLilaRef.current) {
+        const posicioY = volemSaberRef.current.offsetTop;
+        contenidorLilaRef.current.style.top = `${posicioY - 30}px`;
+      }
+    };
+
+    actualitzaTop();
+
+    window.addEventListener("resize", actualitzaTop);
+    return () => window.removeEventListener("resize", actualitzaTop);
+  }, []);
+
+
   useEffect(() => {
     async function carregarDadesUsuari() {
       const { data: { session } } = await supabase.auth.getSession();
@@ -100,7 +118,7 @@ function Contacte() {
             <div className='contingutInfo'>
                 <div className="infoContacte">
                     <div className='divTitolInfo'>
-                        <h3 className='subtitol'>Consultes, Idees, Suggeriments</h3>
+                        <h3 ref={volemSaberRef} className='subtitol'>Consultes, Idees, Suggeriments</h3>
                         <h2 className='h2Contacte VolemSaberDeTu'>Volem saber de tu</h2>
                         <div className="underline"></div>
                     </div>
@@ -175,7 +193,7 @@ function Contacte() {
         <button className='BotoFormContacte' type="submit">Enviar</button>
         {enviat && <p className="missatgeEnviat">Missatge enviat correctament!</p>}
       </form>
-        <div className='ContenidorLila'></div>
+        <div ref={contenidorLilaRef} className='ContenidorLila'></div>
         <div className='divMaps'>
           <div className='divTitolLocalitzacio'>
             <h2 className='h2Contacte'>Localització</h2>
