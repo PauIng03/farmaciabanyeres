@@ -101,7 +101,7 @@ function Contacte() {
                 <div className="infoContacte">
                     <div className='divTitolInfo'>
                         <h3 className='subtitol'>Consultes, Idees, Suggeriments</h3>
-                        <h2 className='h2Contacte'>Volem saber de tu</h2>
+                        <h2 className='h2Contacte VolemSaberDeTu'>Volem saber de tu</h2>
                         <div className="underline"></div>
                     </div>
                     <div className='divInfo'>
@@ -125,7 +125,7 @@ function Contacte() {
                 </div>
                  <form className="formContacte" ref={form} onSubmit={sendEmail} noValidate>
         <div className='divsForm'>
-          <p className='textInput'>Nom</p>
+          <p className='textInputContacte'>Nom</p>
           <input
             type="text"
             name="nom"
@@ -137,7 +137,7 @@ function Contacte() {
         </div>
         
         <div className='divsForm'>
-          <p className='textInput'>Email</p>
+          <p className='textInputContacte'>Email</p>
           <input
             type="email"
             name="email"
@@ -149,7 +149,7 @@ function Contacte() {
         </div>
 
         <div className='divsForm'>
-          <p className='textInput'>Telèfon</p>
+          <p className='textInputContacte'>Telèfon</p>
           <input
             type="tel"
             name="telefon"
@@ -160,7 +160,7 @@ function Contacte() {
         </div>
 
         <div className='divsForm'>
-          <p className='textInput'>Missatge</p>
+          <p className='textInputContacte'>Missatge</p>
           <textarea
             name="missatge"
             placeholder="Missatge"
@@ -171,19 +171,21 @@ function Contacte() {
           {errors.missatge && <span className="error">{errors.missatge}</span>}
         </div>
 
+
         <button className='BotoFormContacte' type="submit">Enviar</button>
         {enviat && <p className="missatgeEnviat">Missatge enviat correctament!</p>}
       </form>
-                <div className='divMaps'>
-                    <div className='divTitolLocalitzacio'>
-                        <h2 className='h2Contacte'>Localització</h2>
-                        <div className="underline"></div>
-                    </div>
-                    <Maps />
-                </div>
-            </div>
+        <div className='ContenidorLila'></div>
+        <div className='divMaps'>
+          <div className='divTitolLocalitzacio'>
+            <h2 className='h2Contacte'>Localització</h2>
+            <div className="underline"></div>
+          </div>
+        <Maps />
         </div>
-    );
+      </div>
+    </div>
+  );
 }
 
 export default Contacte;

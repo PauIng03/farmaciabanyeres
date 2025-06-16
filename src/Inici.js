@@ -34,7 +34,7 @@ function Inici() {
           </p>
           <div className='BotonsAssessorament'>
             <button className='Boto BotoBlanc' onClick={() => navigate("/Assessorament")}>Consulta'ls</button>
-            <button className='Boto BotoVoraBlancaTransparent' onClick={() => navigate("/Contacte")}>Contacta'ns</button>
+            <button className='Boto BotoVoraBlancaTransparent' onClick={() => navigate("/contacte")}>Contacta'ns</button>
           </div>
         </div>
       </div>
