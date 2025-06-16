@@ -38,6 +38,10 @@
 .divTitolInfo{
     font-family: Quicksand, sans-serif;
 }
+.divTitolLocalitzacio{
+    font-family: Quicksand, sans-serif;
+}
+
 .titolsNegreta{
     font-family: Quicksand, sans-serif;
     font-weight: 700;
@@ -120,4 +124,35 @@ textarea{
 }
 .textInput{
     font-size: 16px;
+}
+
+@media screen and (max-width: 950px) {
+    .contacte{
+        padding: 44px 40px;
+        gap: 32px;
+    }
+
+    .contingutInfo {
+        display: flex    ;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 16px;
+        width: 100%;
+        flex-wrap: wrap;
+    }
+    
+    .formContacte{
+        max-width: none;
+    }
+
+    .infoContacte{
+        flex-direction: column-reverse;
+    }
+    .divTitolInfo{
+        padding-top: 32px;
+    }
+    .divTitolLocalitzacio{
+        padding-top: 16px;
+    }
 }

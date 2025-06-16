@@ -175,7 +175,7 @@ function Contacte() {
         {enviat && <p className="missatgeEnviat">Missatge enviat correctament!</p>}
       </form>
                 <div className='divMaps'>
-                    <div className='divTitolInfo'>
+                    <div className='divTitolLocalitzacio'>
                         <h2 className='h2Contacte'>Localització</h2>
                         <div className="underline"></div>
                     </div>
