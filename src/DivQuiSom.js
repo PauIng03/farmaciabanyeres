@@ -13,7 +13,7 @@ function DivQuiSom({ botoText, botoRuta}) {
           <div className="TextImatgeQuiSom">
             <div className='TextBoto'>
               <p className='TextQuiSom'>
-                Farmàcia Banyeres és un espai de salut on tu ets el centre. <br /><br />
+                <b>Farmàcia Banyeres és un espai de salut on tu ets el centre.</b><br /><br />
                 Oferim una atenció personalitzada, professional, actualitzada i adaptada a cada pacient.<br />
                 La nostra motivació són els nostres pacients i tenir cura de la seva salut.<br />
                 Comptem amb un equip qualificat, competent, proper i de confiança que es forma de manera continuada per oferir la millor atenció.

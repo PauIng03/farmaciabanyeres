@@ -18,6 +18,7 @@ h1{
 p{
     padding: 0px;
     margin: 0px;
+  font-size: 18px;
 }
 .TextQuiSom{
     gap: 25px;
@@ -183,7 +184,7 @@ p{
 
   .TextQuiSom,
   .TextValors {
-    font-size: 15px;
+    font-size: 16px;
   }
 
 
