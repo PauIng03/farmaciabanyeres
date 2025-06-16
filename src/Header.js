@@ -153,9 +153,11 @@ function Header() {
         {user && perfil ? (
           <div className="login-register registrat">
             <div className="nav-item">Hola {perfil.nom}!</div>
-            <div className="icon">
-              <FaUser className="icon-header" />
-            </div>
+            <Link to="/usuari">
+              <div className="icon">
+                <FaUser className="icon-header" link/>
+              </div>            
+            </Link>
           </div>
         ) : (
           <div className="login-register">

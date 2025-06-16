@@ -50,7 +50,7 @@ p{
 }
 .Boto{
     margin-top: 24px;
-    width: max-content;
+    width: -webkit-fill-available;
     background-color: #6e0a78;
     color: #ffffff;
     border-radius: 8px;
@@ -60,6 +60,7 @@ p{
     font-weight: 600;
     font-family: Quicksand, sans-serif;
     text-align: center;
+    max-width: 330px;
 }
 .CartaServeisInici{
     display: flex;
@@ -145,7 +146,8 @@ p{
 .BotonsAssessorament{
     display: flex;
     gap: 24px;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    justify-content: center;
 }
 .Boto.BotoBlanc{
     background-color: #ffffff;
@@ -198,20 +200,20 @@ p{
   }
 }
 
+@media screen and (max-width: 800px) {
+  .BotonsAssessorament {
+        gap: 10px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}
+
 @media screen and (max-width: 772px) {
   .BotonsAssessorament {
         gap: 0px;
         justify-content: center;
     }
 }
-
-@media screen and (max-width: 800px) {
-  .BotonsAssessorament {
-        gap: 10px;
-        justify-content: center;
-    }
-}
-
 
 /* ========== GLOBAL (recomanat) ========== */
 * {

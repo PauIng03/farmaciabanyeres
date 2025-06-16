@@ -79,4 +79,7 @@
     .demanarCita{
         padding: 44px 40px;
     }
+    .boto{
+        width: -webkit-fill-available;
+    }
 }

@@ -45,14 +45,18 @@
 
 
 .BotoQuiSom {
-  margin-top: 24px;
-  background-color: #6e0a78;
-  color: #ffffff;
-  border-radius: 8px;
-  padding: 18px 85px;
   border: none;
-  font-size: 16px;
   cursor: pointer;
+  margin-top: 24px;
+    background-color: #6e0a78;
+    color: #ffffff;
+    border-radius: 8px;
+    padding: 18px 85px;
+    border-style: hidden;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: Quicksand, sans-serif;
+    text-align: center;
 }
 
 /* ========== IMATGE COMUNA ========== */
