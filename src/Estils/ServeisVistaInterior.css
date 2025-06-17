@@ -21,7 +21,6 @@
 .imatgeServei {
   width: 100%;
   object-fit: cover;
-  height: -webkit-fill-available;
 }
 
 .degradatOverlay {
@@ -124,6 +123,11 @@
   white-space: pre-wrap;
 }
 
+@media screen and (max-width: 1049px){
+  .imatgeServei{
+    height: -webkit-fill-available;
+  }
+}
 
 @media screen and (max-width: 850px){
   .divTitolResum {
@@ -169,7 +173,11 @@
   }
 
   .textDetall {
-    font-size: 14px;
+    font-size: 15px;
+  }
+
+  .resposta {
+    font-size: 15px;
   }
 
   .divDubtes {

@@ -22,7 +22,6 @@
 .imatgeAssessorament {
   width: 100%;
   object-fit: cover;
-  height: -webkit-fill-available;
 }
 
 .degradatOverlayAssessorament {
@@ -126,7 +125,11 @@
   margin-top: 12px;
   white-space: pre-wrap;
 }
-
+@media screen and (max-width: 1049px){
+  .imatgeAssessorament{
+    height: -webkit-fill-available;
+  }
+}
 
 @media screen and (max-width: 850px){
   .divTitolResumAssessorament {
@@ -172,7 +175,11 @@
   }
 
   .textDetall {
-    font-size: 14px;
+    font-size: 15px;
+  }
+
+  .resposta {
+    font-size: 15px;
   }
 
   .divDubtes {
