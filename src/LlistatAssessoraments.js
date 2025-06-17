@@ -14,7 +14,8 @@ function LlistatAssessoraments({ assessoramentsClass="Assessoraments", underline
       if (error) {
         console.error('Error carregant assessoraments:', error.message);
       } else {
-        setAssessoraments(data);
+          const assessoramentsOrdenats = data.sort((a, b) => (a.Resum?.length || 0) - (b.Resum?.length || 0));
+          setAssessoraments(assessoramentsOrdenats);
       }
     }
     fetchAssessoraments();

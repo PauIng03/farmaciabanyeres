@@ -14,7 +14,7 @@ function Inici() {
       <img src="imatges/carrussel-banner-27.png" className="carrussel-banner-27" alt="carrussel-banner" />
       <DivQuiSom botoText="Coneixe'ns més!" botoRuta="/qui-som" />
       <div className='divServeis'>
-       <LlistatServeis cartaServeisClass='CartaServeisInici' serveisClass='iniciServeis' underlineClass='underlineBlanc' titol="Serveis" limit={6} mode="compacte"></LlistatServeis>
+       <LlistatServeis cartaServeisClass='CartaServeisInici' serveisClass='iniciServeis' underlineClass='underlineBlanc' titol="Serveis" limit={5} mode="compacte"></LlistatServeis>
       <button className='Boto BotoVoraBlanca' onClick={() => navigate('/serveis')}>Veure'n més</button>
       </div>      
       <div className='iniciBlog'>

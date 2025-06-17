@@ -78,6 +78,7 @@
 }
 .BotoDemanarCita{
     min-width: 277px;
+    width: fit-content;
 }
 .creuBotoFlotantDemanarCita{
     background-color: #cf278f;

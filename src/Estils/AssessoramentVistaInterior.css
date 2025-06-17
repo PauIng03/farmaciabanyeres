@@ -22,6 +22,7 @@
 .imatgeAssessorament {
   width: 100%;
   object-fit: cover;
+  height: -webkit-fill-available;
 }
 
 .degradatOverlayAssessorament {
@@ -84,7 +85,8 @@
     width: 33%;
 }
 .textDetall{
-    text-align: center;
+    text-align: left;
+    white-space: pre-wrap;
 }
 .titolDetall{
     margin-top: 0px;
@@ -122,6 +124,7 @@
 
 .resposta {
   margin-top: 12px;
+  white-space: pre-wrap;
 }
 
 

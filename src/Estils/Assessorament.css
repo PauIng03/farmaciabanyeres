@@ -31,6 +31,14 @@ p{
     width: 100px;
     height: 100px;
 }
+.Blanca {
+  filter: brightness(0) invert(1);
+}
+
+.Negra {
+  filter: none;
+}
+
 .nomAssessoraments{
     font-weight: bold;
     font-family: Quicksand, sans-serif;
@@ -82,7 +90,10 @@ p{
     width: 315px;
 }
 .InfoAssesoraments{
+    display: flex;
     text-align: left;
+    gap: 8px;
+    flex-direction: column;
 }
 .IconoNom{
     width: 155px;
@@ -91,7 +102,7 @@ p{
 
 @media (max-width: 768px) {
   .Assessoraments {
-    padding: 24px 16px;
+    padding: 44px 40px;
     gap: 32px;
   }
 
@@ -129,7 +140,6 @@ p{
 
   .Resum {
     font-size: 14px;
-    text-align: center;
   }
 
   .IconoNom {

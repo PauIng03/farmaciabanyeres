@@ -1,31 +1,31 @@
 .QuiSom{
-    height: auto;
-    width: -webkit-fill-available;
-    padding: 44px 128px;
-    gap: 24px;
-    display: flex;
-    flex-direction: column;
+  height: auto;
+  width: -webkit-fill-available;
+  padding: 44px 128px;
+  gap: 24px;
+  display: flex;
+  flex-direction: column;
 }
 .TextImatge{
-    display: inline-flex;
-    gap: 24px;
+  display: inline-flex;
+  gap: 24px;
 }
 h1{
-    padding: 0px;
-    margin: 0px;
-    font-family: Quicksand, sans-serif;
+  padding: 0px;
+  margin: 0px;
+  font-family: Quicksand, sans-serif;
 }
 p{
-    padding: 0px;
-    margin: 0px;
+  padding: 0px;
+  margin: 0px;
   font-size: 18px;
 }
 .TextQuiSom{
-    gap: 25px;
+  gap: 25px;
 }
 .Imatge{
-    object-fit: cover;
-    object-position: center;
+  object-fit: cover;
+  object-position: center;
 }
 .underline {
   height: 0;
@@ -42,84 +42,83 @@ p{
   margin-top: 8px;
 }
 .Titols{
-    width: fit-content;
+  width: fit-content;
 }
 .TextBoto{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .Boto{
-    margin-top: 24px;
-    width: -webkit-fill-available;
-    background-color: #6e0a78;
-    color: #ffffff;
-    border-radius: 8px;
-    padding: 18px 85px;
-    border-style: hidden;
-    font-size: 16px;
-    font-weight: 600;
-    font-family: Quicksand, sans-serif;
-    text-align: center;
-    max-width: 330px;
+  margin-top: 24px;
+  width: -webkit-fill-available;
+  background-color: #6e0a78;
+  color: #ffffff;
+  border-radius: 8px;
+  padding: 18px 85px;
+  border-style: hidden;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: Quicksand, sans-serif;
+  text-align: center;
+  max-width: 330px;
 }
 .CartaServeisInici{
-    display: flex;
-    flex-direction: row;
-    gap: 16px;
-    width: fit-content;
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  width: fit-content;
 }
 .IconoNom {
-    justify-items: center;
-    width: 140px;
+  justify-items: center;
+  width: 140px;
 }
 .nomInici {
-    font-weight: normal;
-    font-family: Quicksand, sans-serif;
-    text-align: center;
+  font-weight: normal;
+  font-family: Quicksand, sans-serif;
+  text-align: center;
 }
 .divServeis{
-    background-color: #6e0a78;
-    height: auto;
-    width: -webkit-fill-available;
-    padding: 44px 128px;
-    gap: 40px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color:#ffffff;
+  background-color: #6e0a78;
+  height: auto;
+  width: -webkit-fill-available;
+  padding: 44px 128px;
+  gap: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color:#ffffff;
 }
 .iniciServeis{
-    height: auto;
-    width: -webkit-fill-available;
-    padding: 0px 0px;
-    gap: 40px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  height: auto;
+  width: -webkit-fill-available;
+  padding: 0px 0px;
+  gap: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .Boto.BotoVoraBlanca{
-    border-color: #ffffff;
-    border-style: double;
-    margin-top: 0px;
+  border-color: #ffffff;
+  border-style: double;
+  margin-top: 0px;
 }
 .divAssessorament {
-    position: relative;
-    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwLFm53tEjkRFMJcgmwsX2o9n71lWJOVZ4qQ&s');
-    background-size: cover;
-    background-position: center;
-    width: -webkit-fill-available;
-    padding: 44px 128px;
-    gap: 24px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: #ffffff;
-    z-index: 0;
-    overflow: hidden;
+  position: relative;
+  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwLFm53tEjkRFMJcgmwsX2o9n71lWJOVZ4qQ&s');
+  background-size: cover;
+  background-position: center;
+  width: -webkit-fill-available;
+  padding: 44px 128px;
+  gap: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #ffffff;
+  z-index: 0;
+  overflow: hidden;
 }
 
-/* Capa negra a sobre de la imatge */
 .divAssessorament::before {
   content: "";
   position: absolute;
@@ -131,45 +130,51 @@ p{
   z-index: 1;
 }
 
-/* Contingut per sobre de l'overlay */
 .divAssessorament > * {
   position: relative;
   z-index: 2;
 }
 .TextBotoAssessorament{
-    display: flex;;
-    flex-direction: column;
-    align-items: center;
-    flex: none;
-    min-width: 250px;
+  display: flex;;
+  flex-direction: column;
+  align-items: center;
+  flex: none;
+  min-width: 250px;
 }
 
 .BotonsAssessorament{
-    display: flex;
-    gap: 24px;
-    flex-wrap: nowrap;
-    justify-content: center;
+  display: flex;
+  gap: 24px;
+  flex-wrap: nowrap;
+  justify-content: center;
 }
 .Boto.BotoBlanc{
-    background-color: #ffffff;
-    color: black;
+  background-color: #ffffff;
+  color: black;
 }
 .Boto.BotoVoraBlancaTransparent{
-    border-color: #ffffff;
-    border-style: double;
-    background-color: transparent;
+  border-color: #ffffff;
+  border-style: double;
+  background-color: transparent;
 }
 .iniciBlog{
-    height: auto;
-    width: -webkit-fill-available;
-    padding: 44px 0px;
-    gap: 40px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  height: auto;
+  width: -webkit-fill-available;
+  padding: 44px 0px;
+  gap: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .articles{
-    align-items: flex-end;
+  align-items: flex-end;
+}
+
+.nomServeisPetit{
+  font-size: 18px;
+  text-align: center;
+  font-family: 'Quicksand';
+  padding-top: 8px;
 }
 
 @media screen and (max-width: 1200px) {
@@ -199,21 +204,24 @@ p{
   .Equip {
     padding: 32px 40px;
   }
+  .divServeis{
+    padding: 44px 40px;
+  }
 }
 
 @media screen and (max-width: 800px) {
   .BotonsAssessorament {
-        gap: 10px;
-        justify-content: center;
-        flex-wrap: wrap;
-    }
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
 }
 
 @media screen and (max-width: 772px) {
   .BotonsAssessorament {
-        gap: 0px;
-        justify-content: center;
-    }
+    gap: 0px;
+    justify-content: center;
+  }
 }
 
 /* ========== GLOBAL (recomanat) ========== */

@@ -82,7 +82,10 @@ p{
     width: 315px;
 }
 .InfoServeis{
+    display: flex;
     text-align: left;
+    gap: 8px;
+    flex-direction: column;
 }
 .IconoNom{
     width: 155px;
@@ -90,7 +93,7 @@ p{
 
 @media (max-width: 768px) {
   .Serveis {
-    padding: 24px 16px;
+    padding: 44px 40px;
     gap: 32px;
   }
 
@@ -128,7 +131,6 @@ p{
 
   .Resum {
     font-size: 14px;
-    text-align: center;
   }
 
   .Boto {

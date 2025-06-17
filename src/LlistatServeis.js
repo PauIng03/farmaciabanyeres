@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { supabase } from './lib/supabaseClient';
 
 function LlistatServeis({ cartaServeisClass='CartaServeis', serveisClass="Serveis", underlineClass="underline", titol = "Serveis", limit = null, mode = "complet" }) {
   const [serveis, setServeis] = useState([]);
   const navigate = useNavigate();
+  const location = useLocation();
+
+  const esInici = location.pathname === '/';
 
   useEffect(() => {
     async function fetchServeis() {
@@ -14,7 +17,8 @@ function LlistatServeis({ cartaServeisClass='CartaServeis', serveisClass="Servei
       if (error) {
         console.error('Error carregant serveis:', error.message);
       } else {
-        setServeis(data);
+          const serveisOrdenats = data.sort((a, b) => (a.Resum?.length || 0) - (b.Resum?.length || 0));
+          setServeis(serveisOrdenats);
       }
     }
     fetchServeis();
@@ -31,8 +35,8 @@ function LlistatServeis({ cartaServeisClass='CartaServeis', serveisClass="Servei
         {serveis.map((servei) => (
           <div key={servei.id} className={cartaServeisClass}>
             <div className='IconoNom'>
-              <img className='IconaCarta' src={servei.Icona || "https://placehold.co/600x200"} alt={servei.Nom} />
-              <p className='nomInici'>{servei.Nom}</p>
+              <img className={esInici ? 'IconaCarta Blanca' : 'IconaCarta Negra'} src={servei.Icona || "https://placehold.co/600x200"} alt={servei.Nom}/>
+              <p className={esInici ? 'nomServeisPetit' : 'nomInici'}>{servei.Nom}</p>
             </div>
 
             {mode === "complet" && (
