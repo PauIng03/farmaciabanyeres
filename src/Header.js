@@ -92,7 +92,7 @@ function Header() {
       </Link>
 
       <div className='iconaMenuHamburguesa'>
-        <Link to={user ? '#' : '/inicisessio'} className="usuari-responsive">
+        <Link to={user ? '/usuari' : '/inicisessio'} className="usuari-responsive">
           <FaUser className='icon-header-responsive' title={user ? `Hola ${perfil?.nom}` : 'Inicia Sessió'} />
         </Link>
         <button className="menu-toggle" onClick={() => setMenuObert(!menuObert)}>
@@ -155,7 +155,7 @@ function Header() {
             <div className="nav-item">Hola {perfil.nom}!</div>
             <Link to="/usuari">
               <div className="icon">
-                <FaUser className="icon-header" link/>
+                <FaUser className="icon-header"/>
               </div>            
             </Link>
           </div>

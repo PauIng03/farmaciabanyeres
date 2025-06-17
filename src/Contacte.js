@@ -95,10 +95,10 @@ function Contacte() {
     }
 
     emailjs.sendForm(
-      'YOUR_SERVICE_ID',
-      'YOUR_TEMPLATE_ID',
+      'service_q8wqbi6',
+      'template_gplsl2b',
       form.current,
-      'YOUR_PUBLIC_KEY'
+      'QhTEuFfxlsTIlPD7E'
     ).then(() => {
       setEnviat(true);
       form.current.reset();

@@ -154,30 +154,38 @@ function DemanarCita() {
 
 
   const sendEmail = (e) => {
-    e.preventDefault();
-    const validationErrors = validate();
-    if (Object.keys(validationErrors).length > 0) {
-      setErrors(validationErrors);
-      return;
-    }
+  e.preventDefault();
 
-    emailjs
-      .sendForm(
-        'YOUR_SERVICE_ID',
-        'YOUR_TEMPLATE_ID',
-        form.current,
-        'YOUR_PUBLIC_KEY'
-      )
-      .then(() => {
-        setEnviat(true);
-        form.current.reset();
-        setFormData({ nom: '', email: '', telefon: '', missatge: '', servei: '', contacte: '', horari: '' });
-      })
-      .catch((error) => {
-        console.error("Error en l'enviament:", error.text);
-        alert("Hi ha hagut un error en enviar el missatge.");
-      });
+  const honeypotValue = form.current?.website?.value;
+  if (honeypotValue) {
+    console.warn("Bot detectat. Missatge no enviat.");
+    return;
+  }
+
+  const validationErrors = validate();
+  if (Object.keys(validationErrors).length > 0) {
+    setErrors(validationErrors);
+    return;
+  }
+
+  emailjs
+    .sendForm(
+      'service_q8wqbi6',
+      'template_zpsz1c9',
+      form.current,
+      'QhTEuFfxlsTIlPD7E'
+    )
+    .then(() => {
+      setEnviat(true);
+      form.current.reset();
+      setFormData({ nom: '', email: '', telefon: '', missatge: '', servei: '', contacte: '', horari: '' });
+    })
+    .catch((error) => {
+      console.error("Error en l'enviament:", error.text);
+      alert("Hi ha hagut un error en enviar el missatge.");
+    });
   };
+
 
   if (!taula) return <p>Ruta no vàlida</p>;
   if (llista.length === 0) return <p>Carregant llista...</p>;
@@ -287,6 +295,9 @@ function DemanarCita() {
             onChange={handleChange}
           />
         </div>
+        <input type="hidden" name="servei_nom" value={serveiSeleccionat?.Nom || ''} />
+
+        <input type="text" name="website" autoComplete="off" style={{ display: 'none' }} tabIndex="-1" />
 
         <button
           className={estilBoto}
