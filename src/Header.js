@@ -11,9 +11,7 @@ function Header() {
 
   const [user, setUser] = useState(null);
   const [perfil, setPerfil] = useState(null);
-
   const [visible, setVisible] = useState(true);
-
   const [menuObert, setMenuObert] = useState(false);
 
   useEffect(() => {
@@ -27,10 +25,7 @@ function Header() {
           .select('nom')
           .eq('user_id', user.id)
           .single();
-
-        if (!error && perfilData) {
-          setPerfil(perfilData);
-        }
+        if (!error && perfilData) setPerfil(perfilData);
       }
     };
 
@@ -52,18 +47,10 @@ function Header() {
 
   useEffect(() => {
     let lastScrollY = window.scrollY;
-
     const handleScroll = () => {
-      if (menuObert) return; // NO amaguis si el menú està obert
-
+      if (menuObert) return;
       const currentScrollY = window.scrollY;
-
-      if (currentScrollY > lastScrollY && currentScrollY > 100) {
-        setVisible(false);
-      } else {
-        setVisible(true);
-      }
-
+      setVisible(currentScrollY < lastScrollY || currentScrollY < 100);
       lastScrollY = currentScrollY;
     };
 
@@ -72,107 +59,113 @@ function Header() {
   }, [menuObert]);
 
   useEffect(() => {
-    if (menuObert) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'auto';
-    }
-
-    return () => {
-      document.body.style.overflow = 'auto';
-    };
+    document.body.style.overflow = menuObert ? 'hidden' : 'auto';
+    return () => { document.body.style.overflow = 'auto'; };
   }, [menuObert]);
 
-
-
   return (
-    <div className={`header ${visible ? 'visible' : 'amagat'} ${menuObert ? 'obert' : ''}`}>
-      <Link to="/" onClick={() => setMenuObert(false)}  className={`nav-item ${currentPath === '/' ? 'active' : ''}`}>
-        <div><img className="logo" src="/Logo.png" alt="Logo" /></div>
+    <header
+      className={`header ${visible ? 'visible' : 'amagat'} ${menuObert ? 'obert' : ''}`}
+      role="banner"
+    >
+      {/* Logo */}
+      <Link
+        to="/"
+        onClick={() => setMenuObert(false)}
+        className={`nav-item ${currentPath === '/' ? 'active' : ''}`}
+        aria-label="Inici - Farmàcia Banyeres"
+      >
+        <img className="logo" src="/Logo.png" alt="Logotip de Farmàcia Banyeres" />
       </Link>
 
-      <div className='iconaMenuHamburguesa'>
-        <Link to={user ? '/usuari' : '/inicisessio'} className="usuari-responsive">
-          <FaUser className='icon-header-responsive' title={user ? `Hola ${perfil?.nom}` : 'Inicia Sessió'} />
+      {/* Accions mòbils */}
+      <div className="iconaMenuHamburguesa">
+        <Link
+          to={user ? '/usuari' : '/inicisessio'}
+          className="usuari-responsive"
+          aria-label={user ? `Perfil de ${perfil?.nom}` : 'Inicia sessió'}
+        >
+          <FaUser className="icon-header-responsive" />
         </Link>
-        <button className="menu-toggle" onClick={() => setMenuObert(!menuObert)}>
+
+        <button
+          className="menu-toggle"
+          onClick={() => setMenuObert(!menuObert)}
+          aria-label={menuObert ? "Tanca el menú" : "Obre el menú"}
+          aria-expanded={menuObert}
+          aria-controls="nav-principal"
+        >
           <span className="bar"></span>
           <span className="bar"></span>
           <span className="bar"></span>
         </button>
       </div>
 
+      {/* Menú de navegació principal */}
+      <nav id="nav-principal" className={`nav ${menuObert ? 'obert' : ''}`} role="navigation" aria-label="Navegació principal">
+        {[
+          { to: '/', label: 'Inici' },
+          { to: '/qui-som', label: 'Qui som?' },
+          { to: '/serveis', label: 'Serveis' },
+          { to: '/assessorament', label: 'Assessorament' },
+          { to: '/blog', label: 'Blog' },
+          { to: '/promocions', label: 'Promocions' },
+          { to: '/contacte', label: 'Contacte' },
+        ].map(({ to, label }) => (
+          <Link
+            key={to}
+            to={to}
+            onClick={() => setMenuObert(false)}
+            className={`nav-item ${currentPath === to || currentPath.startsWith(to) ? 'active' : ''}`}
+            aria-current={currentPath === to ? 'page' : undefined}
+          >
+            <div>{label}</div>
+            {currentPath === to && <div className="underline" />}
+          </Link>
+        ))}
+      </nav>
 
-      <div className={`nav ${menuObert ? 'obert' : ''}`}>
-        <Link to="/" onClick={() => setMenuObert(false)}  className={`nav-item ${currentPath === '/' ? 'active' : ''}`}>
-          <div>Inici</div>
-          {currentPath === '/' && <div className="underline" />}
-        </Link>
-        <Link to="/qui-som" onClick={() => setMenuObert(false)}  className={`nav-item ${currentPath === '/qui-som' ? 'active' : ''}`}>
-          <div>Qui som?</div>
-          {currentPath === '/qui-som' && <div className="underline" />}
-        </Link>
-        <Link to="/serveis" onClick={() => setMenuObert(false)}  className={`nav-item ${currentPath.startsWith('/serveis') ? 'active' : ''}`}>
-          <div>Serveis</div>
-          {currentPath.startsWith('/serveis') && <div className="underline" />}
-        </Link>
-        <Link to="/assessorament" onClick={() => setMenuObert(false)}  className={`nav-item ${currentPath.startsWith('/assessorament') ? 'active' : ''}`}>
-          <div>Assessorament</div>
-          {currentPath.startsWith('/assessorament') && <div className="underline" />}
-        </Link>
-        <Link to="/blog" onClick={() => setMenuObert(false)}  className={`nav-item ${currentPath.startsWith('/blog') ? 'active' : ''}`}>
-          <div>Blog</div>
-          {currentPath.startsWith('/blog') && <div className="underline" />}
-        </Link>
-        <Link to="/promocions" onClick={() => setMenuObert(false)}  className={`nav-item ${currentPath === '/promocions' ? 'active' : ''}`}>
-          <div>Promocions</div>
-          {currentPath === '/promocions' && <div className="underline" />}
-        </Link>
-        <Link to="/contacte" onClick={() => setMenuObert(false)}  className={`nav-item ${currentPath.startsWith('/contacte') ? 'active' : ''}`}>
-          <div>Contacte</div>
-          {currentPath.startsWith('/contacte') && <div className="underline" />}
-        </Link>
-      </div>
-
-      <div className="social-icons">
-        <a href="https://www.instagram.com/farmaciabanyeres" target="_blank" rel="noopener noreferrer">
+      {/* Xarxes socials */}
+      <div className="social-icons" aria-label="Xarxes socials">
+        <a href="https://www.instagram.com/farmaciabanyeres" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
           <FaInstagram className="icon-header" />
         </a>
-        <a href="https://www.facebook.com/farmaciabanyeres" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.facebook.com/farmaciabanyeres" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
           <FaFacebookF className="icon-header" />
         </a>
-        <a href="tel:977671102">
+        <a href="tel:977671102" aria-label="Truca al 977 671 102">
           <FaPhoneAlt className="icon-header" />
         </a>
-        <a href="https://wa.me/34977671102" target="_blank" rel="noopener noreferrer">
+        <a href="https://wa.me/34977671102" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
           <FaWhatsapp className="icon-header" />
         </a>
       </div>
 
+      {/* Secció usuari */}
       <div className="user">
         {user && perfil ? (
           <div className="login-register registrat">
             <div className="nav-item">Hola {perfil.nom}!</div>
-            <Link to="/usuari">
-              <div className="icon">
-                <FaUser className="icon-header"/>
-              </div>            
+            <Link to="/usuari" aria-label="Anar al meu perfil">
+              <FaUser className="icon-header" />
             </Link>
           </div>
         ) : (
           <div className="login-register">
             <Link to="/inicisessio" className={`nav-item ${currentPath.startsWith('/inicisessio') ? 'active' : ''}`}>
-              <div className="nav-item">Inicia Sessió</div>
+              Inicia Sessió
             </Link>
-            <div className="separator" />
+            <div className="separator" aria-hidden="true" />
             <Link to="/registre" className={`nav-item ${currentPath.startsWith('/registre') ? 'active' : ''}`}>
-              <div className="nav-item">Registra’t</div>
+              Registra’t
             </Link>
           </div>
         )}
       </div>
-      <XarxesSocials menuObert={menuObert}></XarxesSocials>
-    </div>
+
+      {/* Xarxes socials flotants */}
+      <XarxesSocials menuObert={menuObert} />
+    </header>
   );
 }
 

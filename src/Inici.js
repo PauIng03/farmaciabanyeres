@@ -13,14 +13,14 @@ function Inici() {
     <div>
       <img src="imatges/carrussel-banner-27.png" className="carrussel-banner-27" alt="carrussel-banner" />
       <DivQuiSom botoText="Coneixe'ns més!" botoRuta="/qui-som" />
-      <div className='divServeis'>
+      <section className='divServeis'>
        <LlistatServeis cartaServeisClass='CartaServeisInici' serveisClass='iniciServeis' underlineClass='underlineBlanc' titol="Serveis" limit={5} mode="compacte"></LlistatServeis>
       <button className='Boto BotoVoraBlanca' onClick={() => navigate('/serveis')}>Veure'n més</button>
-      </div>      
-      <div className='iniciBlog'>
+      </section>      
+      <section className='iniciBlog'>
         <ArticlesBlog underlineClass="underline" limit={3} showButton={true} showReadMore={false} />
-      </div>
-      <div className='divAssessorament'>
+      </section>
+      <section className='divAssessorament'>
         <div className='Titols'>
           <h1>Assessorament</h1>
           <div className='underlineBlanc'></div>
@@ -37,7 +37,7 @@ function Inici() {
             <button className='Boto BotoVoraBlancaTransparent' onClick={() => navigate("/contacte")}>Contacta'ns</button>
           </div>
         </div>
-      </div>
+      </section>
       <CtaFlotant/>
     </div>
   );
