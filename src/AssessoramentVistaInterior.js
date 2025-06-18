@@ -4,11 +4,14 @@ import { supabase } from './lib/supabaseClient';
 import './Estils/AssessoramentVistaInterior.css';
 import Desplegable from './Desplegable';
 import PanellDemanarCita from './PanellDemanarCita';
+import { useNavigate } from 'react-router-dom';
 
 function AssessoramentVistaInterior() {
   const { id } = useParams();
   const [assessorament, setAssessorament] = useState(null);
 
+  const navigate = useNavigate();
+    
   useEffect(() => {
     async function fetchAssessorament() {
       const { data, error } = await supabase
@@ -16,16 +19,17 @@ function AssessoramentVistaInterior() {
         .select('*')
         .eq('id', id)
         .single();
-
-      if (error) {
-        console.error("Error carregant l'asssessorament:", error.message);
+  
+      if (error || !data) {
+        navigate('/assessorament');
       } else {
         setAssessorament(data);
       }
     }
-
+  
     fetchAssessorament();
-  }, [id]);
+  },[id, navigate]);
+
 
   if (!assessorament) return <p>Carregant...</p>;
 

@@ -111,6 +111,18 @@
     margin-top: 0px;
 }
 
+@media screen and (min-width:1050px) and (max-width: 1080px) {
+  .amagatMobilPromocions {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 990px) {
+  .amagatMobilPromocions {
+    display: none !important;
+  }
+}
+
 @media screen and (max-width: 850px) {
   .amagatMobil {
     display: none !important;
@@ -123,4 +135,11 @@
     left: 0px;
     bottom: 130px;
    }
+}
+
+@media screen and (max-width: 768px) {
+    .divBotoDemanarCita {
+        display: flex;
+        justify-content: center;
+    }
 }

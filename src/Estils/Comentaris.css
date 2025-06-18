@@ -9,6 +9,7 @@
 }
 .titolComentaris{
     margin: 0px;
+    font-family: 'Quicksand';
 }
 .divFormulariComentari{
     display: flex;
@@ -27,6 +28,9 @@
 .titolPComentari{
     font-weight: 600;
 }
+.nomUsuariComentari{
+  font-weight: normal;
+}
 .comentari{
     display: flex;
     flex-direction: column;
@@ -42,7 +46,7 @@
     background: none;
     border: none;
     color: white;
-    font-size: 14px;
+    font-size: 16px;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -92,7 +96,6 @@
   }
 
   .botoResposta {
-    font-size: 12px;
     padding: 4px 8px;
     width: min-content;
   }

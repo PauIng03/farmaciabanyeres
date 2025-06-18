@@ -1,7 +1,8 @@
+import LlistatPromocions from "./LlistatPromocions";
+
 function Promocions() {
   return (
-    <div className="header-2">
-    </div>
+    <LlistatPromocions></LlistatPromocions>
   );
 }
 

@@ -65,7 +65,7 @@
 .autorArticle{
     font-family: Quicksand, sans-serif;
     font-weight: 600;
-    font-size: 16px;
+    font-size: 18px;
 }
 .InfoArticle{
     display: flex;
@@ -75,10 +75,10 @@
 .resumArticle{
     font-family: Quicksand, sans-serif;
     font-weight: 600;
-    font-size: 14px;
+    font-size: 16px;
 }
 .resumArticleText{
-    font-size: 14px;
+    font-size: 15px;
 }
 .resum{
     display: flex;
@@ -88,6 +88,7 @@
     display: flex;
     flex-direction: row;
     gap: 5px;
+    align-items: center;
 }
 .iconaUsuari{
     height: min-content;
@@ -124,16 +125,10 @@
   }
 
   .titolArticle {
-    font-size: 24px;
     text-align: center;
   }
 
-  .titolArticle.titolArticlePetit {
-    font-size: 18px;
-  }
-
   .DivDataCategoria {
-    flex-direction: column;
     align-items: flex-start;
     gap: 8px;
   }

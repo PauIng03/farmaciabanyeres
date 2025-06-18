@@ -32,7 +32,7 @@
     color: #6E0A78;
     border-width: 2px;
     font-family: Quicksand, sans-serif;
-    font-size: 14px;
+    font-size: 16px;
 }
 .llistaDemanarCitaAssessorament{
     padding: 12px 12px;
@@ -42,7 +42,7 @@
     color: #A60066;
     border-width: 2px;
     font-family: Quicksand, sans-serif;
-    font-size: 14px;
+    font-size: 16px;
 }
 .divsForm{
     display: flex;
@@ -60,6 +60,7 @@
     padding: 18px 85px;
     border-style: hidden;
     font-size: 16px;
+    cursor: pointer;
 }
 .BotoCitaServeis{
     margin-top: 8px;
@@ -73,6 +74,7 @@
     font-weight: 600;
     font-family: Quicksand, sans-serif;
     text-align: center;
+    cursor: pointer;
 }
 
 @media screen and (max-width: 950px) {

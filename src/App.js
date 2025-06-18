@@ -5,6 +5,7 @@ import QuiSom from './QuiSom.js';
 import Serveis from './Serveis.js'
 import Blog from './Blog.js'
 import Promocions from './Promocions.js'
+import PromocioDetall from './PromocionsVistaInterior.js';
 import Footer from './Footer.js'
 import Inici from './Inici.js';
 import Assessorament from './Assessorament.js';
@@ -18,6 +19,7 @@ import OblidatContrassenya from './OblidatContrassenya.js';
 import Registre from './Registre.js';
 import BotoFlotant from './BotoFlotant.js';
 import PerfilUsuari from './PerfilUsuari.js';
+import Encarrecs from './Encarrecs.js';
 import "./App.css"
 
 function App() {
@@ -34,6 +36,8 @@ function App() {
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog/:id" element={<ArticleIndividual />} />
         <Route path="/promocions" element={<Promocions />} />
+        <Route path="/promocions/:id" element={<PromocioDetall />} />
+        <Route path="/promocions/:id/encarrec" element={<Encarrecs />} />
         <Route path="/assessorament" element={<Assessorament />} />
         <Route path='/assessorament/:id' element={<AssessoramentVistaInterior/>}></Route>
         <Route path='/assessorament/:id/demanar-cita' element={<DemanarCita/>}></Route>

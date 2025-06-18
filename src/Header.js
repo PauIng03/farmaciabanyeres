@@ -14,6 +14,11 @@ function Header() {
   const [visible, setVisible] = useState(true);
   const [menuObert, setMenuObert] = useState(false);
 
+  const isActive = (to) => {
+    if (to === '/') return currentPath === '/';
+    return currentPath.startsWith(to);
+  };
+
   useEffect(() => {
     const getUser = async () => {
       const { data: { user } } = await supabase.auth.getUser();
@@ -69,14 +74,14 @@ function Header() {
       role="banner"
     >
       {/* Logo */}
-      <Link
-        to="/"
-        onClick={() => setMenuObert(false)}
-        className={`nav-item ${currentPath === '/' ? 'active' : ''}`}
-        aria-label="Inici - Farmàcia Banyeres"
-      >
-        <img className="logo" src="/Logo.png" alt="Logotip de Farmàcia Banyeres" />
-      </Link>
+    <Link
+      to="/"
+      onClick={() => setMenuObert(false)}
+      className="logo-link"
+      aria-label="Inici - Farmàcia Banyeres"
+    >
+      <img className="logo" src="/Logo.png" alt="Logotip de Farmàcia Banyeres" />
+    </Link>
 
       {/* Accions mòbils */}
       <div className="iconaMenuHamburguesa">
@@ -112,16 +117,17 @@ function Header() {
           { to: '/promocions', label: 'Promocions' },
           { to: '/contacte', label: 'Contacte' },
         ].map(({ to, label }) => (
-          <Link
-            key={to}
-            to={to}
-            onClick={() => setMenuObert(false)}
-            className={`nav-item ${currentPath === to || currentPath.startsWith(to) ? 'active' : ''}`}
-            aria-current={currentPath === to ? 'page' : undefined}
-          >
-            <div>{label}</div>
-            {currentPath === to && <div className="underline" />}
-          </Link>
+      <Link
+        key={to}
+        to={to}
+        onClick={() => setMenuObert(false)}
+        className={`nav-item ${isActive(to) ? 'active' : ''}`}
+        aria-current={isActive(to) ? 'page' : undefined}
+      >
+        <div>{label}</div>
+        {isActive(to) && <div className="underline" />}
+      </Link>
+
         ))}
       </nav>
 

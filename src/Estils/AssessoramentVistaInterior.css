@@ -50,7 +50,7 @@
 }
 .resumAssessorament{
     padding-left: 20px;
-    text-align: right;
+    text-align: left;
 }
 .botoBlanc{
     background-color: transparent;
@@ -68,6 +68,8 @@
 }
 .titolInfo{
     margin: 0px;
+    font-family: 'Quicksand';
+    font-weight: bolder;
 }
 .detallContingutAssessorament{
     display: flex;
@@ -108,9 +110,10 @@
 }
 
 .pregunta {
-  font-weight: bold;
   margin: 0;
+  font-weight: bold;
 }
+
 
 .fletxa {
   font-size: 20px;
@@ -174,17 +177,16 @@
     width: 100%;
   }
 
-  .textDetall {
+  /*.textDetall {
     font-size: 15px;
   }
 
   .resposta {
     font-size: 15px;
-  }
+  }*/
 
   .divDubtes {
     padding: 44px 40px;
-    gap: 16px;
   }
 
   .divTitolDubtes {
@@ -193,7 +195,6 @@
   }
 
   .Titols h1 {
-    font-size: 24px;
     text-align: center;
   }
 

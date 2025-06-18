@@ -33,7 +33,7 @@ function Comentaris({ articleId }) {
         <div key={c.id} className="comentari" style={{ marginLeft: nivell * 20 }}>
           <div className='divTitolResposta'>
             <p>
-                <strong className='titolPComentari'>
+                <strong className='nomUsuariComentari'>
                 {c.Perfils?.nom + " " + c.Perfils?.cognom || 'Anònim'}
                 </strong> - {new Date(c.created_at).toLocaleString()}
             </p>

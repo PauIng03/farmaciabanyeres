@@ -3,6 +3,7 @@ import { supabase } from './lib/supabaseClient';
 import emailjs from 'emailjs-com';
 import Maps from "./Maps";
 import "./Estils/Contacte.css"
+import Modal from './Modal';
 
 function Contacte() {
   const form = useRef();
@@ -191,7 +192,7 @@ function Contacte() {
 
 
         <button className='BotoFormContacte' type="submit">Enviar</button>
-        {enviat && <p className="missatgeEnviat">Missatge enviat correctament!</p>}
+        {enviat && <Modal missatge="Missatge enviat correctament!" onClose={() => setEnviat(false)} />}
       </form>
         <div ref={contenidorLilaRef} className='ContenidorLila'></div>
         <div className='divMaps'>

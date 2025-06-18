@@ -5,7 +5,7 @@ import emailjs from '@emailjs/browser';
 import "./Estils/DemanarCita.css";
 import Modal from './Modal';
 
-function DemanarCita() {
+function Encarrecs() {
   const { id } = useParams();
   const location = useLocation();
   const [taula, setTaula] = useState(null);
@@ -25,27 +25,21 @@ function DemanarCita() {
     telefon: '',
     missatge: '',
     servei: '',
-    contacte: '',
-    horari: '',
   });
 
   const form = useRef();
 
   useEffect(() => {
-    if (location.pathname.startsWith('/assessorament/')) {
-      setTaula('Assessoraments');
-      setfrase('Assesorament escollit');
-      setEstilBoto('BotoCitaAssessorament');
-      setEstilMargeForm('llistaDemanarCitaAssessorament');
-    } else if (location.pathname.startsWith('/serveis/')) {
-      setTaula('Serveis');
-      setfrase('Servei escollit');
-      setEstilBoto('BotoCitaServeis');
-      setEstilMargeForm('llistaDemanarCitaServeis');
+    if (location.pathname.startsWith('/promocions/')) {
+        setTaula('Promocions');
+        setfrase('Promoció escollida');
+        setEstilBoto('BotoCitaServeis');
+        setEstilMargeForm('llistaDemanarCitaServeis');
     } else {
-      setTaula(null);
-      setfrase(null);
-      setEstilBoto(null);
+        setTaula(null);
+        setfrase(null);
+        setEstilBoto(null);
+        setEstilMargeForm(null);
     }
   }, [location.pathname]);
 
@@ -141,10 +135,6 @@ function DemanarCita() {
 
   if (!formData.telefon || String(formData.telefon).trim() === '') newErrors.telefon = "El telèfon és obligatori.";
 
-  if (!formData.contacte || String(formData.contacte).trim() === '') newErrors.contacte = "Escollir una via de contacte és obligatori.";
-
-  if (!formData.horari || String(formData.horari).trim() === '') newErrors.horari = "Escollir una franja horaria és obligatori.";
-
   return newErrors;
 };
 
@@ -174,7 +164,7 @@ function DemanarCita() {
     .then(() => {
       setEnviat(true);
       form.current.reset();
-      setFormData({ nom: '', email: '', telefon: '', missatge: '', servei: '', contacte: '', horari: '' });
+      setFormData({ nom: '', email: '', telefon: '', missatge: '', servei: '' });
     })
     .catch((error) => {
       console.error("Error en l'enviament:", error.text);
@@ -191,7 +181,7 @@ function DemanarCita() {
       <div className="divSuperiorDemanarCita">
         <h3 className="titolDetall">Demanar cita</h3>
         <p>
-          Omple el formulari per demanar cita. Estarem encantats d’ajudar-te! Et
+          Omple el formulari per encarregar el producte. Estarem encantats d’ajudar-te! Et
           respondrem en 24-48h! El nostre horari d’atenció al client és de 8:00h a
           20:00h de dilluns a divendres i de 9:00h a 14:00h els dissabtes.
         </p>
@@ -250,38 +240,6 @@ function DemanarCita() {
           {errors.telefon && <span className="error">{errors.telefon}</span>}
         </div>
 
-        <div className="desplegableDemanarCita">
-          <p className="textInput">Via de contacte desitjada</p>
-          <select
-            className={estilMargeForm}
-            name="contacte"
-            value={formData.contacte}
-            onChange={handleChange}
-          >
-            <option value="">-- Selecciona una opció --</option>
-            <option value="Telèfon">Telèfon</option>
-            <option value="Email">Email</option>
-            <option value="WhatsApp">WhatsApp</option>
-          </select>
-          {errors.contacte && <span className="error">{errors.contacte}</span>}
-        </div>
-
-        <div className="desplegableDemanarCita">
-          <p className="textInput">Horari preferent</p>
-          <select
-            className={estilMargeForm}
-            name="horari"
-            value={formData.horari}
-            onChange={handleChange}
-            >
-            <option value="">-- Selecciona una franja --</option>
-            <option value="Dilluns a Divendres - Matí">Dilluns a Divendres - Matí</option>
-            <option value="Dilluns a Divendres - Tarda">Dilluns a Divendres - Tarda</option>
-            <option value="Dissabtes - Matí">Dissabtes - Matí</option>
-            </select>
-            {errors.horari && <span className="error">{errors.horari}</span>}
-        </div>
-
         <div className="divsForm">
           <p className="textInput">Missatge</p>
           <textarea
@@ -292,14 +250,14 @@ function DemanarCita() {
           />
         </div>
         <input type="hidden" name="servei_nom" value={serveiSeleccionat?.Nom || ''} />
-
+        
         <input type="text" name="website" autoComplete="off" style={{ display: 'none' }} tabIndex="-1" />
 
         <button
           className={estilBoto}
           type="submit"
         >
-          Demana cita
+          Tramita l'encàrrec
         </button>
 
         {enviat && <Modal missatge="Missatge enviat correctament!" onClose={() => setEnviat(false)} />}
@@ -308,4 +266,4 @@ function DemanarCita() {
   );
 }
 
-export default DemanarCita;
+export default Encarrecs;

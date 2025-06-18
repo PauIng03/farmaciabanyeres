@@ -2,10 +2,13 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { supabase } from './lib/supabaseClient';
 import './Estils/ArticleDetall.css';
+import { useNavigate } from 'react-router-dom';
 
 function ArticleDetall() {
-  const { id } = useParams(); // l'id que ve de la URL
+  const { id } = useParams();
   const [article, setArticle] = useState(null);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     async function fetchArticle() {
@@ -15,12 +18,14 @@ function ArticleDetall() {
         .eq('id', id)
         .single();
 
-      if (error) console.error('Error carregant article:', error.message);
+      if (error || !data) {
+        navigate('/blog');
+      } 
       else setArticle(data);
     }
 
     fetchArticle();
-  }, [id]);
+  }, [id, navigate]);
 
   function formatData(dataString) {
     const data = new Date(dataString);

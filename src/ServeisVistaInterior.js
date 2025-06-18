@@ -3,12 +3,15 @@ import { useParams } from 'react-router-dom';
 import { supabase } from './lib/supabaseClient';
 import './Estils/ServeisVistaInterior.css';
 import Desplegable from './Desplegable';
+import { useNavigate } from 'react-router-dom';
 
 import PanellDemanarCita from './PanellDemanarCita';
 
 function ServeisVistaInterior() {
   const { id } = useParams();
   const [servei, setServei] = useState(null);
+  
+  const navigate = useNavigate();
 
   useEffect(() => {
     async function fetchServei() {
@@ -18,15 +21,15 @@ function ServeisVistaInterior() {
         .eq('id', id)
         .single();
 
-      if (error) {
-        console.error('Error carregant el servei:', error.message);
+      if (error || !data) {
+        navigate('/serveis');
       } else {
         setServei(data);
       }
     }
 
     fetchServei();
-  }, [id]);
+  }, [id, navigate]);
 
   if (!servei) return <p>Carregant...</p>;
 

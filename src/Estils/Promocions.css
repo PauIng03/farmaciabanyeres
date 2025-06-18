@@ -1,0 +1,72 @@
+.Promocions{
+    height: auto;
+    width: -webkit-fill-available;
+    padding: 44px 128px;
+    gap: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.ImatgePromocio{
+    width: 250px;
+    height: 250px;
+    border-radius: 15px;
+}
+.CartaPromocions{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: min-content;
+    min-width: 260px;
+}
+.CartesPromocions{
+    display: flex;
+    flex-direction: row;
+    gap: 60px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.TitolPromocio{
+    font-weight: bold;
+    font-family: 'Quicksand';
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+.TextPromocio{
+    font-family: 'Quicksand';
+    font-weight: normal;
+}
+.PromocionsDetall {
+    height: auto;
+    width: -webkit-fill-available;
+    padding: 44px 128px;
+    gap: 40px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.ImatgePromocioGran{
+    width: 300px;
+    height: 300px;
+    border-radius: 15px;
+}
+.Subtitol{
+    font-family: 'Quicksand';
+    font-weight: bolder;
+    margin-bottom: 8px;
+}
+
+@media screen and (max-width: 1049px) {
+    .Promocions {
+        padding: 44px 40px;
+    }
+    .PromocionsDetall {
+        padding: 44px 40px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .PromocionsDetall {
+        flex-direction: column;
+    }
+}
