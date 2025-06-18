@@ -72,7 +72,7 @@
     font-size: 20px;
 }
 .textBotonsPanellDemanarCita{
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 600;
     font-family: quicksand;
 }
@@ -109,6 +109,9 @@
 }
 .botoWhatsAppDemanarCita{
     margin-top: 0px;
+}
+.textSuperiorPanell{
+    font-size: 18px;
 }
 
 @media screen and (min-width:1050px) and (max-width: 1080px) {

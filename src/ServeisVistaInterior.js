@@ -78,7 +78,7 @@ function ServeisVistaInterior() {
 
       <div className="divDubtes">
         <div className="divTitolDubtes">
-          <h3 className='titolInfo'>Dubtes sobre el servei</h3>
+          <h2 className='titolInfo'>Dubtes sobre el servei</h2>
           <div className="underline"></div>
         </div>
 

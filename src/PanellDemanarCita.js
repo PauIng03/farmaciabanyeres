@@ -19,7 +19,7 @@ function PanellDemanarCita({ id, tipus }) {
       {tipus === 'assessorament' && obert && (
         <div className="panellDemanarCitaAssessorament">
           <div className="capcaleraDemanarCitaAssessorament">
-            <span>Com vols demanar cita?</span>
+            <span className='textSuperiorPanell'>Com vols demanar cita?</span>
             <button className='creuBotoFlotantDemanarCitaAssessorament' onClick={() => setObert(false)}>✖</button>
           </div>
           <div className="cos">
@@ -75,7 +75,7 @@ function PanellDemanarCita({ id, tipus }) {
       {tipus === 'serveis' && obert && (
         <div className="panellDemanarCitaServeis">
           <div className="capcaleraDemanarCita">
-            <span>Com vols demanar cita?</span>
+            <span className='textSuperiorPanell'>Com vols demanar cita?</span>
             <button className='creuBotoFlotantDemanarCita ' onClick={() => setObert(false)}>✖</button>
           </div>
           <div className="cos">
@@ -116,7 +116,7 @@ function PanellDemanarCita({ id, tipus }) {
       {tipus === 'promocions' && obert && (
         <div className="panellDemanarCitaServeis">
           <div className="capcaleraDemanarCita">
-            <span>Encarregar-la</span>
+            <span className='textSuperiorPanell'>Encarregar-la</span>
             <button className='creuBotoFlotantDemanarCita ' onClick={() => setObert(false)}>✖</button>
           </div>
           <div className="cos">

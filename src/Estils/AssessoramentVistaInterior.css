@@ -126,6 +126,7 @@
 
 .resposta {
   margin-top: 12px;
+  margin-bottom: 12px;
   white-space: pre-wrap;
 }
 @media screen and (max-width: 1049px){

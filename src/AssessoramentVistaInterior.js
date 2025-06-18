@@ -78,7 +78,7 @@ function AssessoramentVistaInterior() {
 
       <div className="divDubtes">
         <div className="divTitolDubtes">
-          <h3 className='titolInfo'>Dubtes sobre l'assessorament</h3>
+          <h2 className='titolInfo'>Dubtes sobre l'assessorament</h2>
           <div className="underline"></div>
         </div>
 
