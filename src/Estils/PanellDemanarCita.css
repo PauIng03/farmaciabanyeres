@@ -112,6 +112,7 @@
 }
 .textSuperiorPanell{
     font-size: 18px;
+    font-family: 'Quicksand';
 }
 
 @media screen and (min-width:1050px) and (max-width: 1080px) {
