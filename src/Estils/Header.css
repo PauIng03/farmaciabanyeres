@@ -146,7 +146,6 @@
 }
 
 
-
 @media (max-width: 1250px) and (min-width: 1050px) {
   .header {
     padding: 24px 40px;
@@ -203,6 +202,12 @@
   color: #a60066;
   cursor: pointer;
   display: flex;
+  }
+  .nav-item{
+    font-size: 18px;
+  }
+  .nav-item.active{
+    font-size: 18px;
   }
 }
 

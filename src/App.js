@@ -27,26 +27,26 @@ function App() {
     <BrowserRouter className="inici-desktop-1">
       <Header />
       <div className="ContingutApp">
-      <Routes>
-        <Route path="/" element={<Inici />} />
-        <Route path="/qui-som" element={<QuiSom />} />
-        <Route path="/serveis" element={<Serveis />} />
-        <Route path='/serveis/:id' element={<ServeisVistaInterior/>}></Route>
-        <Route path='/serveis/:id/demanar-cita' element={<DemanarCita/>}></Route>
-        <Route path="/blog" element={<Blog />} />
-        <Route path="/blog/:id" element={<ArticleIndividual />} />
-        <Route path="/promocions" element={<Promocions />} />
-        <Route path="/promocions/:id" element={<PromocioDetall />} />
-        <Route path="/promocions/:id/encarrec" element={<Encarrecs />} />
-        <Route path="/assessorament" element={<Assessorament />} />
-        <Route path='/assessorament/:id' element={<AssessoramentVistaInterior/>}></Route>
-        <Route path='/assessorament/:id/demanar-cita' element={<DemanarCita/>}></Route>
-        <Route path="/contacte" element={<Contacte />} />
-        <Route path='/inicisessio' element={<IniciSessio />}></Route>
-        <Route path='/inicisessio/oblidatcontrassenya' element={<OblidatContrassenya />}></Route>
-        <Route path='/registre' element={<Registre />}></Route>
-        <Route path='/usuari' element={<PerfilUsuari />}></Route>
-      </Routes>
+        <Routes>
+          <Route path="/" element={<Inici />} />
+          <Route path="/qui-som" element={<QuiSom />} />
+          <Route path="/serveis" element={<Serveis />} />
+          <Route path='/serveis/:id' element={<ServeisVistaInterior/>}></Route>
+          <Route path='/serveis/:id/demanar-cita' element={<DemanarCita/>}></Route>
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:id" element={<ArticleIndividual />} />
+          <Route path="/promocions" element={<Promocions />} />
+          <Route path="/promocions/:id" element={<PromocioDetall />} />
+          <Route path="/promocions/:id/encarrec" element={<Encarrecs />} />
+          <Route path="/assessorament" element={<Assessorament />} />
+          <Route path='/assessorament/:id' element={<AssessoramentVistaInterior/>}></Route>
+          <Route path='/assessorament/:id/demanar-cita' element={<DemanarCita/>}></Route>
+          <Route path="/contacte" element={<Contacte />} />
+          <Route path='/inicisessio' element={<IniciSessio />}></Route>
+          <Route path='/inicisessio/oblidatcontrassenya' element={<OblidatContrassenya />}></Route>
+          <Route path='/registre' element={<Registre />}></Route>
+          <Route path='/usuari' element={<PerfilUsuari />}></Route>
+        </Routes>
       </div>
       <BotoFlotant />
       <Footer />

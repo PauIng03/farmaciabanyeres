@@ -29,7 +29,7 @@ function CtaFlotant() {
         {mostrarTooltip && (
           <div className="ctaMissatge" onClick={handleMissatgeClick}>
             <span className="ctaTextMissatge">
-              Promocions especials per a l'al·lèrgia?<br />
+              Promocions especials per l'estiu<br />
               <strong>Descobreix-les!</strong>
             </span>
             <button className="creuCtaFlotant" onClick={handleTancar}>✖</button>

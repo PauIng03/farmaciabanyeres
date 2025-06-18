@@ -97,7 +97,7 @@
     font-size: 32px;
 }
 .titolArticle.titolArticlePetit{
-    font-size: 20px;
+    font-size: 24px;
 }
 .articles.articlesRecomanats{
     align-items: flex-start;
@@ -106,7 +106,7 @@
 
 @media (max-width: 768px) {
   .articles {
-    padding: 0 40px;
+    padding: 0 24px;
   }
 
   .articlesBlog {

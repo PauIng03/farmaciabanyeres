@@ -27,3 +27,10 @@
     padding: 8px;
     font-family: quicksand;
 }
+
+@media screen and (max-width: 1049px) {
+    .ctaMissatge{
+        top: 110px;
+        left: 15px;
+    }
+}

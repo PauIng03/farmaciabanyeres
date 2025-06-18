@@ -10,6 +10,7 @@
 .titolComentaris{
     margin: 0px;
     font-family: 'Quicksand';
+    font-size: 24px;
 }
 .divFormulariComentari{
     display: flex;
@@ -67,7 +68,6 @@
     padding: 40px 40px;
     width: 100%;
     box-sizing: border-box;
-    gap: 16px;
   }
 
   .formulariComentari {
@@ -77,18 +77,8 @@
 
   .textareaComentaris {
     width: 100%;
-    font-size: 14px;
+    font-size: 16px;
     min-height: 100px;
-  }
-
-  .comentari {
-    margin-left: 0 !important; /* eliminem la sangria horitzontal a mòbil */
-    gap: 12px;
-  }
-
-  /* Sangria segons nivell, però amb més control i menys marge */
-  .comentari[style] {
-    margin-left: 12px !important; /* opcional: poc marge per les respostes */
   }
 
   .divTitolResposta {
@@ -101,10 +91,10 @@
   }
 
   .titolPComentari {
-    font-size: 16px;
+    font-size: 18px;
   }
 
   .missatgeEnviat, .error {
-    font-size: 14px;
+    font-size: 16px;
   }
 }
