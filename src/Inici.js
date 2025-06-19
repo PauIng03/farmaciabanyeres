@@ -4,6 +4,7 @@ import './Estils/Inici.css';
 import DivQuiSom from './DivQuiSom';
 import LlistatServeis from './LlistatServeis';
 import ArticlesBlog from './ArticlesBlog';
+import Promocions from './Promocions';
 import CtaFlotant from './CtaFlotant';
 
 function Inici() {
@@ -38,6 +39,7 @@ function Inici() {
           </div>
         </div>
       </section>
+      <Promocions></Promocions>
       <CtaFlotant/>
     </div>
   );

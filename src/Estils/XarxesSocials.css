@@ -56,7 +56,6 @@
   margin-top: 0;
 }
 
-/* Per ocultar visualment però accessible a lectors de pantalla */
 .sr-only {
   position: absolute;
   width: 1px;
@@ -70,7 +69,6 @@
 }
 
 
-/* Només es mostra en mode responsive */
 @media screen and (min-width: 1049px) {
   .social-floating {
     display: none;
