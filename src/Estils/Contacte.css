@@ -183,5 +183,6 @@ textarea{
     }
     .underline{
         color: #ffffff;
+        outline: 1px solid #ffffff;
     }
 }
