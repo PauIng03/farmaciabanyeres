@@ -179,7 +179,7 @@ function Encarrecs() {
   return (
     <div className='demanarCita'>
       <div className="divSuperiorDemanarCita">
-        <h3 className="titolDetall">Demanar cita</h3>
+        <h3 className="titolDetall">Fer un encàrrec</h3>
         <p>
           Omple el formulari per encarregar el producte. Estarem encantats d’ajudar-te! Et
           respondrem en 24-48h! El nostre horari d’atenció al client és de 8:00h a

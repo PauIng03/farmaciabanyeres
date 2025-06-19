@@ -52,7 +52,7 @@ function Comentaris({ articleId }) {
   return (
     <div className="comentaris">
       <div className='Titols'>
-        <h3 className='titolComentaris'>Comentaris</h3>
+        <h2 className='titolComentaris'>Comentaris</h2>
         <div className="underline blanc"></div>
       </div>
       {comentaris.length === 0 ? (
