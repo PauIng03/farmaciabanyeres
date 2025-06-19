@@ -2,7 +2,7 @@
 <html lang="ca">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/Logo.png" />
+    <link rel="icon" href="%PUBLIC_URL%/Logo.webp" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#ffffff" />
 
@@ -15,15 +15,27 @@
     <!-- OG (Open Graph) per compartir a xarxes -->
     <meta property="og:title" content="Farmàcia Banyeres" />
     <meta property="og:description" content="Atenció farmacèutica propera i serveis de salut a Banyeres del Penedès." />
-    <meta property="og:image" content="https://farmaciabanyeres.com/logo.png" />
+    <meta property="og:image" content="https://farmaciabanyeres.com/logo.webp" />
     <meta property="og:url" content="https://farmaciabanyeres.com" />
     <meta property="og:type" content="website" />
 
     <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Arimo&family=Quicksand:wght@400;600&display=swap" rel="stylesheet" />
 
+    <!-- Connexions anticipades -->
+    <link rel="preconnect" href="https://maps.googleapis.com" />
+    <link rel="preconnect" href="https://maps.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://atfkoregabmvkwjeearl.supabase.co" crossorigin />
+
+    <!-- Per navegadors antics -->
+    <link rel="dns-prefetch" href="https://maps.googleapis.com">
+    <link rel="dns-prefetch" href="https://maps.gstatic.com">
+    <link rel="dns-prefetch" href="https://atfkoregabmvkwjeearl.supabase.co">
+
     <!-- ICONES -->
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/Logo.png" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/Logo.webp" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 
     <!-- SCHEMA.ORG JSON-LD -->
@@ -32,7 +44,7 @@
       "@context": "https://schema.org",
       "@type": "Pharmacy",
       "name": "Farmàcia Banyeres",
-      "image": "https://farmaciabanyeres.com/logo.png",
+      "image": "https://farmaciabanyeres.com/logo.webp",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Plaça Onze de Setembre, s/n",

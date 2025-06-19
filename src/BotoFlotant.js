@@ -32,7 +32,7 @@ function BotoFlotant() {
       {obert && (
         <div className="panell-missatgeria">
           <div className="capcalera">
-            <div className='divImatgeLogo'><img className='imatgeLogo' src='/Logo.png' alt='logo farmàcia'></img></div>
+            <div className='divImatgeLogo'><img className='imatgeLogo' src='/Logo.webp' alt='logo farmàcia'></img></div>
                 <span className='textSuperiorPanell'>Farmàcia Banyeres</span>
                 <button className='creuBotoFlotant' onClick={() => setObert(false)}>✖</button>
             </div>

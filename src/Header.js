@@ -80,7 +80,7 @@ function Header() {
       className="logo-link"
       aria-label="Inici - Farmàcia Banyeres"
     >
-      <img className="logo" src="/Logo.png" alt="Logotip de Farmàcia Banyeres" />
+      <img className="logo" src="/Logo.webp" alt="Logotip de Farmàcia Banyeres" />
     </Link>
 
       {/* Accions mòbils */}
