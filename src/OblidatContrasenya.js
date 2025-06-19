@@ -3,7 +3,7 @@ import { supabase } from './lib/supabaseClient';
 import { Link } from 'react-router-dom';
 import "./Estils/Sessio.css"
 
-function OblidatContrassenya() {
+function Oblidatcontrasenya() {
   const [email, setEmail] = useState('');
   const [error, setError] = useState('');
   const [enviat, setEnviat] = useState(false);
@@ -63,4 +63,4 @@ function OblidatContrassenya() {
   );
 }
 
-export default OblidatContrassenya;
+export default Oblidatcontrasenya;

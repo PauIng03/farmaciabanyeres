@@ -4,22 +4,20 @@ import { Link, useNavigate } from 'react-router-dom';
 import "./Estils/Sessio.css"
 
 function IniciSessio() {
-  const [formData, setFormData] = useState({ email: '', contrassenya: '' });
+  const [formData, setFormData] = useState({ email: '', contrasenya: '' });
   const [errors, setErrors] = useState({});
   const [enviat, setEnviat] = useState(false);
   const navigate = useNavigate();
 
-  // Funció per gestionar el canvi en inputs
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
     setErrors({ ...errors, [e.target.name]: '', general: '' }); 
   };
 
-  // Funció per validar el formulari
   const validate = () => {
     const newErrors = {};
     if (!formData.email) newErrors.email = "Introdueix un correu vàlid";
-    if (!formData.contrassenya) newErrors.contrassenya = "Introdueix la contrassenya";
+    if (!formData.contrasenya) newErrors.contrasenya = "Introdueix la contrasenya";
     return newErrors;
   };
 
@@ -33,7 +31,7 @@ function IniciSessio() {
 
     const { data, error } = await supabase.auth.signInWithPassword({
         email: formData.email,
-        password: formData.contrassenya,
+        password: formData.contrasenya,
     });
 
     if (error) {
@@ -79,15 +77,15 @@ function IniciSessio() {
         </div>
 
         <div className="divsForm">
-          <p className="textInput">Contrassenya</p>
+          <p className="textInput">Contrasenya</p>
           <input
             type="password"
-            name="contrassenya"
-            placeholder="Contrassenya"
-            value={formData.contrassenya}
+            name="contrasenya"
+            placeholder="Contrasenya"
+            value={formData.contrasenya}
             onChange={handleChange}
           />
-          {errors.contrassenya && <span className="error">{errors.contrassenya}</span>}
+          {errors.contrasenya && <span className="error">{errors.contrasenya}</span>}
         </div>
 
         {errors.general && <span className="error">{errors.general}</span>}
@@ -102,8 +100,8 @@ function IniciSessio() {
             Encara no tens compte? <Link className='enllaços' to="/registre">Registra't</Link>
         </p>
         <p>
-        <Link to="/inicisessio/oblidatcontrassenya" className='enllaços'>
-            Has oblidat la contrassenya?
+        <Link to="/inicisessio/oblidatcontrasenya" className='enllaços'>
+            Has oblidat la contrasenya?
         </Link>
         </p>
     </div>

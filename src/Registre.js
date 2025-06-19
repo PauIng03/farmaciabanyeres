@@ -6,7 +6,7 @@ import "./Estils/Sessio.css"
 function Registre() {
   const [formData, setFormData] = useState({
     email: '',
-    contrassenya: '',
+    contrasenya: '',
     nom: '',
     cognom: '',
     telefon: '',
@@ -24,7 +24,7 @@ function Registre() {
   const validate = () => {
     const newErrors = {};
     if (!formData.email) newErrors.email = "Introdueix un correu vàlid";
-    if (!formData.contrassenya) newErrors.contrassenya = "Introdueix una contrasenya";
+    if (!formData.contrasenya) newErrors.contrasenya = "Introdueix una contrasenya";
     if (!formData.nom) newErrors.nom = "Introdueix el teu nom";
     if (!formData.cognom) newErrors.cognom = "Introdueix el teu cognom";
     if (!formData.telefon) newErrors.telefon = "Introdueix el teu telèfon";
@@ -41,7 +41,7 @@ function Registre() {
 
     const { data: signUpData, error: signUpError } = await supabase.auth.signUp({
       email: formData.email,
-      password: formData.contrassenya,
+      password: formData.contrasenya,
     });
 
     if (signUpError) {
@@ -96,12 +96,12 @@ function Registre() {
           <p className="textInput">Contrasenya</p>
           <input
             type="password"
-            name="contrassenya"
+            name="contrasenya"
             placeholder="Contrasenya"
-            value={formData.contrassenya}
+            value={formData.contrasenya}
             onChange={handleChange}
           />
-          {errors.contrassenya && <span className="error">{errors.contrassenya}</span>}
+          {errors.contrasenya && <span className="error">{errors.contrasenya}</span>}
         </div>
 
         <div className="divsForm">
