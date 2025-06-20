@@ -121,7 +121,7 @@ function Contacte() {
                     <div className='divTitolInfo'>
                         <h3 ref={volemSaberRef} className='subtitol'>Consultes, Idees, Suggeriments</h3>
                         <h2 className='h2Contacte VolemSaberDeTu'>Volem saber de tu</h2>
-                        <div className="underline"></div>
+                        <div className="underline underlinecontacte"></div>
                     </div>
                     <div className='divInfo'>
                         <p className='titolsNegreta'>Farmàcia Banyeres</p>

@@ -57,6 +57,13 @@ p{
     gap: 16px;
     width: 475px;
 }
+.CartaAltresProgrames{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 475px;
+    align-items: center;
+}
 .underline {
   height: 0;
   align-self: stretch;
@@ -116,6 +123,13 @@ p{
 
   .CartaAssessoraments {
     flex-direction: column;
+    width: 100%;
+    max-width: 360px;
+    gap: 12px;
+    align-items: center;
+  }
+
+  .CartaAltresProgrames{
     width: 100%;
     max-width: 360px;
     gap: 12px;
