@@ -6,7 +6,7 @@ function Assesorament() {
   return (
     <div>
       <img src="imatges/carrussel-banner-27.png" className="carrussel-banner-27" alt="carrussel-banner" />
-      <LlistatAssesoraments titol="Assesorament" mode="complet" />
+      <LlistatAssesoraments titol="Programes" mode="complet" />
     </div>
   );
 }

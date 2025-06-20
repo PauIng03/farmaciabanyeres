@@ -112,7 +112,7 @@ function Header() {
           { to: '/', label: 'Inici' },
           { to: '/qui-som', label: 'Qui som?' },
           { to: '/serveis', label: 'Serveis' },
-          { to: '/assessorament', label: 'Assessorament' },
+          { to: '/programes', label: 'Programes' },
           { to: '/blog', label: 'Blog' },
           { to: '/promocions', label: 'Promocions' },
           { to: '/contacte', label: 'Contacte' },

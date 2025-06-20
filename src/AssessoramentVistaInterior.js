@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { supabase } from './lib/supabaseClient';
 import './Estils/AssessoramentVistaInterior.css';
-import Desplegable from './Desplegable';
 import PanellDemanarCita from './PanellDemanarCita';
 import { useNavigate } from 'react-router-dom';
 
@@ -46,7 +45,7 @@ function AssessoramentVistaInterior() {
             <div className="underline blanc"></div>
           </div>
           <p className="Resum resumAssessorament">{assessorament.Resum}</p>
-          <PanellDemanarCita id={assessorament.id} tipus="assessorament" />
+          <PanellDemanarCita id={assessorament.id} tipus="programes" />
         </div>
       </div>
 
@@ -65,25 +64,14 @@ function AssessoramentVistaInterior() {
           <p className='textDetall'>{assessorament.Professionals}</p>
         </div>
 
-        <div className="blocText">
-          <h3 className='titolDetall'>Cost</h3>
-          <p className='textDetall'>{assessorament.Cost}</p>
-        </div>
-
-        <div className="blocText">
-          <h3 className='titolDetall'>Temps estimat</h3>
-          <p className='textDetall'>{assessorament.TempsEstimat}</p>
-        </div>
       </div>
 
       <div className="divDubtes">
         <div className="divTitolDubtes">
-          <h2 className='titolInfo'>Dubtes sobre l'assessorament</h2>
-          <div className="underline"></div>
+          <h2 className='titolInfo'>Tens dubtes?</h2>
+          <div className="underline underlineProgrames"></div>
         </div>
-
-        <Desplegable pregunta="Quina és la modalitat de l'assessorament?" resposta={assessorament.Modalitat} />
-        <Desplegable pregunta="Qui es pot beneficiar d'aquest assessorament?" resposta={assessorament.Beneficiaris} />
+          <button className='BotoRosa botoProgrames' onClick={() => navigate('/contacte')}>Contacta amb nosaltres!</button>
       </div>
     </div>
   );

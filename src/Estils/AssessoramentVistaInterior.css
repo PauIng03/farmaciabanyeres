@@ -129,10 +129,22 @@
   margin-bottom: 12px;
   white-space: pre-wrap;
 }
+
+.botoProgrames{
+  margin-top: 0px;
+  width: -webkit-fill-available;
+}
+
 @media screen and (max-width: 1049px){
   .imatgeAssessorament{
     height: -webkit-fill-available;
   }
+}
+
+@media screen and (max-width: 950px) {
+    .underlineProgrames {
+        outline: 1px solid #a60066;
+    }
 }
 
 @media screen and (max-width: 850px){

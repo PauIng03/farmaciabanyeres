@@ -79,7 +79,7 @@ function ServeisVistaInterior() {
       <div className="divDubtes">
         <div className="divTitolDubtes">
           <h2 className='titolInfo'>Dubtes sobre el servei</h2>
-          <div className="underline"></div>
+          <div className="underline underlineProgrames"></div>
         </div>
 
         <Desplegable pregunta="Quina és la modalitat del servei?" resposta={servei.Modalitat} />

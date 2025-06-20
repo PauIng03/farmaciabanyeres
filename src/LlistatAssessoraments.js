@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { supabase } from './lib/supabaseClient';
 
-function LlistatAssessoraments({ assessoramentsClass="Assessoraments", underlineClass="underline", titol = "Assessoraments", limit = null, mode = "complet" }) {
+function LlistatAssessoraments({ assessoramentsClass="Assessoraments", underlineClass="underline", titol = "Programes", limit = null, mode = "complet" }) {
   const [assessoraments, setAssessoraments] = useState([]);
   const navigate = useNavigate();
 
@@ -42,7 +42,7 @@ function LlistatAssessoraments({ assessoramentsClass="Assessoraments", underline
                   <p className='nomAssessoraments'>{assessorament.Nom}</p>
                   <p className='Resum'>{assessorament.Resum}</p>
                 </div>
-                <button className='BotoRosa' onClick={() => navigate(`/assessorament/${assessorament.id}`)}>Veure'n més</button>
+                <button className='BotoRosa' onClick={() => navigate(`/programes/${assessorament.id}`)}>Veure'n més</button>
               </div>
             )}
           </div>

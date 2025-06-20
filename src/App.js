@@ -38,9 +38,9 @@ function App() {
           <Route path="/promocions" element={<Promocions />} />
           <Route path="/promocions/:id" element={<PromocioDetall />} />
           <Route path="/promocions/:id/encarrec" element={<Encarrecs />} />
-          <Route path="/assessorament" element={<Assessorament />} />
-          <Route path='/assessorament/:id' element={<AssessoramentVistaInterior/>}></Route>
-          <Route path='/assessorament/:id/demanar-cita' element={<DemanarCita/>}></Route>
+          <Route path="/programes" element={<Assessorament />} />
+          <Route path='/programes/:id' element={<AssessoramentVistaInterior/>}></Route>
+          <Route path='/programes/:id/demanar-cita' element={<DemanarCita/>}></Route>
           <Route path="/contacte" element={<Contacte />} />
           <Route path='/inicisessio' element={<IniciSessio />}></Route>
           <Route path='/inicisessio/oblidatContrasenya' element={<OblidatContrasenya />}></Route>

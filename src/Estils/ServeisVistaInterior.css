@@ -131,6 +131,13 @@
   }
 }
 
+@media screen and (max-width: 950px) {
+    .underlineProgrames {
+        outline: 1px solid #660066;
+    }
+}
+
+
 @media screen and (max-width: 850px){
   .divTitolResum {
     padding: 44px 40px;

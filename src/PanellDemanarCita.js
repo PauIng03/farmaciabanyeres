@@ -16,7 +16,7 @@ function PanellDemanarCita({ id, tipus }) {
     
     <div className='divBotoDemanarCita'>
 
-      {tipus === 'assessorament' && obert && (
+      {tipus === 'programes' && obert && (
         <div className="panellDemanarCitaAssessorament">
           <div className="capcaleraDemanarCitaAssessorament">
             <span className='textSuperiorPanell'>Com vols demanar cita?</span>
@@ -58,7 +58,7 @@ function PanellDemanarCita({ id, tipus }) {
         </div>
       )}
 
-      {(tipus === 'serveis' || tipus === 'assessorament') && (
+      {(tipus === 'serveis' || tipus === 'programes') && (
       <button className={`Boto botoBlanc BotoDemanarCita ${obert ? 'amagatMobil' : ''}`}
       onClick={handleClick}>
         Demanar cita

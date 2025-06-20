@@ -32,9 +32,9 @@ function DemanarCita() {
   const form = useRef();
 
   useEffect(() => {
-    if (location.pathname.startsWith('/assessorament/')) {
+    if (location.pathname.startsWith('/programes/')) {
       setTaula('Assessoraments');
-      setfrase('Assesorament escollit');
+      setfrase('Programa escollit');
       setEstilBoto('BotoCitaAssessorament');
       setEstilMargeForm('llistaDemanarCitaAssessorament');
     } else if (location.pathname.startsWith('/serveis/')) {

@@ -23,7 +23,7 @@ function Inici() {
       </section>
       <section className='divAssessorament'>
         <div className='Titols'>
-          <h1>Assessorament</h1>
+          <h1>Programes</h1>
           <div className='underlineBlanc'></div>
         </div>
         <div className='TextBotoAssessorament'>
@@ -34,7 +34,7 @@ function Inici() {
             Comptem amb un equip qualificat, competent, proper i de confiança que es forma de manera continuada per oferir la millor atenció.
           </p>
           <div className='BotonsAssessorament'>
-            <button className='Boto BotoBlanc' onClick={() => navigate("/Assessorament")}>Consulta'ls</button>
+            <button className='Boto BotoBlanc' onClick={() => navigate("/programes")}>Consulta'ls</button>
             <button className='Boto BotoVoraBlancaTransparent' onClick={() => navigate("/contacte")}>Contacta'ns</button>
           </div>
         </div>
