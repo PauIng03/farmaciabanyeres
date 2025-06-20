@@ -9,7 +9,7 @@ function Desplegable({ pregunta, resposta }) {
         <p className="pregunta">{pregunta}</p>
         <span className={`fletxa ${obert ? 'oberta' : ''}`}>▼</span>
       </div>
-      {obert && <p className="resposta">{resposta}</p>}
+      {obert && <p className="resposta" dangerouslySetInnerHTML={{ __html: resposta }} />}
     </div>
   );
 }
