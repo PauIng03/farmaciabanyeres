@@ -17,7 +17,7 @@ function LlistatServeis({ cartaServeisClass='CartaServeis', serveisClass="Servei
       if (error) {
         console.error('Error carregant serveis:', error.message);
       } else {
-          const serveisOrdenats = data.sort((a, b) => (a.Resum?.length || 0) - (b.Resum?.length || 0));
+          const serveisOrdenats = data.sort((a, b) => (b.Resum?.length || 0) - (a.Resum?.length || 0));
           setServeis(serveisOrdenats);
       }
     }
