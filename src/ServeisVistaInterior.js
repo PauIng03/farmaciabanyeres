@@ -52,10 +52,10 @@ function ServeisVistaInterior() {
 
       <div className='divInfoServei'>
         <div className="textInfo">
-          <h2 className='titolInfo'>En què consisteix?</h2>
+          <h2 className='titolInfo'>Què fem?</h2>
           <div className="underline"></div>
         </div>
-        <p className='textDetall'>{servei.Info}</p>
+        <p className='textDetall' dangerouslySetInnerHTML={{ __html: servei.Info }} />
       </div>
 
       <div className="detallContingut">
