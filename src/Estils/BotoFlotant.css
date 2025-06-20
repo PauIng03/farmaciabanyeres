@@ -82,6 +82,8 @@
     display: flex;
     justify-content: center;
     gap: 10px;
+    font-family: 'Quicksand';
+    align-items: center;
 }
 .creuBotoFlotant{
     background-color: #cf278f;
