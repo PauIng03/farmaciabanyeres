@@ -12,7 +12,8 @@ function QuiSom() {
       if (error) {
         console.error('Error carregant equip:', error.message);
       } else {
-        setEquip(data);
+        const EquipOrdenat = data.sort((a, b) => a.id - b.id);
+        setEquip(EquipOrdenat);
       }
     }
     fetchEquip();
