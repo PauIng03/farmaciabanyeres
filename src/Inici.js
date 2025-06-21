@@ -21,7 +21,7 @@ function Inici() {
       <section className='iniciBlog'>
         <ArticlesBlog underlineClass="underline" limit={3} showButton={true} showReadMore={false} />
       </section>
-      <section className='divAssessorament'>
+      <section className='divAssessorament inici'>
         <div className='Titols'>
           <h1>Programes</h1>
           <div className='underlineBlanc'></div>

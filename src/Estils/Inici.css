@@ -161,7 +161,7 @@ p{
 .iniciBlog{
   height: auto;
   width: -webkit-fill-available;
-  padding: 44px 0px;
+  padding: 44px 20px;
   gap: 40px;
   display: flex;
   flex-direction: column;
@@ -199,17 +199,6 @@ p{
     }
 }
 
-@media screen and (max-width: 768px) {
-  .QuiSom,
-  .Valors,
-  .Equip {
-    padding: 32px 40px;
-  }
-  .divServeis{
-    padding: 44px 40px;
-  }
-}
-
 @media screen and (max-width: 800px) {
   .BotonsAssessorament {
     gap: 10px;
@@ -225,6 +214,19 @@ p{
   }
 }
 
+@media screen and (max-width: 768px) {
+  .QuiSom,
+  .Valors,
+  .Equip {
+    padding: 32px 40px;
+  }
+  .divServeis{
+    padding: 44px 40px;
+  }
+  .inici{
+    padding: 44px 40px;
+  }
+}
 /* ========== GLOBAL (recomanat) ========== */
 * {
   box-sizing: border-box;
