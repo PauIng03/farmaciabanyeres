@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './Estils/Header.css';
 import { FaUser, FaPhoneAlt, FaInstagram, FaFacebookF, FaWhatsapp } from 'react-icons/fa';
 import { Link, useLocation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { supabase } from './lib/supabaseClient';
 import XarxesSocials from './XarxesSocials';
 
@@ -13,6 +14,8 @@ function Header() {
   const [perfil, setPerfil] = useState(null);
   const [visible, setVisible] = useState(true);
   const [menuObert, setMenuObert] = useState(false);
+
+  const navigate = useNavigate();
 
   const isActive = (to) => {
     if (to === '/') return currentPath === '/';
@@ -85,13 +88,16 @@ function Header() {
 
       {/* Accions mòbils */}
       <div className="iconaMenuHamburguesa">
-        <Link
-          to={user ? '/usuari' : '/inicisessio'}
+        <button
+          onClick={() => {
+            setMenuObert(false);
+            navigate(user ? '/usuari' : '/inicisessio');
+          }}
           className="usuari-responsive"
           aria-label={user ? `Perfil de ${perfil?.nom}` : 'Inicia sessió'}
         >
           <FaUser className="icon-header-responsive" />
-        </Link>
+        </button>
 
         <button
           className="menu-toggle"

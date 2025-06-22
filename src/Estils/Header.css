@@ -77,6 +77,12 @@
   gap: 8px;
 }
 
+.usuari-responsive{
+  background: none;
+  border: none;
+  padding: 0px;
+}
+
 .login-register {
   display: flex;
   align-items: center;
