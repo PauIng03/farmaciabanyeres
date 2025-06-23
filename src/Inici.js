@@ -12,7 +12,10 @@ function Inici() {
 
   return (
     <div>
-      <img src="imatges/carrussel-banner-27.png" className="carrussel-banner-27" alt="carrussel-banner" />
+      <div className='divBanner'>
+        <h1 className='titolBanner'>Farmàcia Banyeres, som la teva farmàcia</h1>
+        <img src="https://atfkoregabmvkwjeearl.supabase.co/storage/v1/object/public/imatges-header//Mostrador.avif" className="bannerCarrussel" alt="carrussel-banner-inici" />
+      </div>
       <DivQuiSom botoText="Coneixe'ns més!" botoRuta="/qui-som" />
       <section className='divServeis'>
        <LlistatServeis cartaServeisClass='CartaServeisInici' serveisClass='iniciServeis' underlineClass='underlineBlanc' titol="Serveis" limit={5} mode="compacte"></LlistatServeis>
