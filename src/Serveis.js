@@ -12,7 +12,7 @@ function Serveis() {
           <h1 className="titolBanner">Serveis</h1>
         </div>
       </div>
-      <LlistatServeis titol="Serveis" mode="complet" />
+      <LlistatServeis titol="Tots els serveis" mode="complet" />
     </div>
   );
 }

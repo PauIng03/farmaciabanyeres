@@ -4,8 +4,8 @@ import './Estils/Inici.css';
 import DivQuiSom from './DivQuiSom';
 import LlistatServeis from './LlistatServeis';
 import ArticlesBlog from './ArticlesBlog';
-import Promocions from './Promocions';
 import CtaFlotant from './CtaFlotant';
+import LlistatPromocions from './LlistatPromocions';
 
 function Inici() {
   const navigate = useNavigate();
@@ -27,7 +27,7 @@ function Inici() {
       <button className='Boto BotoVoraBlanca' onClick={() => navigate('/serveis')}>Veure'n més</button>
       </section>      
       <section className='iniciBlog'>
-        <ArticlesBlog underlineClass="underline" limit={3} showButton={true} showReadMore={false} />
+        <ArticlesBlog title = "Blog" underlineClass="underline" limit={3} showButton={true} showReadMore={false} />
       </section>
       <section className='divAssessorament inici'>
         <div className='Titols'>
@@ -47,7 +47,7 @@ function Inici() {
           </div>
         </div>
       </section>
-      <Promocions></Promocions>
+      <LlistatPromocions></LlistatPromocions>
       <CtaFlotant/>
     </div>
   );

@@ -5,7 +5,7 @@ import { supabase } from './lib/supabaseClient';
 import './Estils/Blog.css';
 
 function ArticlesBlog({
-  title = "Blog",
+  title = "Articles",
   underlineClass = "underline",
   limit = null,
   showButton = false,

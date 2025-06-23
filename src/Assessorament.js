@@ -10,10 +10,10 @@ function Assesorament() {
         <img src="https://atfkoregabmvkwjeearl.supabase.co/storage/v1/object/public/imatges-header//Mostrador.avif" alt="Imatge banner" className="imatgeBanner" />
         <div className="overlayNegre"></div>
         <div className="contingutBanner">
-          <h1 className="titolBanner">Programes</h1>
+          <h1 className="titolBanner">Programes sanitàris</h1>
         </div>
       </div>
-      <LlistatAssesoraments titol="Programes" mode="complet" />
+      <LlistatAssesoraments titol="Destacats" mode="complet" />
       <AltresProgrames titol="Altres programes" mode="complet" />
     </div>
   );

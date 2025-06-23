@@ -10,7 +10,7 @@ function Promocions() {
           <h1 className="titolBanner">Promocions</h1>
         </div>
       </div>
-    <LlistatPromocions></LlistatPromocions>
+    <LlistatPromocions titol="Destaquem"></LlistatPromocions>
     </div>
 
   );
