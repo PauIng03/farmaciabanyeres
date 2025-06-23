@@ -21,9 +21,14 @@ function QuiSom() {
 
   return (
     <div>
-      <img src="imatges/carrussel-banner-27.png" className="carrussel-banner-27" alt="carrussel-banner" />
+      <div className="banner">
+        <img src="https://atfkoregabmvkwjeearl.supabase.co/storage/v1/object/public/imatges-header//Mostrador.avif" alt="Imatge banner" className="imatgeBanner" />
+        <div className="overlayNegre"></div>
+        <div className="contingutBanner">
+          <h1 className="titolBanner">Qui Som?</h1>
+        </div>
+      </div>
       <DivQuiSom botoText="Contacta amb nosaltres!"botoRuta="/contacte" ></DivQuiSom>
-
       <div className="Valors">
         <div className='Titols'>
           <h1>Els nostres valors</h1>

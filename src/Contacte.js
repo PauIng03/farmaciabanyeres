@@ -110,7 +110,15 @@ function Contacte() {
     });
   };
 
-    return (
+  return (
+    <div>
+        <div className="banner">
+          <img src="https://atfkoregabmvkwjeearl.supabase.co/storage/v1/object/public/imatges-header//Mostrador.avif" alt="Imatge banner" className="imatgeBanner" />
+          <div className="overlayNegre"></div>
+          <div className="contingutBanner">
+            <h1 className="titolBanner">Contacte</h1>
+          </div>
+        </div>
         <div className='contacte'>
             <div className='Titols'>
                 <h1>Contacte</h1>
@@ -204,6 +212,7 @@ function Contacte() {
         </div>
       </div>
     </div>
+  </div>
   );
 }
 

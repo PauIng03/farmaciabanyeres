@@ -6,7 +6,13 @@ import AltresProgrames from './AltresProgrames';
 function Assesorament() {
   return (
     <div>
-      <img src="imatges/carrussel-banner-27.png" className="carrussel-banner-27" alt="carrussel-banner" />
+      <div className="banner">
+        <img src="https://atfkoregabmvkwjeearl.supabase.co/storage/v1/object/public/imatges-header//Mostrador.avif" alt="Imatge banner" className="imatgeBanner" />
+        <div className="overlayNegre"></div>
+        <div className="contingutBanner">
+          <h1 className="titolBanner">Programes</h1>
+        </div>
+      </div>
       <LlistatAssesoraments titol="Programes" mode="complet" />
       <AltresProgrames titol="Altres programes" mode="complet" />
     </div>

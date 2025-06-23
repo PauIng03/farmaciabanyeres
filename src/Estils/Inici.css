@@ -1,23 +1,59 @@
-.bannerCarrussel{
-  width: -webkit-fill-available;
-  height: 500px;
-  object-fit: cover;
-  opacity: 55%;
-}
-.divBanner{
-  background-color: black;
-  width: auto;
-  height: 500px;
+.banner {
+  position: relative;
+  height: 20vh;
+  overflow: hidden;
   display: flex;
   align-items: center;
-}
-.titolBanner{
-  padding: 0px;
-  margin: 0px;
-  font-family: Quicksand, sans-serif;
-  font-weight: 400;
+  justify-content: flex-start;
   color: white;
 }
+.bannerInici {
+  position: relative;
+  height: 60vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  color: white;
+}
+
+.imatgeBanner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.overlayNegre {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(77 18 83 / 75%);
+  z-index: 2;
+}
+
+.contingutBanner {
+  z-index: 3;
+  padding: 44px 128px;
+}
+
+.titolBanner {
+  font-size: 3rem;
+  font-family: 'Quicksand', sans-serif;
+  margin-bottom: 1rem;
+  font-weight: 400;
+}
+
+.subtitolBanner {
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
 .QuiSom{
   height: auto;
   width: -webkit-fill-available;
@@ -244,6 +280,9 @@ p{
     padding: 44px 40px;
   }
   .inici{
+    padding: 44px 40px;
+  }
+  .contingutBanner{
     padding: 44px 40px;
   }
 }
