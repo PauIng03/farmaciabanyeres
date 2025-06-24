@@ -35,7 +35,11 @@ function LlistatServeis({ cartaServeisClass='CartaServeis', serveisClass="Servei
         {serveis.map((servei) => (
           <div key={servei.id} className={cartaServeisClass}>
             <div className='IconoNom'>
-              <img className={esInici ? 'IconaCarta Blanca' : 'IconaCarta Negra'} src={servei.Icona || "https://placehold.co/600x200"} alt={servei.Nom}/>
+              <img
+                className={`${esInici ? 'IconaCarta Blanca' : 'IconaCarta Negra'} ${(servei.id === 11 || servei.id === 4) ? 'iconaSPD' : ''}`}
+                src={servei.Icona || "https://placehold.co/600x200"}
+                alt={servei.Nom}
+              />
               <p className={esInici ? 'nomServeisPetit' : 'nomInici'}>{servei.Nom}</p>
             </div>
 

@@ -108,7 +108,10 @@ p{
 .IconoNom{
     width: 155px;
 }
-
+.iconaSPD{
+  width: 80px;
+  height: 100px;
+}
 
 @media (max-width: 768px) {
   .Assessoraments {
@@ -140,7 +143,10 @@ p{
     width: 80px;
     height: 80px;
   }
-
+  .iconaSPD{
+    width: 65px;
+    height: 80px;
+  }
   .InfoFotoAssessoraments {
     width: 100%;
     padding: 0 8px;

@@ -90,7 +90,10 @@ p{
 .IconoNom{
     width: 155px;
 }
-
+.iconaSPD{
+  width: 80px;
+  height: 80px;
+}
 @media (max-width: 768px) {
   .Serveis {
     padding: 44px 40px;
@@ -113,6 +116,9 @@ p{
   .IconaCarta {
     width: 80px;
     height: 80px;
+  }
+  .iconaSPD{
+    width: 65px;
   }
 
   .InfoFotoServeis {
