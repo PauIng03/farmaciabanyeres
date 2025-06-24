@@ -163,7 +163,7 @@ p{
 }
 .divAssessorament {
   position: relative;
-  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwLFm53tEjkRFMJcgmwsX2o9n71lWJOVZ4qQ&s');
+  background-image: url('https://atfkoregabmvkwjeearl.supabase.co/storage/v1/object/public/imatges-header//Porta.avif');
   background-size: cover;
   background-position: center;
   width: -webkit-fill-available;
@@ -184,7 +184,7 @@ p{
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5); /* 0.5 = 50% opacitat negra */
+  background-color: rgb(77 18 83 / 75%);
   z-index: 1;
 }
 
