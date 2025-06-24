@@ -27,7 +27,7 @@ function Inici() {
       <button className='Boto BotoVoraBlanca' onClick={() => navigate('/serveis')}>Veure'n més</button>
       </section>      
       <section className='iniciBlog'>
-        <ArticlesBlog title = "Blog" underlineClass="underline" limit={3} showButton={true} showReadMore={false} />
+        <ArticlesBlog title = "Blog" underlineClass="underline" limit={3} showButton={true} showReadMore={false} articleindividual={"articleIndividualInici"} />
       </section>
       <section className='divAssessorament inici'>
         <div className='Titols'>

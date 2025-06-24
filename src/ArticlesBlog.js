@@ -13,6 +13,7 @@ function ArticlesBlog({
   excludeId = null,
   smallTitle = false,
   articlesRecomanats = false,
+  articleindividual = "articleIndividual"
 }) {
   const [articles, setArticles] = useState([]);
   const navigate = useNavigate();
@@ -66,7 +67,7 @@ function ArticlesBlog({
       <div className="articlesBlog">
         {articles.map((article) => (
           <div key={article.id} className='articleBoto'>
-            <div className='articleIndividual' onClick={() => navigate(`/blog/${article.id}`)}>
+            <div className={articleindividual} onClick={() => navigate(`/blog/${article.id}`)}>
               <div className='DivDataCategoria'>
                 <div className='data'>
                   {formatData(article.Data)}
@@ -89,7 +90,7 @@ function ArticlesBlog({
             </div>
 
             {showReadMore && (
-              <button className='Boto' onClick={() => navigate(`/blog/${article.id}`)}>Continua llegint</button>
+              <button className='BotoArticle' onClick={() => navigate(`/blog/${article.id}`)}>Continua llegint</button>
             )}
           </div>
         ))}

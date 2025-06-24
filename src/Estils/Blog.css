@@ -28,6 +28,17 @@
     background-image: none;
     background-color: black;
     color: white;
+    border-radius: 10px 10px 0px 0px;
+    padding: 16px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.articleIndividualInici{
+    background-image: none;
+    background-color: black;
+    color: white;
     border-radius: 10px;
     padding: 16px;
     height: 400px;
@@ -102,6 +113,20 @@
 .articles.articlesRecomanats{
     align-items: flex-start;
     width: -webkit-fill-available;
+}
+.BotoArticle{
+    width: -webkit-fill-available;
+    background-color: #6e0a78;
+    color: #ffffff;
+    padding: 18px;
+    border-style: hidden;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: Quicksand, sans-serif;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 0px 0px 10px 10px;
+    margin-top: 0px;
 }
 
 @media (max-width: 768px) {
