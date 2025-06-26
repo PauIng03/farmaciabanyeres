@@ -50,8 +50,7 @@ function ArticleDetall() {
       </div>
 
         <div className='cos'>
-          <p className='cosArticle'>Negreta</p>
-          <p className='cosArticleText'>{article.Cos}</p>
+          <div className='cosArticleText' dangerouslySetInnerHTML={{ __html: article.Cos }} />
         </div>
     </div>
   );

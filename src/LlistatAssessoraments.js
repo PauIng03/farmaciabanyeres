@@ -31,18 +31,13 @@ function LlistatAssessoraments({ assessoramentsClass="Assessoraments", underline
       <div className="CartesAssessoraments">
         {assessoraments.map((assessorament) => (
           <div key={assessorament.id} className='CartaAssessoraments'>
-            <div className='IconoNom'>
-              <img className='IconaCarta' src={assessorament.Icona || "https://placehold.co/600x200"} alt={assessorament.Nom} />
-              <p className='nomInici'>{assessorament.Nom}</p>
-            </div>
-
             {mode === "complet" && (
               <div className='InfoFotoAssessoraments'>
                 <div className='InfoAssessoraments'>
+                  <img className='IconaCarta' src={assessorament.Icona || "https://placehold.co/600x200"} alt={assessorament.Nom} />
                   <p className='nomAssessoraments'>{assessorament.Nom}</p>
-                  <p className='Resum'>{assessorament.Resum}</p>
                 </div>
-                <button className='BotoRosa' onClick={() => navigate(`/programes/${assessorament.id}`)}>Veure'n més</button>
+                <button className='BotoRosaAssessoraments' onClick={() => navigate(`/programes/${assessorament.id}`)}>Veure'n més</button>
               </div>
             )}
           </div>

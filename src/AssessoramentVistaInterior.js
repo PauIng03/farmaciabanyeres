@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { supabase } from './lib/supabaseClient';
 import './Estils/AssessoramentVistaInterior.css';
-import PanellDemanarCita from './PanellDemanarCita';
 import { useNavigate } from 'react-router-dom';
 
 function AssessoramentVistaInterior() {
@@ -44,8 +43,6 @@ function AssessoramentVistaInterior() {
             <h1>{assessorament.Nom}</h1>
             <div className="underline blanc"></div>
           </div>
-          <p className="Resum resumAssessorament">{assessorament.Resum}</p>
-          <PanellDemanarCita id={assessorament.id} tipus="programes" />
         </div>
       </div>
 

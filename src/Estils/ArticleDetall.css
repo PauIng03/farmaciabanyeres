@@ -91,3 +91,6 @@
 .articleDetall{
     justify-items: center;
 }
+.cosArticleText{
+    white-space: pre-line;
+}
