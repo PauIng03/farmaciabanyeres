@@ -45,7 +45,7 @@ function ArticleDetall() {
       </div>
 
       <div className="articleDetall">
-        <p className='autorArticle'>Autora: {article.Autor}</p>
+        <p className='autorArticle'>{article.Autor}</p>
         <p className="dataText">{formatData(article.Data)}</p>
       </div>
 
