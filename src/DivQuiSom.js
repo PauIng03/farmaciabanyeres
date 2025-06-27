@@ -20,7 +20,7 @@ function DivQuiSom({ botoText, botoRuta}) {
               </p>
               <button className='BotoQuiSom' onClick={() => navigate(botoRuta)}>{botoText}</button>
             </div>
-            <img className='Imatge' src="https://atfkoregabmvkwjeearl.supabase.co/storage/v1/object/public/imatges-serveis-assessorament//QuiSom.jpeg" alt="QuiSom" />
+            <img className='Imatge' src="https://atfkoregabmvkwjeearl.supabase.co/storage/v1/object/public/imatges-header//QuiSom.avif" alt="QuiSom" />
           </div>
         </div>
     )

@@ -35,7 +35,7 @@ function QuiSom() {
           <div className='underlineBlanc'></div>
         </div>
         <div className="TextImatgeQuiSom">
-          <img className='Imatge' src="https://placehold.co/600x250" alt="Valors" />
+          <img className='Imatge' src="https://atfkoregabmvkwjeearl.supabase.co/storage/v1/object/public/imatges-header//Mostrador.avif" alt="Valors" />
           <p className='TextValors'>
             La nostra visió és la d’una farmàcia comunitària centrada en el pacient.<br />
             Volem establir una relació de confiança amb la nostra comunitat, basada en oferir una atenció farmacèutica on el pacient rep una informació sanitària de qualitat que li permet prendre decisions sobre la seva salut.<br />
