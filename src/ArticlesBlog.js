@@ -91,7 +91,6 @@ function ArticlesBlog({
                   <p className='autorArticle'>{article.Autor}</p>
                 </div>
                 <div className='resum'>
-                  <p className='resumArticle'>Resum</p>
                   <p className='resumArticleText'>{article.Resum}</p>
                 </div>
               </div>
