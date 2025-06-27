@@ -67,7 +67,15 @@ function ArticlesBlog({
       <div className="articlesBlog">
         {articles.map((article) => (
           <div key={article.id} className='articleBoto'>
-            <div className={articleindividual} onClick={() => navigate(`/blog/${article.id}`)}>
+            <div
+              className={articleindividual}
+              onClick={() => navigate(`/blog/${article.id}`)}
+              style={{
+                backgroundImage: `url(${article.Imatge})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+              }}
+            >
               <div className='DivDataCategoria'>
                 <div className='data'>
                   {formatData(article.Data)}

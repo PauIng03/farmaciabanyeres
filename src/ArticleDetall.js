@@ -38,20 +38,26 @@ function ArticleDetall() {
   if (!article) return <p>Carregant article...</p>;
 
   return (
-    <div className="articles">
-      <div className='Titols'>
-        <h1>{article.Nom}</h1>
-        <div className="underline"></div>
-      </div>
-
-      <div className="articleDetall">
-        <p className='autorArticle'>{article.Autor}</p>
-        <p className="dataText">{formatData(article.Data)}</p>
-      </div>
-
-        <div className='cos'>
-          <div className='cosArticleText' dangerouslySetInnerHTML={{ __html: article.Cos }} />
+    <div>
+      <div
+        className="HeaderArticleDetall"
+        style={{ backgroundImage: `url(${article.Imatge})` }}
+      ></div>
+      <div className="articles">
+        <div className='Titols'>
+          <h1>{article.Nom}</h1>
+          <div className="underline"></div>
         </div>
+
+        <div className="articleDetall">
+          <p className='autorArticle'>{article.Autor}</p>
+          <p className="dataText">{formatData(article.Data)}</p>
+        </div>
+
+          <div className='cos'>
+            <div className='cosArticleText' dangerouslySetInnerHTML={{ __html: article.Cos }} />
+          </div>
+      </div>
     </div>
   );
 }

@@ -9,7 +9,7 @@ function ArticleIndividual() {
   const { id } = useParams();
 
   return (
-    <div className="Blog">
+    <div className="ArticleBlog">
       <ArticleDetall></ArticleDetall>
       <Comentaris articleId={parseInt(id)} />
       <ArticlesBlog title="Altres articles" limit={3} excludeId={parseInt(id)} smallTitle={true} articlesRecomanats={true}/>
