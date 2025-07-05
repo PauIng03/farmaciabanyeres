@@ -42,7 +42,7 @@ function BotoFlotant() {
                 <p>En què et podem ajudar?</p>
             </div>
             <a
-              href="https://wa.me/34600000000"
+              href="https://wa.me/34693926229"
               target="_blank"
               rel="noopener noreferrer"
               className="boto-whatsapp"

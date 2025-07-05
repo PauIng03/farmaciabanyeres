@@ -24,7 +24,7 @@ function PanellDemanarCita({ id, tipus }) {
           </div>
           <div className="cos">
             <a
-              href="https://wa.me/34600000000"
+              href="https://wa.me/34693926229"
               target="_blank"
               rel="noopener noreferrer"
               className="botoPanellDemanarCitaAssessorament botoWhatsAppDemanarCita"
@@ -80,7 +80,7 @@ function PanellDemanarCita({ id, tipus }) {
           </div>
           <div className="cos">
             <a
-              href="https://wa.me/34600000000"
+              href="https://wa.me/34693926229"
               target="_blank"
               rel="noopener noreferrer"
               className="botoPanellDemanarCita  botoWhatsAppDemanarCita"
@@ -121,7 +121,7 @@ function PanellDemanarCita({ id, tipus }) {
           </div>
           <div className="cos">
             <a
-              href="https://wa.me/34600000000"
+              href="https://wa.me/34693926229"
               target="_blank"
               rel="noopener noreferrer"
               className="botoPanellDemanarCita  botoWhatsAppDemanarCita"
