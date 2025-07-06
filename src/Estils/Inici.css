@@ -126,6 +126,7 @@ p{
   flex-direction: row;
   gap: 16px;
   width: fit-content;
+  text-align: -webkit-center;
 }
 .IconoNom {
   justify-items: center;

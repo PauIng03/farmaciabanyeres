@@ -17,7 +17,7 @@ function BotoFlotant() {
 
   const handleClick = () => {
     setObert(!obert);
-    setMostrarTooltip(false); // Amaga tooltip si es fa clic
+    setMostrarTooltip(false);
   };
 
   return (

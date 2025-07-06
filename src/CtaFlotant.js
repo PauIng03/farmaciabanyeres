@@ -19,7 +19,7 @@ function CtaFlotant() {
   };
 
   const handleTancar = (e) => {
-    e.stopPropagation(); // Evita que es propagui i s'activi el clic del missatge
+    e.stopPropagation();
     setMostrarTooltip(false);
   };
 

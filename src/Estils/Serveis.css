@@ -48,6 +48,7 @@ p{
     flex-direction: row;
     gap: 16px;
     width: 475px;
+    text-align: -webkit-center;
 }
 .underline {
   height: 0;
